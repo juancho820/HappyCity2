@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private bool iniciado = false;
     public static bool Once = false;
     private PlayerMotor motor;
+    public Camera camara;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, diamondAnim, botonAnim;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        coinScore = PlayerPrefs.GetInt("Score");
         Once = false;
         Instance = this;
         modifierScore = 1;
@@ -97,10 +99,16 @@ public class GameManager : MonoBehaviour
     {
         isDead = true;
         FindObjectOfType<GlacierSpawner>().IsScrolling = false;
-        deadScoreText.text = score.ToString("0");
-        deadCoinText.text = coinScore.ToString("0");
+        //deadScoreText.text = score.ToString("0");
+        //deadCoinText.text = coinScore.ToString("0");
         deathMenuAnim.SetTrigger("Dead");
         gameCanvas.SetTrigger("Hide");
+
+        camara.GetComponent<SlidingNumber>().AddToNumber(score);
+        camara.GetComponent<SlidingNumber>().AddToNumber2(coinScore);
+
+        PlayerPrefs.SetInt("Score", (int)coinScore);
+
 
         //Check if this is a highscore
         if (score > PlayerPrefs.GetInt("Hiscore"))
