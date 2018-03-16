@@ -25,7 +25,16 @@ public class PieceSpawner : MonoBehaviour
                 amtObj = LevelManager.Instance.ramps.Count;
                 break;
             case PieceType.block:
-                amtObj = LevelManager.Instance.ramps.Count;
+                amtObj = LevelManager.Instance.blocks.Count;
+                break;
+            case PieceType.jumpB:
+                amtObj = LevelManager.Instance.jumpsB.Count;
+                break;
+            case PieceType.slideB:
+                amtObj = LevelManager.Instance.slidesB.Count;
+                break;
+            case PieceType.longblockS:
+                amtObj = LevelManager.Instance.longblocksS.Count;
                 break;
         }
 

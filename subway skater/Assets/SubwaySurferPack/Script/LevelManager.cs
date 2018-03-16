@@ -33,8 +33,11 @@ public class LevelManager : MonoBehaviour
 
     //List of pieces
     public List<Piece> ramps = new List<Piece>();
+    public List<Piece> longblocksS = new List<Piece>();
+    public List<Piece> jumpsB = new List<Piece>();
     public List<Piece> longblocks = new List<Piece>();
     public List<Piece> jumps = new List<Piece>();
+    public List<Piece> slidesB = new List<Piece>();
     public List<Piece> slides = new List<Piece>();
     public List<Piece> blocks = new List<Piece>();
     [HideInInspector]
@@ -351,10 +354,10 @@ public class LevelManager : MonoBehaviour
     {
         Piece p = pieces.Find(x => x.type == pt && x.visualIndex == visualIndex && !x.gameObject.activeSelf);
 
-        if(p == null)
+        if (p == null)
         {
             GameObject go = null;
-            if(pt == PieceType.ramp)
+            if (pt == PieceType.ramp)
             {
                 go = ramps[visualIndex].gameObject;
             }
@@ -374,6 +377,19 @@ public class LevelManager : MonoBehaviour
             {
                 go = blocks[visualIndex].gameObject;
             }
+            else if (pt == PieceType.jumpB)
+            {
+                go = jumpsB[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.slideB)
+            {
+                go = slidesB[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.longblockS)
+            {
+                go = longblocksS[visualIndex].gameObject;
+            }
+
 
             go = Instantiate(go);
             p = go.GetComponent<Piece>();
