@@ -11,6 +11,10 @@ public enum PieceType
     jumpB = 5,
     slideB = 6,
     longblockS = 7,
+    zone1 = 8,
+    zone2 = 9,
+    zone3 = 10,
+    zone4 = 11,
 }
 
 public class Piece : MonoBehaviour
