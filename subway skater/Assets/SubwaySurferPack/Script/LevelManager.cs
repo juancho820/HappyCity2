@@ -40,6 +40,10 @@ public class LevelManager : MonoBehaviour
     public List<Piece> slidesB = new List<Piece>();
     public List<Piece> slides = new List<Piece>();
     public List<Piece> blocks = new List<Piece>();
+    public List<Piece> zones1 = new List<Piece>();
+    public List<Piece> zones2 = new List<Piece>();
+    public List<Piece> zones3 = new List<Piece>();
+    public List<Piece> zones4 = new List<Piece>();
     [HideInInspector]
     public List<Piece> pieces = new List<Piece>(); //All the pieces in the pool
 
@@ -388,6 +392,22 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.longblockS)
             {
                 go = longblocksS[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.zone1)
+            {
+                go = zones1[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.zone2)
+            {
+                go = zones2[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.zone3)
+            {
+                go = zones3[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.zone4)
+            {
+                go = zones4[visualIndex].gameObject;
             }
 
 

@@ -36,6 +36,18 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.longblockS:
                 amtObj = LevelManager.Instance.longblocksS.Count;
                 break;
+            case PieceType.zone1:
+                amtObj = LevelManager.Instance.zones1.Count;
+                break;
+            case PieceType.zone2:
+                amtObj = LevelManager.Instance.zones2.Count;
+                break;
+            case PieceType.zone3:
+                amtObj = LevelManager.Instance.zones3.Count;
+                break;
+            case PieceType.zone4:
+                amtObj = LevelManager.Instance.zones4.Count;
+                break;
         }
 
         currentPiece = LevelManager.Instance.GetPiece(type, Random.Range(0,amtObj));
