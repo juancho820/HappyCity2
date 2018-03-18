@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     private int currentSpawnZ;
     private int currentLevel;
     private int y1, y2, y3;
+    public bool Iniciado = false;
 
     public int NumeroDeSpawns = 5;
     public int Contador = 0;
@@ -86,6 +87,7 @@ public class LevelManager : MonoBehaviour
                 }
                 else
                 {
+                    Iniciado = true;
                     GenerateSegment();
                 }
             }
@@ -268,7 +270,16 @@ public class LevelManager : MonoBehaviour
 
         if(s == null)
         {
-            GameObject go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments[id].gameObject) as GameObject;
+            GameObject go;
+            if (Iniciado == false)
+            {
+                go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments[id].gameObject) as GameObject;
+            }
+            else
+            {
+                go = Instantiate(availableSegments[id].gameObject) as GameObject;
+            }
+            
             s = go.GetComponent<Segment>();
 
             s.SegId = id;

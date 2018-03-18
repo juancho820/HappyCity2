@@ -16,7 +16,7 @@ public class PlayerMotor : MonoBehaviour {
 
     // Movement
     private CharacterController controller;
-    private float jumpForce = 4.0f;
+    private float jumpForce = 6.0f;
     private float gravity = 12.0f;
     private float verticalVelocity;    
     private int desireLane = 1; // 0=L, 1=M , 2=R
