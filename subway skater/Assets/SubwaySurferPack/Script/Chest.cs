@@ -6,12 +6,27 @@ public class Chest : MonoBehaviour
 {
     public float msToWait = 5000.0f;
 
-    private Text chestTimer;
+    public Text chestTimer;
     private Button chestButton;
+    private Sprite sprite;
     private ulong lastChestOpen;
+    private int cofre;
 
     private void Start()
     {
+        cofre = PlayerPrefs.GetInt("CofreMadera");
+        if(cofre == 1)
+        {
+            GetComponent<Image>().sprite= GameManager.Instance.sprite1;
+        }
+        else if (cofre == 2)
+        {
+            GetComponent<Image>().sprite = GameManager.Instance.sprite2;
+        }
+        else if (cofre == 3)
+        {
+            GetComponent<Image>().sprite = GameManager.Instance.sprite3;
+        }
         chestButton = GetComponent<Button>();
         lastChestOpen = ulong.Parse(PlayerPrefs.GetString("LastChestOpen"));
         chestTimer = GetComponentInChildren<Text>();
@@ -51,11 +66,22 @@ public class Chest : MonoBehaviour
 
     public void ChestClick()
     {
-        lastChestOpen = (ulong)DateTime.Now.Ticks;
-        PlayerPrefs.SetString("LastChestOpen",lastChestOpen.ToString());
-        chestButton.interactable = false;
+        //lastChestOpen = (ulong)DateTime.Now.Ticks;
+        //PlayerPrefs.SetString("LastChestOpen",lastChestOpen.ToString());
+        //chestButton.interactable = false;
+
+        GetComponent<Image>().sprite = GameManager.Instance.none;
+        PlayerPrefs.SetInt("CofreMadera", 0);
+
+        //GameManager.Instance.boton1.gameObject.SetActive(false);
 
         //Give reward
+    }
+    public void ActivateChest()
+    {
+        lastChestOpen = (ulong)DateTime.Now.Ticks;
+        PlayerPrefs.SetString("LastChestOpen", lastChestOpen.ToString());
+        chestButton.interactable = false;
     }
 
     private bool IsChestReady()

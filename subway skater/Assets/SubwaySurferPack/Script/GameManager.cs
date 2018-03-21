@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public static bool Once = false;
     private PlayerMotor motor;
     public Camera camara;
+    public Button boton1, boton2, boton3;
+    public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, diamondAnim, botonAnim;
@@ -109,6 +111,83 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Score", (int)coinScore);
 
+        if (score > 30 && score < 50)
+        {
+            if (boton1.image.sprite == none)
+            {
+                boton1.image.sprite = sprite1;
+                PlayerPrefs.SetInt("CofreMadera", 1);
+                //boton1.gameObject.SetActive(true);
+                boton1.GetComponent<Chest>().ActivateChest();
+
+            }
+            else if (boton2.image.sprite == none)
+            {
+                boton2.image.sprite = sprite1;
+                PlayerPrefs.SetInt("CofrePlata", 1);
+                //boton2.gameObject.SetActive(true);
+                boton2.GetComponent<ChestPlata>().ActivateChest();
+
+            }
+            else if (boton3.image.sprite == none)
+            {
+                boton3.image.sprite = sprite1;
+                PlayerPrefs.SetInt("CofreOro", 1);
+                //boton3.gameObject.SetActive(true);
+                boton3.GetComponent<ChestOro>().ActivateChest();
+            }
+        }
+        else if (score > 50 && score < 100)
+        {
+            if (boton1.image.sprite == none)
+            {
+                boton1.image.sprite = sprite2;
+                PlayerPrefs.SetInt("CofreMadera", 2);
+                //boton1.gameObject.SetActive(true);
+                boton1.GetComponent<Chest>().ActivateChest();
+
+            }
+            else if (boton2.image.sprite == none)
+            {
+                boton2.image.sprite = sprite2;
+                PlayerPrefs.SetInt("CofrePlata", 2);
+                //boton2.gameObject.SetActive(true);
+                boton2.GetComponent<ChestPlata>().ActivateChest();
+
+            }
+            else if (boton3.image.sprite == none)
+            {
+                boton3.image.sprite = sprite2;
+                PlayerPrefs.SetInt("CofreOro", 2);
+                //boton3.gameObject.SetActive(true);
+                boton3.GetComponent<ChestOro>().ActivateChest();
+
+            }
+        }
+        else if (score > 100)
+        {
+            if (boton1.image.sprite == none)
+            {
+                boton1.image.sprite = sprite3;
+                //boton1.gameObject.SetActive(true);
+                boton1.GetComponent<Chest>().ActivateChest();
+                PlayerPrefs.SetInt("CofreMadera", 3);
+            }
+            else if (boton2.image.sprite == none)
+            {
+                boton2.image.sprite = sprite3;
+                //boton2.gameObject.SetActive(true);
+                boton2.GetComponent<ChestPlata>().ActivateChest();
+                PlayerPrefs.SetInt("CofrePlata", 3);
+            }
+            else if (boton3.image.sprite == none)
+            {
+                boton3.image.sprite = sprite3;
+                //boton3.gameObject.SetActive(true);
+                boton3.GetComponent<ChestOro>().ActivateChest();
+                PlayerPrefs.SetInt("CofreOro", 3);
+            }
+        }
 
         //Check if this is a highscore
         if (score > PlayerPrefs.GetInt("Hiscore"))
