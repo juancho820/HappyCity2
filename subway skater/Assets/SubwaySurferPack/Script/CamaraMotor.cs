@@ -17,9 +17,9 @@ public class CamaraMotor : MonoBehaviour
             return;
         }
         
-        Vector3 desirePosition = lookAt.position + offset;
-        desirePosition.x = 0;
-        transform.position = Vector3.Lerp(transform.position,desirePosition,Time.deltaTime);
+        Vector3 desirePosition = lookAt.position + offset ;
+        desirePosition.x = lookAt.transform.position.x;
+        transform.position = Vector3.Lerp(transform.position,desirePosition,0.1f);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
     }
 }

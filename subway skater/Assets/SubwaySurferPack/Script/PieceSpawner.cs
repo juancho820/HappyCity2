@@ -12,11 +12,26 @@ public class PieceSpawner : MonoBehaviour
         int amtObj = 0;
         switch (type)
         {
-            case PieceType.jump:
-                amtObj = LevelManager.Instance.jumps.Count;
+            case PieceType.jumpPA:
+                amtObj = LevelManager.Instance.jumpsPA.Count;
                 break;
-            case PieceType.slide:
-                amtObj = LevelManager.Instance.slides.Count;
+            case PieceType.jumpCC:
+                amtObj = LevelManager.Instance.jumpsCC.Count;
+                break;
+            case PieceType.jumpT:
+                amtObj = LevelManager.Instance.jumpsT.Count;
+                break;
+            case PieceType.jumpA:
+                amtObj = LevelManager.Instance.jumpsA.Count;
+                break;
+            case PieceType.slidePA:
+                amtObj = LevelManager.Instance.slidesPA.Count;
+                break;
+            case PieceType.slideCC:
+                amtObj = LevelManager.Instance.slidesCC.Count;
+                break;
+            case PieceType.slideT:
+                amtObj = LevelManager.Instance.slidesT.Count;
                 break;
             case PieceType.longblock:
                 amtObj = LevelManager.Instance.longblocks.Count;
@@ -24,8 +39,14 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.ramp:
                 amtObj = LevelManager.Instance.ramps.Count;
                 break;
-            case PieceType.block:
-                amtObj = LevelManager.Instance.blocks.Count;
+            case PieceType.blockPA:
+                amtObj = LevelManager.Instance.blocksPA.Count;
+                break;
+            case PieceType.blockCC:
+                amtObj = LevelManager.Instance.blocksCC.Count;
+                break;
+            case PieceType.blockT:
+                amtObj = LevelManager.Instance.blocksT.Count;
                 break;
             case PieceType.jumpB:
                 amtObj = LevelManager.Instance.jumpsB.Count;
@@ -36,17 +57,17 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.longblockS:
                 amtObj = LevelManager.Instance.longblocksS.Count;
                 break;
-            case PieceType.zone1:
-                amtObj = LevelManager.Instance.zones1.Count;
+            case PieceType.floorZone1:
+                amtObj = LevelManager.Instance.FloorZones1.Count;
                 break;
-            case PieceType.zone2:
-                amtObj = LevelManager.Instance.zones2.Count;
+            case PieceType.floorZone2:
+                amtObj = LevelManager.Instance.FloorZones2.Count;
                 break;
-            case PieceType.zone3:
-                amtObj = LevelManager.Instance.zones3.Count;
+            case PieceType.floorZone3:
+                amtObj = LevelManager.Instance.FloorZones3.Count;
                 break;
-            case PieceType.zone4:
-                amtObj = LevelManager.Instance.zones4.Count;
+            case PieceType.floorZone4:
+                amtObj = LevelManager.Instance.FloorZones4.Count;
                 break;
         }
 

@@ -37,14 +37,21 @@ public class LevelManager : MonoBehaviour
     public List<Piece> longblocksS = new List<Piece>();
     public List<Piece> jumpsB = new List<Piece>();
     public List<Piece> longblocks = new List<Piece>();
-    public List<Piece> jumps = new List<Piece>();
+    public List<Piece> jumpsPA = new List<Piece>();
+    public List<Piece> jumpsCC = new List<Piece>();
+    public List<Piece> jumpsT = new List<Piece>();
+    public List<Piece> jumpsA = new List<Piece>();
     public List<Piece> slidesB = new List<Piece>();
-    public List<Piece> slides = new List<Piece>();
-    public List<Piece> blocks = new List<Piece>();
-    public List<Piece> zones1 = new List<Piece>();
-    public List<Piece> zones2 = new List<Piece>();
-    public List<Piece> zones3 = new List<Piece>();
-    public List<Piece> zones4 = new List<Piece>();
+    public List<Piece> slidesPA = new List<Piece>();
+    public List<Piece> slidesCC = new List<Piece>();
+    public List<Piece> slidesT = new List<Piece>();
+    public List<Piece> blocksPA = new List<Piece>();
+    public List<Piece> blocksCC = new List<Piece>();
+    public List<Piece> blocksT = new List<Piece>();
+    public List<Piece> FloorZones1 = new List<Piece>();
+    public List<Piece> FloorZones2 = new List<Piece>();
+    public List<Piece> FloorZones3 = new List<Piece>();
+    public List<Piece> FloorZones4 = new List<Piece>();
     [HideInInspector]
     public List<Piece> pieces = new List<Piece>(); //All the pieces in the pool
 
@@ -380,17 +387,45 @@ public class LevelManager : MonoBehaviour
             {
                 go = longblocks[visualIndex].gameObject;
             }
-            else if (pt == PieceType.jump)
+            else if (pt == PieceType.jumpPA)
             {
-                go = jumps[visualIndex].gameObject;
+                go = jumpsPA[visualIndex].gameObject;
             }
-            else if (pt == PieceType.slide)
+            else if (pt == PieceType.jumpCC)
             {
-                go = slides[visualIndex].gameObject;
+                go = jumpsCC[visualIndex].gameObject;
             }
-            else if (pt == PieceType.block)
+            else if (pt == PieceType.jumpA)
             {
-                go = blocks[visualIndex].gameObject;
+                go = jumpsA[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.jumpT)
+            {
+                go = jumpsT[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.slidePA)
+            {
+                go = slidesPA[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.slideCC)
+            {
+                go = slidesCC[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.slideT)
+            {
+                go = slidesT[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockPA)
+            {
+                go = blocksPA[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockCC)
+            {
+                go = blocksCC[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockT)
+            {
+                go = blocksT[visualIndex].gameObject;
             }
             else if (pt == PieceType.jumpB)
             {
@@ -404,21 +439,21 @@ public class LevelManager : MonoBehaviour
             {
                 go = longblocksS[visualIndex].gameObject;
             }
-            else if (pt == PieceType.zone1)
+            else if (pt == PieceType.floorZone1)
             {
-                go = zones1[visualIndex].gameObject;
+                go = FloorZones1[visualIndex].gameObject;
             }
-            else if (pt == PieceType.zone2)
+            else if (pt == PieceType.floorZone2)
             {
-                go = zones2[visualIndex].gameObject;
+                go = FloorZones2[visualIndex].gameObject;
             }
-            else if (pt == PieceType.zone3)
+            else if (pt == PieceType.floorZone3)
             {
-                go = zones3[visualIndex].gameObject;
+                go = FloorZones3[visualIndex].gameObject;
             }
-            else if (pt == PieceType.zone4)
+            else if (pt == PieceType.floorZone4)
             {
-                go = zones4[visualIndex].gameObject;
+                go = FloorZones4[visualIndex].gameObject;
             }
 
 

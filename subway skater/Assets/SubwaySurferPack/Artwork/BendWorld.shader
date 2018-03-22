@@ -3,7 +3,7 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_Curvature("Curvature", Float) = 0.001
+		_Curvature("Curvature", Float) = 0.003
 		_Color("Color", Color) = (1,1,1,1)
 	}
 		SubShader
