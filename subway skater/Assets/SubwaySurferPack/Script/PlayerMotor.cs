@@ -24,6 +24,7 @@ public class PlayerMotor : MonoBehaviour {
     // Speed Modifier
     private float originalSpeed = 7.0f;
     private float speed = 7.0f;
+    private float speedTurn = 20;
     private float speedIncreaseLastTick;
     private float speedIncreaseTime = 2.5f;
     private float speedIncreaseAmount = 0.1f;
@@ -72,7 +73,7 @@ public class PlayerMotor : MonoBehaviour {
 
         // lets calculate our move delta
         Vector3 moveVector = Vector3.zero;
-        moveVector.x = (targetPosition - transform.position).normalized.x * speed;
+        moveVector.x = (targetPosition - transform.position).normalized.x * speedTurn;
 
         bool isGrounded = IsGrounded();
         anim.SetBool("Grounded", isGrounded);
