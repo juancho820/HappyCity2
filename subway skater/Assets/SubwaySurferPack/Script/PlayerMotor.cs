@@ -115,7 +115,7 @@ public class PlayerMotor : MonoBehaviour {
 
         // Rotate Tin to where he is going
         Vector3 dir = controller.velocity;
-        if(dir != Vector3.zero)
+        if (dir != Vector3.zero)
         {
             dir.y = 0;
             transform.forward = Vector3.Lerp(transform.forward, dir, TURN_SPEED);
