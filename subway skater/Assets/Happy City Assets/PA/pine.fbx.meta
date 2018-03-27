@@ -11,7 +11,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Tree_Type1_04_mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _trees_normal
+    second: {fileID: 2100000, guid: c5081b8cd4d74ce4ab013bf071a58572, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
