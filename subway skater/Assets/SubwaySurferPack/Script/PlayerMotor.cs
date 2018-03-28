@@ -22,6 +22,7 @@ public class PlayerMotor : MonoBehaviour {
     private int desireLane = 1; // 0=L, 1=M , 2=R
     private float timeMagneto = 0;
     private float timeX2 = 0;
+    private float timeInvencibilidad = 0;
 
     // Speed Modifier
     private float originalSpeed = 7.0f;
@@ -49,6 +50,15 @@ public class PlayerMotor : MonoBehaviour {
             {
                 Magneto.powerMagneto = false;
                 timeMagneto = 0;
+            }
+        }
+        if (Invencibilidad.powerInvenci == true)
+        {
+            timeInvencibilidad += Time.deltaTime;
+            if (timeInvencibilidad >= 10)
+            {
+                Invencibilidad.powerInvenci = false;
+                timeInvencibilidad = 0;
             }
         }
         if (X2.x2 == 2)
@@ -185,13 +195,34 @@ public class PlayerMotor : MonoBehaviour {
         GameManager.Instance.OnDeath();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Invencibilidad.powerInvenci == true)
+        {
+            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Invencibilidad")
+            {
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        switch (hit.gameObject.tag)
+        if(Invencibilidad.powerInvenci == false)
         {
-            case "Obstacle":
-                Crash();
-            break;
+            switch (hit.gameObject.tag)
+            {
+                case "Obstacle":
+                    Crash();
+                    break;
+            }
+        }
+        if (Invencibilidad.powerInvenci == true)
+        {
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Invencibilidad")
+            {
+                Destroy(hit.gameObject);
+            }
         }
     }
 }
