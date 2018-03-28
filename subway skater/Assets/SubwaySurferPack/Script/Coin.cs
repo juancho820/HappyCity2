@@ -31,12 +31,14 @@ public class Coin : MonoBehaviour
                 anim.SetTrigger("Collected");
             }
         }
-        
-        if(other.tag == "Magneto")
+        else
         {
-            cogida = true;
-            GameManager.Instance.GetCoin();
-            anim.SetTrigger("Collected");
+            if (other.tag == "Magneto")
+            {
+                cogida = true;
+                GameManager.Instance.GetCoin();
+                anim.SetTrigger("Collected");
+            }
         }
     }
     private void Update()

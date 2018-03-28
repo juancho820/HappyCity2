@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magneto : MonoBehaviour {
+public class Invencibilidad : MonoBehaviour {
 
-    public static bool powerMagneto = false;
+    public static bool powerInvenci = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            powerMagneto = true;
+            powerInvenci = true;
             gameObject.SetActive(false);
+            Debug.Log(powerInvenci);
         }
     }
 }

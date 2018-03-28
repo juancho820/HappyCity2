@@ -37,9 +37,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4640718010757656}
   - component: {fileID: 114919318397227120}
+  - component: {fileID: 65813294150155218}
   m_Layer: 0
   m_Name: P0
-  m_TagString: Untagged
+  m_TagString: Invencibilidad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +113,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126937559145900}
   m_Mesh: {fileID: 4300000, guid: 6b2015cd9e5c41a4595d363198fb0a03, type: 3}
+--- !u!65 &65813294150155218
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534267314498166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114919318397227120
 MonoBehaviour:
   m_ObjectHideFlags: 1
