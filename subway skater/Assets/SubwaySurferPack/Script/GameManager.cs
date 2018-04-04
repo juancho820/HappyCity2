@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager Instance { set; get; }
 
+    private int InvenciPower = 0;
+    private int valorEstrella = 0;
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
@@ -19,8 +21,8 @@ public class GameManager : MonoBehaviour
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, diamondAnim, botonAnim;
-    public Text scoreText, coinText, modifierText, hiscoreText;
+    public Animator gameCanvas, menuAnim, diamondAnim, botonAnim, TiendaAnim;
+    public Text scoreText, coinText, modifierText, hiscoreText, coinTextTienda, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
 
@@ -30,7 +32,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
         coinScore = PlayerPrefs.GetInt("Score");
+        valorEstrella = 100;
         Once = false;
         Instance = this;
         modifierScore = 1;
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
+        InvenciText.text = InvenciPower.ToString("0");
 
         hiscoreText.text = PlayerPrefs.GetInt("Hiscore").ToString();
         botonAnim.SetTrigger("Iniciar");
@@ -55,6 +60,7 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<GlacierSpawner>().IsScrolling = true;
                 FindObjectOfType<CamaraMotor>().IsMoving = true;
                 gameCanvas.SetTrigger("Show");
+                coinText.text = coinScore.ToString("0");
             }
         }
 
@@ -86,6 +92,29 @@ public class GameManager : MonoBehaviour
         botonAnim.SetTrigger("Esconder");
     }
 
+    public void Invenci()
+    {
+        if (InvenciPower > 0)
+        {
+            Invencibilidad.powerInvenci = true;
+            InvenciPower--;
+            InvenciText.text = InvenciPower.ToString("0");
+            PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
+        }
+    }
+
+    public void SumarInvici()
+    {
+        if(coinScore >= valorEstrella)
+        {
+            InvenciPower++;
+            coinScore -= valorEstrella;
+            PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
+            PlayerPrefs.SetInt("Score", (int)coinScore);
+            coinTextTienda.text = coinScore.ToString("0");
+        }
+    }
+
     public void UpdateModifier(float modifierAmount)
     {
         modifierScore = 1.0f + modifierAmount;
@@ -95,6 +124,21 @@ public class GameManager : MonoBehaviour
     public void OnPlayButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+
+    public void Tienda()
+    {
+        botonAnim.SetTrigger("Esconder");
+        menuAnim.SetTrigger("Hide");
+        TiendaAnim.SetTrigger("Show");
+        coinTextTienda.text = coinScore.ToString("0");
+    }
+
+    public void VolverMenu()
+    {
+        menuAnim.SetTrigger("Show");
+        botonAnim.SetTrigger("Iniciar");
+        TiendaAnim.SetTrigger("Hide");
     }
 
     public void OnDeath()
