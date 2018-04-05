@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4940394812418820}
   - component: {fileID: 33640316384726942}
   - component: {fileID: 23871445627052794}
+  - component: {fileID: 95629495924571028}
+  - component: {fileID: 65231115007485016}
+  - component: {fileID: 114365642100158834}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -36,8 +39,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4850323245175750}
-  - component: {fileID: 95330272969328736}
-  - component: {fileID: 65053475383556608}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601465187228036}
   m_LocalRotation: {x: -0.27465656, y: -0.27465656, z: 0.65158564, w: 0.65158564}
-  m_LocalPosition: {x: 0, y: 2.15, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 33.109898, y: 3.9173234, z: 47.480587}
   m_Children: []
   m_Father: {fileID: 4850323245175750}
@@ -113,27 +114,27 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601465187228036}
   m_Mesh: {fileID: 4300000, guid: 5935473361272c54c825053e3e972483, type: 3}
---- !u!65 &65053475383556608
+--- !u!65 &65231115007485016
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931672734419864}
+  m_GameObject: {fileID: 1601465187228036}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1.34, z: 0}
---- !u!95 &95330272969328736
+  m_Size: {x: 0.020000007, y: 0.06110435, z: 0.020062964}
+  m_Center: {x: 3.802701e-11, y: -0.0056654564, z: 0.0001137163}
+--- !u!95 &95629495924571028
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931672734419864}
+  m_GameObject: {fileID: 1601465187228036}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 5935473361272c54c825053e3e972483, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d84d022ce57629f48ac867882fb6ea22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -142,3 +143,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114365642100158834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601465187228036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184ce56f2d93a5049a2afe84e66e52ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  cogida: 0
