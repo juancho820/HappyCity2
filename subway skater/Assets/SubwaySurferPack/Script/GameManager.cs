@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin()
     {
-        diamondAnim.SetTrigger("Collect");
+        //diamondAnim.SetTrigger("Collect");
         coinScore += 1 *X2.x2;
         coinText.text = coinScore.ToString("0");
         //score += COIN_SCORE_AMOUNT;

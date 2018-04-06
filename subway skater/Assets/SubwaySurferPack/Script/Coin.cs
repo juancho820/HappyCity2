@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
 
     private void OnEnable()
     {
-        anim.SetTrigger("Spawn");
+        //anim.SetTrigger("Spawn");
     }
 
     private void OnTriggerEnter (Collider other)
@@ -28,7 +28,7 @@ public class Coin : MonoBehaviour
             {
                 cogida = true;
                 GameManager.Instance.GetCoin();
-                anim.SetTrigger("Collected");
+                //anim.SetTrigger("Collected");
             }
         }
         else
@@ -37,7 +37,7 @@ public class Coin : MonoBehaviour
             {
                 cogida = true;
                 GameManager.Instance.GetCoin();
-                anim.SetTrigger("Collected");
+                //anim.SetTrigger("Collected");
             }
         }
     }
