@@ -13,7 +13,9 @@ public class PlayerMotor : MonoBehaviour {
     //Animation
     private Animator anim;
 
-    public RadialSlider slider, slider2, slider3;
+    public RadialSliderInv slider;
+    public RadialSliderx2 slider2;
+    public RadialSliderMag slider3;
     public int InvCooldown = 10;
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
@@ -51,11 +53,14 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Magneto.powerMagneto == true)
         {
-            timeMagneto += Time.deltaTime;
-            if (timeMagneto >= MagCooldown)
+            slider3.gameObject.SetActive(true);
+            slider3.maxValue = MagCooldown;
+            slider3.value += Time.deltaTime;
+            if (slider3.value >= MagCooldown)
             {
                 Magneto.powerMagneto = false;
-                timeMagneto = 0;
+                slider3.value = 0;
+                slider3.gameObject.SetActive(false);
             }
         }
         if (Invencibilidad.powerInvenci == true)
@@ -70,11 +75,14 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (X2.x2 == 2)
         {
-            timeX2 += Time.deltaTime;
-            if (timeX2 >= x2Cooldown)
+            slider2.gameObject.SetActive(true);
+            slider2.maxValue = x2Cooldown;
+            slider2.value += Time.deltaTime;
+            if (slider2.value >= x2Cooldown)
             {
                 X2.x2 = 1;
-                timeMagneto = 0;
+                slider2.value = 0;
+                slider2.gameObject.SetActive(false);
             }
         }
         if (!isRunning)

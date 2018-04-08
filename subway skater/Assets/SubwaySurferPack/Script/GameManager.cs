@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private int InvenciPower = 0;
     private int valorEstrella = 0;
     private int valorUpgradeInv = 100;
+    private int valorUpgradeMag = 100;
+    private int valorUpgradex2 = 100;
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, diamondAnim, botonAnim, TiendaAnim;
+    public Animator gameCanvas, menuAnim, diamondAnim, botonAnim, TiendaAnim, jugarAnim;
     public Text scoreText, coinText, modifierText, hiscoreText, coinTextTienda, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -88,11 +90,17 @@ public class GameManager : MonoBehaviour
         //scoreText.text = scoreText.text = score.ToString("0");
     }
 
+    public void Jugar()
+    {
+        jugarAnim.SetTrigger("Show");
+        botonAnim.SetTrigger("Esconder");
+    }
+
     public void Infinito()
     {
         iniciado = true;
         menuAnim.SetTrigger("Hide");
-        botonAnim.SetTrigger("Esconder");
+        jugarAnim.SetTrigger("Hide");
     }
 
     public void Invenci()
@@ -150,11 +158,17 @@ public class GameManager : MonoBehaviour
         coinTextTienda.text = coinScore.ToString("0");
     }
 
-    public void VolverMenu()
+    public void VolverTienda()
     {
         menuAnim.SetTrigger("Show");
         botonAnim.SetTrigger("Iniciar");
         TiendaAnim.SetTrigger("Hide");
+    }
+    public void VolverJugar()
+    {
+        menuAnim.SetTrigger("Show");
+        botonAnim.SetTrigger("Iniciar");
+        jugarAnim.SetTrigger("Hide");
     }
 
     public void OnDeath()
