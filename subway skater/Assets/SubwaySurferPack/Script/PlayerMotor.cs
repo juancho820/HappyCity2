@@ -13,6 +13,11 @@ public class PlayerMotor : MonoBehaviour {
     //Animation
     private Animator anim;
 
+    public RadialSlider slider, slider2, slider3;
+    public int InvCooldown = 10;
+    public int MagCooldown = 10;
+    public int x2Cooldown = 10;
+
 
     // Movement
     private CharacterController controller;
@@ -34,6 +39,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Start()
     {
+        
         speed = originalSpeed;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
@@ -46,7 +52,7 @@ public class PlayerMotor : MonoBehaviour {
         if (Magneto.powerMagneto == true)
         {
             timeMagneto += Time.deltaTime;
-            if (timeMagneto >= 10)
+            if (timeMagneto >= MagCooldown)
             {
                 Magneto.powerMagneto = false;
                 timeMagneto = 0;
@@ -54,17 +60,18 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            timeInvencibilidad += Time.deltaTime;
-            if (timeInvencibilidad >= 10)
+            slider.maxValue = InvCooldown;
+            slider.value += Time.deltaTime;
+            if (slider.value >= InvCooldown)
             {
                 Invencibilidad.powerInvenci = false;
-                timeInvencibilidad = 0;
+                slider.value = 0;
             }
         }
         if (X2.x2 == 2)
         {
             timeX2 += Time.deltaTime;
-            if (timeX2 >= 10)
+            if (timeX2 >= x2Cooldown)
             {
                 X2.x2 = 1;
                 timeMagneto = 0;
@@ -221,7 +228,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Invencibilidad")
             {
-                Destroy(hit.gameObject);
+                hit.gameObject.SetActive(false);
             }
         }
     }

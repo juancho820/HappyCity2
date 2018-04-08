@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
 
     private int InvenciPower = 0;
     private int valorEstrella = 0;
+    private int valorUpgradeInv = 100;
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
     public static bool Once = false;
     private PlayerMotor motor;
     public Camera camara;
+    public PlayerMotor player;
     public Button boton1, boton2, boton3;
     public Sprite sprite1, sprite2, sprite3, none;
 
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
         InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
         coinScore = PlayerPrefs.GetInt("Score");
         valorEstrella = 100;
+        valorUpgradeInv = PlayerPrefs.GetInt("UpgradeInv");
         Once = false;
         Instance = this;
         modifierScore = 1;
@@ -113,6 +116,19 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Score", (int)coinScore);
             coinTextTienda.text = coinScore.ToString("0");
         }
+    }
+
+    public void SumarUpgradeInv()
+    {
+        if (coinScore >= valorUpgradeInv)
+        {
+            if(player.InvCooldown < 20)
+            {
+                player.InvCooldown += 2;
+                valorUpgradeInv += 100;
+                PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
+            }
+        }      
     }
 
     public void UpdateModifier(float modifierAmount)
