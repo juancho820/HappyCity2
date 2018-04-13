@@ -27,9 +27,6 @@ public class PlayerMotor : MonoBehaviour {
     private float gravity = 12.0f;
     private float verticalVelocity;    
     private int desireLane = 1; // 0=L, 1=M , 2=R
-    private float timeMagneto = 0;
-    private float timeX2 = 0;
-    private float timeInvencibilidad = 0;
 
     // Speed Modifier
     private float originalSpeed = 7.0f;
@@ -45,8 +42,6 @@ public class PlayerMotor : MonoBehaviour {
         speed = originalSpeed;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        timeMagneto = 0;
-        timeX2 = 0;
     }
 
     private void Update()
@@ -216,7 +211,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Invencibilidad")
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
         }
     }

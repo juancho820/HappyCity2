@@ -6,6 +6,12 @@ public class PieceSpawner : MonoBehaviour
 {
     public PieceType type;
     private Piece currentPiece;
+    int i;
+
+    public void Start()
+    {
+        i = transform.childCount;
+    }
 
     public void Spawn()
     {
@@ -79,5 +85,19 @@ public class PieceSpawner : MonoBehaviour
     public void Despawn()
     {
         currentPiece.gameObject.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if (!transform.GetChild(i-1).gameObject.activeSelf)
+        {
+            StartCoroutine(Activar());
+        }
+    }
+
+    private IEnumerator Activar()
+    {
+        yield return new WaitForSeconds(2);
+        transform.GetChild(i-1).gameObject.SetActive(true);
     }
 }

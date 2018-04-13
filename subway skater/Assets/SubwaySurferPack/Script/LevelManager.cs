@@ -456,7 +456,6 @@ public class LevelManager : MonoBehaviour
                 go = FloorZones4[visualIndex].gameObject;
             }
 
-
             go = Instantiate(go);
             p = go.GetComponent<Piece>();
             pieces.Add(p);
