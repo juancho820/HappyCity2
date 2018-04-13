@@ -20,12 +20,11 @@ public class GameManager : MonoBehaviour
     public static bool Once = false;
     private PlayerMotor motor;
     public Camera camara;
-    public PlayerMotor player;
     public Button boton1, boton2, boton3;
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, diamondAnim, botonAnim, TiendaAnim, jugarAnim;
+    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TiendaAnim, jugarAnim;
     public Text scoreText, coinText, modifierText, hiscoreText, coinTextTienda, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -83,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin()
     {
-        //diamondAnim.SetTrigger("Collect");
+        CoinUIAnim.SetTrigger("Collect");
         coinScore += 1 *X2.x2;
         coinText.text = coinScore.ToString("0");
         //score += COIN_SCORE_AMOUNT;
@@ -130,9 +129,9 @@ public class GameManager : MonoBehaviour
     {
         if (coinScore >= valorUpgradeInv)
         {
-            if(player.InvCooldown < 20)
+            if(motor.InvCooldown < 20)
             {
-                player.InvCooldown += 2;
+                motor.InvCooldown += 2;
                 valorUpgradeInv += 100;
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
             }
@@ -180,8 +179,7 @@ public class GameManager : MonoBehaviour
         deathMenuAnim.SetTrigger("Dead");
         gameCanvas.SetTrigger("Hide");
 
-        camara.GetComponent<SlidingNumber>().AddToNumber(score);
-        camara.GetComponent<SlidingNumber>().AddToNumber2(coinScore);
+        StartCoroutine(SlidingNumbers());
 
         PlayerPrefs.SetInt("Score", (int)coinScore);
 
@@ -274,5 +272,12 @@ public class GameManager : MonoBehaviour
             }
             PlayerPrefs.SetInt("Hiscore", (int)s);
         }
+    }
+
+    private IEnumerator SlidingNumbers()
+    {
+        yield return new WaitForSeconds(1.5f);
+        camara.GetComponent<SlidingNumber>().AddToNumber(score);
+        camara.GetComponent<SlidingNumber>().AddToNumber2(coinScore);
     }
 }

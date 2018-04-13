@@ -28,4 +28,5 @@ public class Piece : MonoBehaviour
 {
     public PieceType type;
     public int visualIndex;
+
 }
