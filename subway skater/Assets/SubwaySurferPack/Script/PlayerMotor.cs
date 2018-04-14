@@ -23,6 +23,7 @@ public class PlayerMotor : MonoBehaviour {
 
     // Movement
     private CharacterController controller;
+    [SerializeField]
     private float jumpForce = 6.0f;
     private float gravity = 12.0f;
     private float verticalVelocity;    
