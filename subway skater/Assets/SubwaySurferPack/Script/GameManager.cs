@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TiendaAnim, jugarAnim;
+    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TiendaAnim, jugarAnim, nivelesAnim;
     public Text scoreText, coinText, modifierText, hiscoreText, coinTextTienda, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -156,6 +156,11 @@ public class GameManager : MonoBehaviour
         TiendaAnim.SetTrigger("Show");
         coinTextTienda.text = coinScore.ToString("0");
     }
+    public void Campana()
+    {
+        jugarAnim.SetTrigger("Hide");
+        nivelesAnim.SetTrigger("Show");
+    }
 
     public void VolverTienda()
     {
@@ -169,6 +174,12 @@ public class GameManager : MonoBehaviour
         botonAnim.SetTrigger("Iniciar");
         jugarAnim.SetTrigger("Hide");
     }
+    public void VolverNiveles()
+    {
+        nivelesAnim.SetTrigger("Hide");
+        jugarAnim.SetTrigger("Show");
+    }
+
 
     public void OnDeath()
     {
