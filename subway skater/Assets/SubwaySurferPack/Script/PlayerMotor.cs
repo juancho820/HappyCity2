@@ -13,6 +13,10 @@ public class PlayerMotor : MonoBehaviour {
     //Animation
     private Animator anim;
 
+    private float posicionActual;
+    private float travel;
+    private float posicionAnterior;
+
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
     public RadialSliderMag slider3;
@@ -142,10 +146,20 @@ public class PlayerMotor : MonoBehaviour {
         {
             verticalVelocity -= (gravity * Time.deltaTime);
 
+            posicionActual = transform.position.y;
+            travel = posicionActual - posicionAnterior;
+            posicionAnterior = transform.position.y;
+
+            if(travel < 0)
+            {
+                anim.SetTrigger("Bajando");
+            }
+
             // Fast Falling mechanic
             if (MobileInput.Instance.SwipeDown)
             {
                 verticalVelocity = -jumpForce;
+                
             }
         }
 
