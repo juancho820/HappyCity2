@@ -29,6 +29,7 @@ public class PlayerMotor : MonoBehaviour {
     private CharacterController controller;
     [SerializeField]
     private float jumpForce = 6.0f;
+    [SerializeField]
     private float gravity = 12.0f;
     private float verticalVelocity;    
     private int desireLane = 1; // 0=L, 1=M , 2=R
