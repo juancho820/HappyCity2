@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.62658834, g: 0.70857143, b: 0.7514999, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 1463562403}
-  offset: {x: 0, y: 5, z: -1}
-  rotation: {x: 20, y: 0, z: 0}
+  offset: {x: 0, y: 5.42, z: -0.5}
+  rotation: {x: 27.27, y: 0, z: 0}
 --- !u!114 &131846778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8958,6 +8958,7 @@ MonoBehaviour:
   MagCooldown: 10
   x2Cooldown: 10
   jumpForce: 9
+  gravity: 12
 --- !u!114 &1187659307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8986,7 +8987,7 @@ CharacterController:
   m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0.05
   m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!95 &1187659309
 Animator:
