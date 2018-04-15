@@ -36,9 +36,11 @@ public class PlayerMotor : MonoBehaviour {
 
     // Speed Modifier
     private float originalSpeed = 7.0f;
+    [SerializeField]
     private float speed = 7.0f;
     private float speedTurn = 20;
     private float speedIncreaseLastTick;
+    [SerializeField]
     private float speedIncreaseTime = 2.5f;
     private float speedIncreaseAmount = 0.1f;
 
@@ -141,7 +143,7 @@ public class PlayerMotor : MonoBehaviour {
             {
                 //Slide
                 StartSliding();
-                Invoke("StopSliding", 1.0f);
+                Invoke("StopSliding", 0.6f);
             }
         }
         else
