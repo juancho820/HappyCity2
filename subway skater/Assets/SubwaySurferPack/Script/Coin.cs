@@ -15,11 +15,6 @@ public class Coin : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-        //anim.SetTrigger("Spawn");
-    }
-
     private void OnTriggerEnter (Collider other)
     {
         if(Magneto.powerMagneto == false)
