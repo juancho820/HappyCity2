@@ -27,16 +27,20 @@ public class PlayerMotor : MonoBehaviour {
 
     // Movement
     private CharacterController controller;
+    [SerializeField]
     private float jumpForce = 6.0f;
+    [SerializeField]
     private float gravity = 12.0f;
     private float verticalVelocity;    
     private int desireLane = 1; // 0=L, 1=M , 2=R
 
     // Speed Modifier
     private float originalSpeed = 7.0f;
+    [SerializeField]
     private float speed = 7.0f;
     private float speedTurn = 20;
     private float speedIncreaseLastTick;
+    [SerializeField]
     private float speedIncreaseTime = 2.5f;
     private float speedIncreaseAmount = 0.1f;
 
@@ -139,7 +143,7 @@ public class PlayerMotor : MonoBehaviour {
             {
                 //Slide
                 StartSliding();
-                Invoke("StopSliding", 1.0f);
+                Invoke("StopSliding", 0.6f);
             }
         }
         else

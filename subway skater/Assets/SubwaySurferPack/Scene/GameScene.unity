@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 02e89a8c40048f04897d87c3e83efde6, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6292d524dee3735439b4be949876a1f0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 1463562403}
-  offset: {x: 0, y: 5, z: -1}
-  rotation: {x: 20, y: 0, z: 0}
+  offset: {x: 0, y: 5.42, z: -0.5}
+  rotation: {x: 27.27, y: 0, z: 0}
 --- !u!114 &131846778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8957,6 +8957,10 @@ MonoBehaviour:
   InvCooldown: 10
   MagCooldown: 10
   x2Cooldown: 10
+  jumpForce: 9
+  gravity: 12
+  speed: 10
+  speedIncreaseTime: 2.5
 --- !u!114 &1187659307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8985,7 +8989,7 @@ CharacterController:
   m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0.05
   m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!95 &1187659309
 Animator:
@@ -11008,7 +11012,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187659305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2113451061}
@@ -16277,7 +16281,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113451060}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.018645672, y: 1.0731043, z: 0.03745106}
+  m_LocalPosition: {x: -0.018645672, y: 0.48, z: 0.04}
   m_LocalScale: {x: 0.3, y: 0.30000013, z: 0.30000013}
   m_Children:
   - {fileID: 1493854363}
