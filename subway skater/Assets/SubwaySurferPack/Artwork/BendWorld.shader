@@ -53,7 +53,6 @@
 		void surf(Input IN, inout SurfaceOutputStandard o) {
 		// Albedo comes from a texture tinted by color
 		fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-		float4 t1 = c * (1 - c);
 		o.Alpha = c.a;
 		o.Albedo = c.rgb;
 		o.Normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
