@@ -10,6 +10,7 @@ Shader "Cartoon FX/Particle Multiply Colored"
 		_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 		_MainTex ("Particle Texture (alpha)", 2D) = "white" {}
 		_InvFade ("Soft Particles Factor", Range(0.01,3.0)) = 1.0
+		_Curvature("Curvature", Float) = 0.003
 	}
 	
 	Category
@@ -41,6 +42,7 @@ Shader "Cartoon FX/Particle Multiply Colored"
 				float4 _MainTex_ST;
 				fixed4 _TintColor;
 				sampler2D _CameraDepthTexture;
+				uniform float _Curvature;
 				float _InvFade;
 				
 				struct appdata_t
@@ -71,6 +73,16 @@ Shader "Cartoon FX/Particle Multiply Colored"
 					o.color = v.color;
 					o.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
 					return o;
+
+				}
+
+				void vert(inout appdata_full v)
+				{
+					float4 vv = mul(unity_ObjectToWorld, v.vertex);
+					vv.xyz -= _WorldSpaceCameraPos.xyz;
+					vv = float4(0.0f, (vv.z * vv.z) * -_Curvature, 0.0f, 0.0f);
+
+					v.vertex += mul(unity_WorldToObject, vv);
 				}
 				
 				fixed4 frag (v2f i) : COLOR

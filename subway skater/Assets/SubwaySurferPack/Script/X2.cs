@@ -5,12 +5,7 @@ using UnityEngine;
 public class X2 : MonoBehaviour {
 
     public static int x2 = 1;
-    private ParticleSystem PS;
-
-    public void Start()
-    {
-        PS = GetComponentInParent<ParticleSystem>();
-    }
+    public ParticleSystem PS;
 
     private void OnTriggerEnter(Collider other)
     {

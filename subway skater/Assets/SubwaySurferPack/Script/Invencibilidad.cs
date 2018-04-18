@@ -6,12 +6,7 @@ public class Invencibilidad : MonoBehaviour {
 
     public static bool powerInvenci = false;
     public int InvenPower = 0;
-    private ParticleSystem PS;
-
-    public void Start()
-    {
-        PS = GetComponentInParent<ParticleSystem>();
-    }
+    public ParticleSystem PS;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -5,12 +5,7 @@ using UnityEngine;
 public class Magneto : MonoBehaviour {
 
     public static bool powerMagneto = false;
-    private ParticleSystem PS;
-
-    public void Start()
-    {
-        PS = GetComponentInParent<ParticleSystem>();
-    }
+    public ParticleSystem PS;
 
     private void OnTriggerEnter(Collider other)
     {
