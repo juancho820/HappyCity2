@@ -67,10 +67,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 883, y: 492}
-  m_MaxSize: {x: 16008, y: 14042}
+  m_MinSize: {x: 885, y: 492}
+  m_MaxSize: {x: 16010, y: 14042}
   vertical: 0
-  controlID: 51
+  controlID: 152
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -169,7 +169,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &8
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_MinSize: {x: 608, y: 492}
   m_MaxSize: {x: 12008, y: 14042}
   vertical: 1
-  controlID: 52
+  controlID: 81
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_MinSize: {x: 608, y: 221}
   m_MaxSize: {x: 12008, y: 4021}
   vertical: 0
-  controlID: 53
+  controlID: 82
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -492,19 +492,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/SubwaySurferPack/Animations/powerUps
+    - Assets/SubwaySurferPack/Prefab/PowerUps
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SubwaySurferPack/Animations/powerUps
+  - Assets/SubwaySurferPack/Prefab/PowerUps
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\GitHub\HappyCity2\subway skater
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 2239}
-    m_SelectedIDs: 723a0000
-    m_LastClickedID: 14962
-    m_ExpandedIDs: 00000000e62700004c2800005a2800006e280000bc280000d82800008e290000cc290000422a0000ca2a00000a2b0000122b00001e2c00006c2c0000902c0000b62c00007c2d0000002f0000102f00001430000016300000383000008e310000063200000c3200001032000054320000943200000e3300003435000044350000c835000002380000a0380000b4380000f0380000423b0000483b00007e3b0000ec3b0000683c00003e3d0000d83d0000183e0000583e00000c5300000e530000105300001253000014530000165300001853000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 2499}
+    m_SelectedIDs: 58280000
+    m_LastClickedID: 10328
+    m_ExpandedIDs: 00000000e227000048280000562800006a280000b8280000d42800008a290000c82900003e2a0000c62a0000062b00000e2b00001a2c0000682c00008c2c0000b22c0000782d0000fc2e00000c2f00001030000012300000343000008a31000002320000083200000c32000050320000903200000a3300003035000040350000c4350000fe3700009c380000b0380000ec3800003e3b0000443b00007a3b0000e83b0000643c00003a3d0000d43d0000143e0000543e00000a5300000c5300000e5300001053000012530000145300001653000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,7 +532,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e62700004c2800005a2800006e280000bc280000d82800008e290000cc290000422a0000ca2a00000a2b0000122b00001e2c00006c2c0000902c0000b62c00007c2d0000002f0000102f00001430000016300000383000008e310000063200000c3200001032000054320000943200000e3300003435000044350000c835000002380000a0380000b4380000f0380000423b0000483b00007e3b0000ec3b0000683c00003e3d0000d83d0000183e0000583e00000c5300000e5300001053000012530000145300001653000018530000
+    m_ExpandedIDs: 00000000e227000048280000562800006a280000b8280000d42800008a290000c82900003e2a0000c62a0000062b00000e2b00001a2c0000682c00008c2c0000b22c0000782d0000fc2e00000c2f00001030000012300000343000008a31000002320000083200000c32000050320000903200000a3300003035000040350000c4350000fe3700009c380000b0380000ec3800003e3b0000443b00007a3b0000e83b0000643c00003a3d0000d43d0000143e0000543e00000a5300000c5300000e53000010530000125300001453000016530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,20 +650,20 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: b6d5ffffbed5ffffced5ffffecd5fffff0d5ffffe2d7fffffcd7ffff1ed8ffff22d8ffff8ed9ffffa2d9ffffc4d9ffffc8d9ffff98fbffff00000000
+    m_SelectedIDs: 743f0000
+    m_LastClickedID: 16244
+    m_ExpandedIDs: 66b1fbfffee3fbff30e5fbff56e6fbff40e7fbff7ee8fbff02e9fbffcce9fbff92eafbff8015fcffd017fcfff4e1feff54efffff5cefffff6cefffff8aefffff10f1ffff18f1ffff32f1ffff54f1ffff58f1ffffeaf2fffffef2ffff1ef3ffff22f3ffff9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Cube.002
-      m_OriginalName: Cube.002
+      m_Name: SidesJumpCoin4
+      m_OriginalName: SidesJumpCoin4
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -10818
+      m_UserData: -269008
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -703,14 +703,14 @@ MonoBehaviour:
     height: 567
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1305.9907385606734
+  lastFramingTime: 1704.776032984348
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.462438, y: -0.048127413, z: 0.8501195}
+    m_Target: {x: -66.644966, y: 0.064454556, z: -41.868443}
     speed: 2
-    m_Value: {x: 4.462438, y: -0.048127413, z: 0.8501195}
+    m_Value: {x: -66.644966, y: 0.064454556, z: -41.868443}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -734,13 +734,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.12915325, y: -0.626201, z: 0.10620326, w: -0.76151985}
+    m_Target: {x: 0.14624359, y: 0.5038402, z: -0.08700676, w: 0.84686935}
     speed: 2
-    m_Value: {x: -0.12915327, y: -0.62620103, z: 0.106203265, w: -0.7615199}
+    m_Value: {x: 0.14624359, y: 0.5038402, z: -0.08700676, w: 0.84686935}
   m_Size:
-    m_Target: 6.694152
+    m_Target: 17.969625
     speed: 2
-    m_Value: 6.694152
+    m_Value: 17.969625
   m_Ortho:
     m_Target: 0
     speed: 2
