@@ -16,6 +16,9 @@ public class PlayerMotor : MonoBehaviour {
     private float posicionActual;
     private float travel;
     private float posicionAnterior;
+    private bool salto2;
+    private bool caida;
+    private int random, random2;
 
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
@@ -131,19 +134,32 @@ public class PlayerMotor : MonoBehaviour {
         // Calculate Y
         if (isGrounded) // if Grounded
         {
+            if(caida == true)
+            {
+                anim.SetTrigger("Roll");
+                caida = false;
+            }
             verticalVelocity = -0.1f;
-            
             if (MobileInput.Instance.SwipeUp)
             {
                 //Jump
-                anim.SetTrigger("Jump");
+                random = Random.Range(1, 3);
+
+                if (random == 1)
+                {
+                    anim.SetTrigger("Jump");
+                }
+                else
+                {
+                    anim.SetTrigger("Jump2");
+                }
                 verticalVelocity = jumpForce;
             }
             else if (MobileInput.Instance.SwipeDown)
             {
                 //Slide
                 StartSliding();
-                Invoke("StopSliding", 0.6f);
+                Invoke("StopSliding", 0.4f);
             }
         }
         else
@@ -156,13 +172,21 @@ public class PlayerMotor : MonoBehaviour {
 
             if(travel < 0)
             {
-                anim.SetTrigger("Bajando");
+                if(random == 1)
+                {
+                    anim.SetTrigger("Bajando");
+                }
+                else
+                {
+                    anim.SetTrigger("Bajando2");
+                    caida = true;
+                }
             }
 
             // Fast Falling mechanic
             if (MobileInput.Instance.SwipeDown)
             {
-                verticalVelocity = -jumpForce;
+                verticalVelocity -= jumpForce;
                 
             }
         }
