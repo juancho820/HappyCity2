@@ -41,10 +41,14 @@ public class LevelManager : MonoBehaviour
     public List<Piece> jumpsCC = new List<Piece>();
     public List<Piece> jumpsT = new List<Piece>();
     public List<Piece> jumpsA = new List<Piece>();
+    public List<Piece> jumpsMRC = new List<Piece>();
+    public List<Piece> jumpsMRD = new List<Piece>();
+    public List<Piece> jumpsMR = new List<Piece>();
     public List<Piece> slidesB = new List<Piece>();
     public List<Piece> slidesPA = new List<Piece>();
     public List<Piece> slidesCC = new List<Piece>();
     public List<Piece> slidesT = new List<Piece>();
+    public List<Piece> slidesMR = new List<Piece>();
     public List<Piece> blocksPA = new List<Piece>();
     public List<Piece> blocksCC = new List<Piece>();
     public List<Piece> blocksT = new List<Piece>();
@@ -402,6 +406,22 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.jumpT)
             {
                 go = jumpsT[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.jumpMR)
+            {
+                go = jumpsMR[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.jumpMRD)
+            {
+                go = jumpsMRD[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.jumpMRC)
+            {
+                go = jumpsMRC[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.slideMR)
+            {
+                go = slidesMR[visualIndex].gameObject;
             }
             else if (pt == PieceType.slidePA)
             {

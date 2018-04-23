@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,8 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager Instance { set; get; }
 
-    private int InvenciPower = 0;
-    private int valorEstrella = 0;
-    private int valorUpgradeInv = 100;
-    private int valorUpgradeMag = 100;
-    private int valorUpgradex2 = 100;
+    public int InvenciPower = 0;
+
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
@@ -24,8 +22,8 @@ public class GameManager : MonoBehaviour
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TiendaAnim, jugarAnim, nivelesAnim;
-    public Text scoreText, coinText, modifierText, hiscoreText, coinTextTienda, InvenciText;
+    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim;
+    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
 
@@ -35,20 +33,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
         coinScore = PlayerPrefs.GetInt("Score");
-        valorEstrella = 100;
-        valorUpgradeInv = PlayerPrefs.GetInt("UpgradeInv");
         Once = false;
         Instance = this;
         modifierScore = 1;
-        motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotor>();
 
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
-        InvenciText.text = InvenciPower.ToString("0");
 
+
+        motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotor>();
+    
         hiscoreText.text = PlayerPrefs.GetInt("Hiscore").ToString();
         botonAnim.SetTrigger("Iniciar");
     }
@@ -113,31 +109,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SumarInvici()
-    {
-        if(coinScore >= valorEstrella)
-        {
-            InvenciPower++;
-            coinScore -= valorEstrella;
-            PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
-            PlayerPrefs.SetInt("Score", (int)coinScore);
-            coinTextTienda.text = coinScore.ToString("0");
-        }
-    }
-
-    public void SumarUpgradeInv()
-    {
-        if (coinScore >= valorUpgradeInv)
-        {
-            if(motor.InvCooldown < 20)
-            {
-                motor.InvCooldown += 2;
-                valorUpgradeInv += 100;
-                PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
-            }
-        }      
-    }
-
     public void UpdateModifier(float modifierAmount)
     {
         modifierScore = 1.0f + modifierAmount;
@@ -151,22 +122,16 @@ public class GameManager : MonoBehaviour
 
     public void Tienda()
     {
-        botonAnim.SetTrigger("Esconder");
-        menuAnim.SetTrigger("Hide");
-        TiendaAnim.SetTrigger("Show");
-        coinTextTienda.text = coinScore.ToString("0");
+        SceneManager.LoadScene("Tienda");
+        //botonAnim.SetTrigger("Esconder");
+        //menuAnim.SetTrigger("Hide");
+        //TiendaAnim.SetTrigger("Show");
+        //coinTextTienda.text = coinScore.ToString("0");
     }
     public void Campana()
     {
         jugarAnim.SetTrigger("Hide");
         nivelesAnim.SetTrigger("Show");
-    }
-
-    public void VolverTienda()
-    {
-        menuAnim.SetTrigger("Show");
-        botonAnim.SetTrigger("Iniciar");
-        TiendaAnim.SetTrigger("Hide");
     }
     public void VolverJugar()
     {

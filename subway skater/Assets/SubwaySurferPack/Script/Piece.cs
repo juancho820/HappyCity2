@@ -22,6 +22,10 @@ public enum PieceType
     blockT = 16,
     slideCC = 17,
     slideT = 18,
+    slideMR = 19,
+    jumpMRC = 20,
+    jumpMRD = 21,
+    jumpMR = 22,
 }
 
 public class Piece : MonoBehaviour

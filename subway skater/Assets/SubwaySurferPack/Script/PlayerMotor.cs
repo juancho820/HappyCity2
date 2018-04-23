@@ -23,9 +23,9 @@ public class PlayerMotor : MonoBehaviour {
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
     public RadialSliderMag slider3;
-    public int InvCooldown = 10;
-    public int MagCooldown = 10;
-    public int x2Cooldown = 10;
+    //public int InvCooldown = 10;
+    //public int MagCooldown = 10;
+    //public int x2Cooldown = 10;
 
 
     // Movement
@@ -60,9 +60,9 @@ public class PlayerMotor : MonoBehaviour {
         if (Magneto.powerMagneto == true)
         {
             slider3.gameObject.SetActive(true);
-            slider3.maxValue = MagCooldown;
+            slider3.maxValue = PlayerPrefs.GetInt("MagCooldown");
             slider3.value += Time.deltaTime;
-            if (slider3.value >= MagCooldown)
+            if (slider3.value >= PlayerPrefs.GetInt("MagCooldown"))
             {
                 Magneto.powerMagneto = false;
                 slider3.value = 0;
@@ -71,9 +71,9 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            slider.maxValue = InvCooldown;
+            slider.maxValue = PlayerPrefs.GetInt("InvCooldown");
             slider.value += Time.deltaTime;
-            if (slider.value >= InvCooldown)
+            if (slider.value >= PlayerPrefs.GetInt("InvCooldown"))
             {
                 Invencibilidad.powerInvenci = false;
                 slider.value = 0;
@@ -82,9 +82,9 @@ public class PlayerMotor : MonoBehaviour {
         if (X2.x2 == 2)
         {
             slider2.gameObject.SetActive(true);
-            slider2.maxValue = x2Cooldown;
+            slider2.maxValue = PlayerPrefs.GetInt("x2Cooldown");
             slider2.value += Time.deltaTime;
-            if (slider2.value >= x2Cooldown)
+            if (slider2.value >= PlayerPrefs.GetInt("x2Cooldown"))
             {
                 X2.x2 = 1;
                 slider2.value = 0;
