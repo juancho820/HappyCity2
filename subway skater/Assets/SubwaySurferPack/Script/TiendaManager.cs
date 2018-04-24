@@ -14,9 +14,9 @@ public class TiendaManager : MonoBehaviour
     private int valorUpgradeMag = 100;
     private int valorUpgradex2 = 100;
 
-    public static int InvCooldown = 10;
-    public static int MagCooldown = 10;
-    public static int x2Cooldown = 10;
+    public int InvCooldown = 10;
+    public int MagCooldown = 10;
+    public int x2Cooldown = 10;
 
     public Text coinTextTienda, InvenciText, MasInv, MasMag, Masx2;
     private float coinScore;
@@ -81,7 +81,7 @@ public class TiendaManager : MonoBehaviour
             if (MagCooldown < 20)
             {
                 MagCooldown += 2;
-                PlayerPrefs.SetInt("InvCooldown", MagCooldown);
+                PlayerPrefs.SetInt("MagCooldown", MagCooldown);
                 valorUpgradeMag += 100;
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
                 MasMag.text = valorUpgradeMag.ToString("0");
@@ -95,7 +95,7 @@ public class TiendaManager : MonoBehaviour
             if (x2Cooldown < 20)
             {
                 x2Cooldown += 2;
-                PlayerPrefs.SetInt("InvCooldown", x2Cooldown);
+                PlayerPrefs.SetInt("x2Cooldown", x2Cooldown);
                 valorUpgradex2 += 100;
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 Masx2.text = valorUpgradex2.ToString("0");

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim;
-    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
+    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText, algo;
     private float score, coinScore, modifierScore;
     private int lastScore;
 
@@ -33,6 +33,19 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (!PlayerPrefs.HasKey("MagCooldown"))
+        {
+            PlayerPrefs.SetInt("MagCooldown", 10);
+        }
+        if (!PlayerPrefs.HasKey("InvCooldown"))
+        {
+            PlayerPrefs.SetInt("InvCooldown", 10);
+        }
+        if (!PlayerPrefs.HasKey("x2Cooldown"))
+        {
+            PlayerPrefs.SetInt("x2Cooldown", 10);
+        }
+
         coinScore = PlayerPrefs.GetInt("Score");
         Once = false;
         Instance = this;
@@ -50,7 +63,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(iniciado == true)
+        if (iniciado == true)
         {
             if (MobileInput.Instance.Tap && !isGameStarted)
             {
