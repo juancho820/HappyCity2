@@ -47,7 +47,7 @@ public class CamaraMotor : MonoBehaviour
     }
     private IEnumerator Resetiar()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.2f);
         agachar = false;
         subir = false;
     }

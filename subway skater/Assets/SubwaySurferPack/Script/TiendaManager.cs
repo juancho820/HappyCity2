@@ -23,6 +23,19 @@ public class TiendaManager : MonoBehaviour
 
     private void Awake()
     {
+        if (!PlayerPrefs.HasKey("UpgradeInv"))
+        {
+            PlayerPrefs.SetInt("UpgradeInv", 100);
+        }
+        if (!PlayerPrefs.HasKey("UpgradeMag"))
+        {
+            PlayerPrefs.SetInt("UpgradeMag", 100);
+        }
+        if (!PlayerPrefs.HasKey("Upgradex2"))
+        {
+            PlayerPrefs.SetInt("Upgradex2", 100);
+        }
+
         InvCooldown = PlayerPrefs.GetInt("InvCooldown");
         MagCooldown = PlayerPrefs.GetInt("MagCooldown");
         x2Cooldown = PlayerPrefs.GetInt("x2Cooldown");
