@@ -258,6 +258,14 @@ public class PlayerMotor : MonoBehaviour {
                 other.gameObject.SetActive(false);
             }
         }
+        if(other.gameObject.tag == "bajarCamara")
+        {
+            CamaraMotor.agachar = true;
+        }
+        if (other.gameObject.tag == "subirCamara")
+        {
+            CamaraMotor.subir = true;
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
