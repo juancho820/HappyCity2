@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim;
-    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText, algo;
+    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
 

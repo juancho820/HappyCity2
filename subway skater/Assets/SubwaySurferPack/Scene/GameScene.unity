@@ -8334,7 +8334,6 @@ MonoBehaviour:
   modifierText: {fileID: 368919599}
   hiscoreText: {fileID: 2109017250}
   InvenciText: {fileID: 168136558}
-  algo: {fileID: 0}
   deathMenuAnim: {fileID: 1183311774}
   deadScoreText: {fileID: 1580590423}
   deadCoinText: {fileID: 1370768907}
@@ -9244,7 +9243,6 @@ MonoBehaviour:
   - {fileID: 114069136927821436, guid: ffb8b8424903514418ffa55b49688d75, type: 2}
   jumpsB:
   - {fileID: 114301633450642564, guid: 0073bc95e33181c448fd34d1c0d845e5, type: 2}
-  - {fileID: 114273262691393578, guid: 2df9802b582a0ea489cde4957a2307cc, type: 2}
   longblocks:
   - {fileID: 114694585318170826, guid: dcb3d22f5f896e24ba9b8aa250500b65, type: 2}
   - {fileID: 114676046060124854, guid: c5124857651e943479672176c197f252, type: 2}
@@ -9261,16 +9259,17 @@ MonoBehaviour:
   jumpsA: []
   jumpsMRC: []
   jumpsMRD: []
-  jumpsMR: []
+  jumpsMR:
+  - {fileID: 114273262691393578, guid: 2df9802b582a0ea489cde4957a2307cc, type: 2}
   slidesB:
   - {fileID: 114768478884648686, guid: 2f8a1bd868d422e45b2e7aa258d716a3, type: 2}
-  - {fileID: 114071783252718932, guid: 0712195a8ec74a34d8b3027f96945149, type: 2}
   slidesPA:
   - {fileID: 114431446031423690, guid: 390d937b59c65c748a7e266dde4f40ba, type: 2}
   - {fileID: 114418627216537092, guid: 933a4cff2b8fc2e41acf5697f801e5c1, type: 2}
   slidesCC: []
   slidesT: []
-  slidesMR: []
+  slidesMR:
+  - {fileID: 114071783252718932, guid: 0712195a8ec74a34d8b3027f96945149, type: 2}
   blocksPA:
   - {fileID: 114919318397227120, guid: b7238a043a76e9b428e5680fa239ad02, type: 2}
   - {fileID: 114812508999856180, guid: caeb0c5a48598db46b85743c1d4bad6f, type: 2}

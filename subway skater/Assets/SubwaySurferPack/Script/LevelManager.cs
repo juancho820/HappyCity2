@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     private int amountOfActiveSegments4;
     private int continiousSegments;
     private int currentSpawnZ;
-    private int currentLevel;
+    //private int currentLevel;
     private int y1, y2, y3;
     public bool Iniciado = false;
 
@@ -75,14 +75,14 @@ public class LevelManager : MonoBehaviour
     public List<Segment> segments4 = new List<Segment>();
 
     //Gameplay
-    private bool isMoving = false;
+    //private bool isMoving = false;
 
     private void Awake()
     {
         Instance = this;
         cameraContainer = Camera.main.transform;
         currentSpawnZ = 0;
-        currentLevel = 0;
+        //currentLevel = 0;
         zona = 0;
     }
     private void Start()
@@ -110,8 +110,9 @@ public class LevelManager : MonoBehaviour
     {
         if(currentSpawnZ - cameraContainer.position.z < DISTANCE_BEFORE_SPAWN)
         {
-            GenerateSegment();
+            
             Contador++;
+            GenerateSegment();
             if (Contador >= NumeroDeSpawns)
             {
                 zona++;
@@ -167,16 +168,16 @@ public class LevelManager : MonoBehaviour
         }
         
 
-        if(Random.Range(0f,1f) < (continiousSegments * 0.25f))
-        {
-            // Spawn transition seg
-            continiousSegments = 0;
-            SpawnTransition();
-        }
-        else
-        {
-            continiousSegments++;
-        }
+        //if(Random.Range(0f,1f) < (continiousSegments * 0.25f))
+        //{
+        //    // Spawn transition seg
+        //    continiousSegments = 0;
+        //    SpawnTransition();
+        //}
+        //else
+        //{
+        //    continiousSegments++;
+        //}
     }
 
     private void SpawnSegment()
