@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour {
 
+    public static PlayerMotor Instance { set; get; }
+
     private const float LANE_DISTANCE = 3.5f;
     private const float TURN_SPEED = 0.05f;
 
@@ -49,6 +51,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Start()
     {
+        Instance = this;
         InvCooldown = PlayerPrefs.GetInt("MagCooldown");
         MagCooldown = PlayerPrefs.GetInt("InvCooldown");
         x2Cooldown = PlayerPrefs.GetInt("x2Cooldown");
@@ -161,7 +164,7 @@ public class PlayerMotor : MonoBehaviour {
             {
                 //Slide
                 StartSliding();
-                Invoke("StopSliding", 0.4f);
+                Invoke("StopSliding", 0.6f);
             }
         }
         else

@@ -11,6 +11,10 @@ public class X2 : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            if (x2 == 2)
+            {
+                PlayerMotor.Instance.slider2.value = 0;
+            }
             x2 = 2;
             PS.Play();
             gameObject.SetActive(false);

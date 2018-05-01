@@ -12,6 +12,10 @@ public class Invencibilidad : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            if(powerInvenci == true)
+            {
+                PlayerMotor.Instance.slider.value = 0;
+            }
             powerInvenci = true;
             PS.Play();
             gameObject.SetActive(false);

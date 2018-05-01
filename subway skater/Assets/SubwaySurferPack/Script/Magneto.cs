@@ -11,6 +11,10 @@ public class Magneto : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            if (powerMagneto == true)
+            {
+                PlayerMotor.Instance.slider3.value = 0;
+            }
             powerMagneto = true;
             PS.Play();
             gameObject.SetActive(false);
