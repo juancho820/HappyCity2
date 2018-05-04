@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     //Level Spawning
     private const float DISTANCE_BEFORE_SPAWN = 100.0f;
-    private const int INITIAL_SEGMENTS = 10;
+    private const int INITIAL_SEGMENTS = 5;
     private const int INITIAL_TRANSITION_SEGMENTS = 2;
     private const int MAX_SEGMENTS_ON_SCREEN = 15;
     private const int MAX_SEGMENTS_ON_SCREEN2 = 15;
@@ -115,14 +115,14 @@ public class LevelManager : MonoBehaviour
             GenerateSegment();
             if (Contador >= NumeroDeSpawns)
             {
-                zona++;
+                //zona++;
                 Contador = 0;
                 return;
             }
-            if(zona > 3)
-            {
-                zona = 0;
-            }
+            //if(zona > 3)
+            //{
+            //    zona = 0;
+            //}
             
         }
 
@@ -158,6 +158,7 @@ public class LevelManager : MonoBehaviour
                 break;
             case 1:
                 SpawnSegment2();
+                Debug.Log("zona2");
                 break;
             case 2:
                 SpawnSegment3();
