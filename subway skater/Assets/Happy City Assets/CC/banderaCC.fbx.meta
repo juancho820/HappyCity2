@@ -514,6 +514,7 @@ ModelImporter:
     2300296: Tree_Type3_04_mesh.003
     2300298: Tree_Type3_04_mesh.004
     2300300: Tree_Type3_04_mesh.005
+    2300302: //RootNode
     3300000: Circle
     3300002: Circle.001
     3300004: Circle.002
@@ -665,6 +666,7 @@ ModelImporter:
     3300296: Tree_Type3_04_mesh.003
     3300298: Tree_Type3_04_mesh.004
     3300300: Tree_Type3_04_mesh.005
+    3300302: //RootNode
     4300000: Cube.037
     4300002: Plane.026
     4300004: Plane.025
@@ -855,7 +857,12 @@ ModelImporter:
     13700000: Plane.017
     13700002: Plane.018
     13700004: Plane.019
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: c34bb97134f92b446b864291f364f2f1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

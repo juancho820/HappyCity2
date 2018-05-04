@@ -98,6 +98,7 @@ ModelImporter:
     2100008: Material_001__tin_textures_png
     2100010: Material_002__TinModeloBodyfbx__avatar_king_AlbedoTransparency_png
     2100012: Material_001__TinModeloBodyfbx__avatar_king_AlbedoTransparency_png
+    2100014: Material_001
     4300000: King_003
     4300002: King_001
     4300004: King
@@ -113,13 +114,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material_001__TinModeloBodyfbx__avatar_king_AlbedoTransparency_png
     second: {fileID: 2100000, guid: 0c0541363f2d2f645876a812469d8c57, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_001__tin_textures_png
-    second: {fileID: 2100000, guid: 0c0541363f2d2f645876a812469d8c57, type: 2}
+    second: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

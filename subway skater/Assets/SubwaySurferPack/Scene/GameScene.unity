@@ -286,7 +286,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 7c9d6983f275678479ebf019a670f9cf, type: 2}
+      objectReference: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
     - target: {fileID: 137998263559495696, guid: 38fedc7216e5e4644b2b41a188acc4d1,
         type: 2}
       propertyPath: m_DynamicOccludee
@@ -296,12 +296,12 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7c9d6983f275678479ebf019a670f9cf, type: 2}
+      objectReference: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
     - target: {fileID: 137180181951719098, guid: 38fedc7216e5e4644b2b41a188acc4d1,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f12d680b3c37c3c4fae5c220798d9977, type: 2}
+      objectReference: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38fedc7216e5e4644b2b41a188acc4d1, type: 2}
   m_IsPrefabParent: 0
@@ -7817,8 +7817,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
-  m_Intensity: 0.9
+  m_Color: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
+  m_Intensity: 0.78
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -7839,7 +7839,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 2
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 1.24
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -9273,7 +9273,9 @@ MonoBehaviour:
   - {fileID: 114752099320136328, guid: 0a9c06662bfda034b8f77dfb5bc85369, type: 2}
   - {fileID: 114358570399336904, guid: c086d3c1a29318f428d686dae72344f3, type: 2}
   - {fileID: 114535029622604354, guid: 0364c6df015a7c24db6f4e523556b024, type: 2}
-  jumpsCC: []
+  jumpsCC:
+  - {fileID: 114563220629103124, guid: 0cabb8c6c54fe9f4697066ef771f7479, type: 2}
+  - {fileID: 114905349238301216, guid: 30eb9d99d3d92b140af3fca7da6d5506, type: 2}
   jumpsT: []
   jumpsA: []
   jumpsMRC: []
@@ -9285,7 +9287,8 @@ MonoBehaviour:
   slidesPA:
   - {fileID: 114431446031423690, guid: 390d937b59c65c748a7e266dde4f40ba, type: 2}
   - {fileID: 114418627216537092, guid: 933a4cff2b8fc2e41acf5697f801e5c1, type: 2}
-  slidesCC: []
+  slidesCC:
+  - {fileID: 114431446031423690, guid: 390d937b59c65c748a7e266dde4f40ba, type: 2}
   slidesT: []
   slidesMR:
   - {fileID: 114071783252718932, guid: 0712195a8ec74a34d8b3027f96945149, type: 2}
@@ -9294,7 +9297,7 @@ MonoBehaviour:
   - {fileID: 114812508999856180, guid: caeb0c5a48598db46b85743c1d4bad6f, type: 2}
   - {fileID: 114250918878192742, guid: cf96544c29bb22b498cfd454f1e17656, type: 2}
   blocksCC:
-  - {fileID: 0}
+  - {fileID: 114854464870502514, guid: 1bf90fb1d7ea7ed4b82312939011185e, type: 2}
   blocksT: []
   FloorZones1:
   - {fileID: 114257745239160184, guid: 9f060c165cb31f949b4e0e30e1901f66, type: 2}
@@ -9306,7 +9309,6 @@ MonoBehaviour:
   - {fileID: 114576364635950518, guid: dc58354d13533d544b9e86f210ed8da9, type: 2}
   - {fileID: 114420354999209442, guid: e2c66fbfb73456d4eb3682141f225dcd, type: 2}
   - {fileID: 114019031298167480, guid: e91ff99fe6492204c90f052ac9bab5f8, type: 2}
-  - {fileID: 114389331042855782, guid: 3b68dea803c1f7a419b1b6ad352c6220, type: 2}
   FloorZones3: []
   FloorZones4: []
   pieces: []

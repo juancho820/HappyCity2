@@ -417,8 +417,8 @@ AnimatorState:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Slide 0
-  m_Speed: 0.74
+  m_Name: fastfall
+  m_Speed: 0.72
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101221911889862186}
@@ -470,7 +470,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Run
-  m_Speed: 1
+  m_Speed: 1.07
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101702893986080938}
@@ -496,7 +496,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Slide
-  m_Speed: 0.74
+  m_Speed: 1.18
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101981734318679724}
@@ -509,7 +509,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 688fb13bcaacbd747ac5c6fea5f3b6c9, type: 3}
+  m_Motion: {fileID: 7400000, guid: 9c837f0d451b7834b8683d63ec19dcb7, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -547,7 +547,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New State 0
+  m_Name: fall2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -561,7 +561,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: d2e6df94c8a41164488779e2d0a8733b, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -573,7 +573,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New State
+  m_Name: jump2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
