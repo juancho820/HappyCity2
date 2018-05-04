@@ -301,7 +301,19 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 2100000, guid: 1da44f4db6fbd8b4081d3196e3fcb8a5, type: 2}
+=======
+      objectReference: {fileID: 2100000, guid: f12d680b3c37c3c4fae5c220798d9977, type: 2}
+    - target: {fileID: 1606692663925772, guid: 38fedc7216e5e4644b2b41a188acc4d1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738228449432756, guid: 38fedc7216e5e4644b2b41a188acc4d1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.643
+      objectReference: {fileID: 0}
+>>>>>>> 8848871b96a413b0e12ce024dc9d3bf3eda128f1
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38fedc7216e5e4644b2b41a188acc4d1, type: 2}
   m_IsPrefabParent: 0
@@ -2012,7 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.53893334, g: 0.9411765, b: 0.2629758, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2045,6 +2057,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filled: {fileID: 779834025}
+  background: {fileID: 276299631}
+  Full: {r: 0, g: 1, b: 0, a: 1}
+  Low: {r: 1, g: 0, b: 0, a: 1}
   maxValue: 10
   value: 0
 --- !u!1001 &277703262
@@ -4495,6 +4510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filled: {fileID: 951179319}
+  background: {fileID: 541650804}
+  Full: {r: 0.24137926, g: 1, b: 0, a: 1}
+  Low: {r: 1, g: 0, b: 0, a: 1}
   maxValue: 100
   value: 0
 --- !u!114 &541650804
@@ -7711,7 +7729,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
 --- !u!222 &951179320
@@ -7867,6 +7885,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4488011658083494, guid: a2b877974857bdf4695cb62cf0598ba8,
     type: 2}
   m_PrefabInternal: {fileID: 1078826544}
+--- !u!1001 &979610916
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690920261271148, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6e55d7baa34a43a47ba4829adb377583, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &995448911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11749,6 +11809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filled: {fileID: 594425003}
+  background: {fileID: 1516521215}
+  Full: {r: 0, g: 1, b: 0, a: 1}
+  Low: {r: 1, g: 0, b: 0, a: 1}
   maxValue: 10
   value: 0
 --- !u!224 &1516521214
