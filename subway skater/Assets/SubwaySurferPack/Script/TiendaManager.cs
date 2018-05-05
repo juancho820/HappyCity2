@@ -69,7 +69,8 @@ public class TiendaManager : MonoBehaviour
             coinScore -= valorEstrella;
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
             PlayerPrefs.SetInt("Score", (int)coinScore);
-            coinTextTienda.text = coinScore.ToString("0");
+            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+            InvenciText.text = InvenciPower.ToString("0");
         }
     }
 
@@ -80,8 +81,11 @@ public class TiendaManager : MonoBehaviour
             if(InvCooldown < 20)
             {
                 InvCooldown += 2;
+                coinScore -= valorUpgradeInv;
                 PlayerPrefs.SetInt("InvCooldown", InvCooldown);
                 valorUpgradeInv += 100;
+                PlayerPrefs.SetInt("Score", (int)coinScore);
+                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
                 MasInv.text = valorUpgradeInv.ToString("0");
             }
@@ -94,8 +98,11 @@ public class TiendaManager : MonoBehaviour
             if (MagCooldown < 20)
             {
                 MagCooldown += 2;
+                coinScore -= valorUpgradeMag;
                 PlayerPrefs.SetInt("MagCooldown", MagCooldown);
                 valorUpgradeMag += 100;
+                PlayerPrefs.SetInt("Score", (int)coinScore);
+                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
                 MasMag.text = valorUpgradeMag.ToString("0");
             }
@@ -108,8 +115,11 @@ public class TiendaManager : MonoBehaviour
             if (x2Cooldown < 20)
             {
                 x2Cooldown += 2;
+                coinScore -= valorUpgradex2;
                 PlayerPrefs.SetInt("x2Cooldown", x2Cooldown);
                 valorUpgradex2 += 100;
+                PlayerPrefs.SetInt("Score", (int)coinScore);
+                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 Masx2.text = valorUpgradex2.ToString("0");
             }

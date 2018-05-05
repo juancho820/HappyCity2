@@ -101,10 +101,10 @@ public class PieceSpawner : MonoBehaviour
 
     public void Update()
     {
-        if (!transform.GetChild(i-1).gameObject.activeSelf)
-        {
-            StartCoroutine(Activar());
-        }
+        //if (!transform.GetChild(i-1).gameObject.activeSelf)
+        //{
+        //    StartCoroutine(Activar());
+        //}
     }
 
     private IEnumerator Activar()

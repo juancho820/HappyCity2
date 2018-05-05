@@ -63,6 +63,10 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            coinScore += 100;
+        }
         if (iniciado == true)
         {
             if (MobileInput.Instance.Tap && !isGameStarted)
@@ -74,13 +78,18 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<CamaraMotor>().IsMoving = true;
                 gameCanvas.SetTrigger("Show");
                 coinText.text = coinScore.ToString("0");
+                InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
+                InvenciText.text = InvenciPower.ToString("0");
             }
         }
 
         if (isGameStarted && !isDead)
         {
             // Bump score up
-            score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+            if(GameObject.FindGameObjectWithTag("Player").transform.position.z > 0)
+            {
+                score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+            }
             if(lastScore != (int)score)
             {
                 lastScore = (int)score;
