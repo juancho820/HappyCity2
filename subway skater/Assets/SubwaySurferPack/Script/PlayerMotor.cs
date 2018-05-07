@@ -265,9 +265,17 @@ public class PlayerMotor : MonoBehaviour {
         {
             CamaraMotor.agachar = true;
         }
+        if (other.gameObject.tag == "bajarCamaraCC")
+        {
+            CamaraMotor.agacharCC = true;
+        }
         if (other.gameObject.tag == "subirCamara")
         {
             CamaraMotor.subir = true;
+        }
+        if (other.gameObject.tag == "resetiarCamara")
+        {
+            CamaraMotor.agacharCC = false;
         }
     }
 

@@ -611,6 +611,47 @@ Transform:
   m_PrefabParentObject: {fileID: 4018469485270948, guid: 49d26842f1ab37e4d95c53f7411e9f1f,
     type: 2}
   m_PrefabInternal: {fileID: 998019345}
+--- !u!1 &112106939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 112106941}
+  - component: {fileID: 112106940}
+  m_Layer: 0
+  m_Name: SubidorDeCamara
+  m_TagString: resetiarCamara
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &112106940
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112106939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &112106941
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112106939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &120491429
 Prefab:
   m_ObjectHideFlags: 0
@@ -9270,6 +9311,8 @@ MonoBehaviour:
   NumeroDeSpawns: 5
   Contador: 0
   zona: 0
+  BajadorDeCamara: {fileID: 1346383617}
+  SubidorDeCamara: {fileID: 112106939}
   ramps:
   - {fileID: 114401880403880470, guid: 06fe8c8338f3c804d98a8eb6bc383757, type: 2}
   longblocksS:
@@ -9287,7 +9330,9 @@ MonoBehaviour:
   - {fileID: 114752099320136328, guid: 0a9c06662bfda034b8f77dfb5bc85369, type: 2}
   - {fileID: 114358570399336904, guid: c086d3c1a29318f428d686dae72344f3, type: 2}
   - {fileID: 114535029622604354, guid: 0364c6df015a7c24db6f4e523556b024, type: 2}
-  jumpsCC: []
+  jumpsCC:
+  - {fileID: 114563220629103124, guid: 0cabb8c6c54fe9f4697066ef771f7479, type: 2}
+  - {fileID: 114905349238301216, guid: 30eb9d99d3d92b140af3fca7da6d5506, type: 2}
   jumpsT: []
   jumpsA: []
   jumpsMRC: []
@@ -9308,7 +9353,7 @@ MonoBehaviour:
   - {fileID: 114812508999856180, guid: caeb0c5a48598db46b85743c1d4bad6f, type: 2}
   - {fileID: 114250918878192742, guid: cf96544c29bb22b498cfd454f1e17656, type: 2}
   blocksCC:
-  - {fileID: 0}
+  - {fileID: 114854464870502514, guid: 1bf90fb1d7ea7ed4b82312939011185e, type: 2}
   blocksT: []
   FloorZones1:
   - {fileID: 114257745239160184, guid: 9f060c165cb31f949b4e0e30e1901f66, type: 2}
@@ -9320,7 +9365,6 @@ MonoBehaviour:
   - {fileID: 114576364635950518, guid: dc58354d13533d544b9e86f210ed8da9, type: 2}
   - {fileID: 114420354999209442, guid: e2c66fbfb73456d4eb3682141f225dcd, type: 2}
   - {fileID: 114019031298167480, guid: e91ff99fe6492204c90f052ac9bab5f8, type: 2}
-  - {fileID: 0}
   FloorZones3: []
   FloorZones4: []
   pieces: []
@@ -9333,7 +9377,12 @@ MonoBehaviour:
   - {fileID: 114279122199381244, guid: fb5744719e95b584baa4b504c2e4c26d, type: 2}
   - {fileID: 114456162583265234, guid: 241cdf0b9e842bd4abe105718cc1ceb8, type: 2}
   - {fileID: 114891298169872250, guid: 684e9e8ea3e654a40b1706d8417cf3d5, type: 2}
-  availableSegments2: []
+  availableSegments2:
+  - {fileID: 114923852789317148, guid: 6339c0a729adec44ab16c218d7b3ab9d, type: 2}
+  - {fileID: 114719053730747790, guid: 5fe376b8e9cf1974ab3c07236ac61408, type: 2}
+  - {fileID: 114868712386903246, guid: 2e78e1d1fa11d15448f9e33cbf91c364, type: 2}
+  - {fileID: 114003744437859396, guid: 582150beaa62ff74e88f5c22908e96a7, type: 2}
+  - {fileID: 114917364509348936, guid: b9ff29523e2e90048a9f88c2d623ca25, type: 2}
   availableSegments3: []
   availableSegments4: []
   availableTransitions:
@@ -10520,6 +10569,47 @@ Transform:
   m_PrefabParentObject: {fileID: 4488011658083494, guid: a2b877974857bdf4695cb62cf0598ba8,
     type: 2}
   m_PrefabInternal: {fileID: 1346152447}
+--- !u!1 &1346383617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1346383619}
+  - component: {fileID: 1346383618}
+  m_Layer: 0
+  m_Name: BajadorDeCamara
+  m_TagString: bajarCamaraCC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1346383618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1346383617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1346383619
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1346383617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1359076284
 Prefab:
   m_ObjectHideFlags: 0

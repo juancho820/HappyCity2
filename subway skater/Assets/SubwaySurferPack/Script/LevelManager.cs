@@ -31,6 +31,10 @@ public class LevelManager : MonoBehaviour
     public int Contador = 0;
     public int zona;
 
+    public GameObject BajadorDeCamara;
+    public GameObject SubidorDeCamara;
+    private bool MovedorDeCamaraCC = false;
+
 
     //List of pieces
     public List<Piece> ramps = new List<Piece>();
@@ -110,19 +114,27 @@ public class LevelManager : MonoBehaviour
     {
         if(currentSpawnZ - cameraContainer.position.z < DISTANCE_BEFORE_SPAWN)
         {
-            
             Contador++;
             GenerateSegment();
             if (Contador >= NumeroDeSpawns)
             {
-                //zona++;
+                zona++;
+                if(zona == 1)
+                {
+                    MovedorDeCamaraCC = true;
+                    SpawnMoveCamara();
+                }
+                else
+                {
+                    MovedorDeCamaraCC = false;
+                    SpawnMoveCamara();
+                }
                 Contador = 0;
-                return;
             }
-            //if(zona > 3)
-            //{
-            //    zona = 0;
-            //}
+            if(zona == 2)
+            {
+                zona = 0;
+            }
             
         }
 
@@ -274,6 +286,20 @@ public class LevelManager : MonoBehaviour
         currentSpawnZ += s.lenght;
         amountOfActiveSegments++;
         s.Spawn();
+    }
+    private void SpawnMoveCamara()
+    {
+        if(MovedorDeCamaraCC == true)
+        {
+            BajadorDeCamara.SetActive(true);
+            BajadorDeCamara.transform.localPosition = Vector3.forward * currentSpawnZ;
+        }
+        else
+        {
+            SubidorDeCamara.SetActive(true);
+            SubidorDeCamara.transform.localPosition = Vector3.forward * currentSpawnZ;
+        }
+
     }
 
     public Segment GetSegment(int id, bool transition)

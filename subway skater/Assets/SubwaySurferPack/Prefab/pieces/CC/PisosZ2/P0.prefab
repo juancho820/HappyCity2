@@ -273,10 +273,9 @@ GameObject:
   - component: {fileID: 4221825080240820}
   - component: {fileID: 33310865397820822}
   - component: {fileID: 23535083592414058}
-  - component: {fileID: 65979757008667828}
   m_Layer: 0
   m_Name: techoCC
-  m_TagString: bajarCamara
+  m_TagString: bajarCamaraCC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,8 +433,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331087599702926}
   m_LocalRotation: {x: -0.4999999, y: -0.5000001, z: -0.5000001, w: 0.4999999}
-  m_LocalPosition: {x: 0, y: -0.02, z: 9.18}
-  m_LocalScale: {x: 890.95624, y: 3020.2778, z: 93.46726}
+  m_LocalPosition: {x: 0, y: -0.02, z: 12.21}
+  m_LocalScale: {x: 1200, y: 3020.2778, z: 93.46726}
   m_Children: []
   m_Father: {fileID: 4990434742371860}
   m_RootOrder: 18
@@ -447,8 +446,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840292820681906}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.24, y: -0.01, z: 11.6}
-  m_LocalScale: {x: 2253.4756, y: 2253.4756, z: 2253.4756}
+  m_LocalPosition: {x: -0.41, y: 0, z: 15.3}
+  m_LocalScale: {x: 2253.4756, y: 3000, z: 2253.4756}
   m_Children: []
   m_Father: {fileID: 4990434742371860}
   m_RootOrder: 1
@@ -1325,18 +1324,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995572896504184}
   m_Mesh: {fileID: 4300000, guid: 6167fd8c9c38df149b8a435f7af4524d, type: 3}
---- !u!65 &65979757008667828
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1840292820681906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.014460388, y: 0.008012041, z: 0.0041993083}
-  m_Center: {x: -0.00017083283, y: -0.0010999625, z: 0.0020996535}
 --- !u!108 &108181753781608236
 Light:
   m_ObjectHideFlags: 1
