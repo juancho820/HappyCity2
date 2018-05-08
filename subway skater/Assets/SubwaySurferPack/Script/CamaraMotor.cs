@@ -15,6 +15,13 @@ public class CamaraMotor : MonoBehaviour
 
     public bool IsMoving { set; get; }
 
+    public void Start()
+    {
+     agachar = false;
+     agacharCC = false;
+     subir = false;
+    }
+
     private void LateUpdate()
     {
         if (!IsMoving)
