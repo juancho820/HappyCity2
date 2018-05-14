@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590545163353830}
   - component: {fileID: 114239428192407230}
+  - component: {fileID: 114212633423226698}
   m_Layer: 0
   m_Name: BlockCC (1)
   m_TagString: Untagged
@@ -174,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192767280677214}
   - component: {fileID: 114172248376085698}
+  - component: {fileID: 114149141589902146}
   m_Layer: 0
   m_Name: BlockCC
   m_TagString: Untagged
@@ -672,6 +674,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114149141589902146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756947399493196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bb9dffdc4e3be489a95111fd14e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114172248376085698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -684,6 +697,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 12
+--- !u!114 &114212633423226698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496271007095828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bb9dffdc4e3be489a95111fd14e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114239428192407230
 MonoBehaviour:
   m_ObjectHideFlags: 1

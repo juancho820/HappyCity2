@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4178587699353286}
   - component: {fileID: 114823605462256734}
+  - component: {fileID: 114096500217579492}
   m_Layer: 0
   m_Name: BlockCC
   m_TagString: Untagged
@@ -210,6 +211,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114096500217579492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209554853967304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bb9dffdc4e3be489a95111fd14e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114823605462256734
 MonoBehaviour:
   m_ObjectHideFlags: 1

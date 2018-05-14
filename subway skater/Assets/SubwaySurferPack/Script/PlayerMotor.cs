@@ -42,7 +42,7 @@ public class PlayerMotor : MonoBehaviour {
     // Speed Modifier
     private float originalSpeed = 7.0f;
     [SerializeField]
-    private float speed = 7.0f;
+    public float speed = 7.0f;
     private float speedTurn = 20;
     private float speedIncreaseLastTick;
     [SerializeField]
@@ -251,6 +251,12 @@ public class PlayerMotor : MonoBehaviour {
         isRunning = false;
         GameManager.Instance.OnDeath();
     }
+    private void Crash2()
+    {
+        anim.SetTrigger("Death2");
+        isRunning = false;
+        GameManager.Instance.OnDeath();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -287,6 +293,9 @@ public class PlayerMotor : MonoBehaviour {
             {
                 case "Obstacle":
                     Crash();
+                    break;
+                case "Obstacle2":
+                    Crash2();
                     break;
             }
         }
