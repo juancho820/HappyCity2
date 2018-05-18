@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public Sprite sprite1, sprite2, sprite3, none;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim;
+    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim, TapAnim;
     public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
             {
                 Once = true;
                 isGameStarted = true;
+                TapAnim.gameObject.SetActive(false);
                 motor.StartRunning();
                 FindObjectOfType<GlacierSpawner>().IsScrolling = true;
                 FindObjectOfType<CamaraMotor>().IsMoving = true;
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
         iniciado = true;
         menuAnim.SetTrigger("Hide");
         jugarAnim.SetTrigger("Hide");
+        TapAnim.gameObject.SetActive(true);
     }
 
     public void Invenci()
