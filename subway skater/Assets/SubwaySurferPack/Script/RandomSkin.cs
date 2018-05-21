@@ -5,8 +5,8 @@ using UnityEngine;
 public class RandomSkin : MonoBehaviour {
 
     public Texture[] textures;
-    public Renderer rend;
-    public int random;
+    private Renderer rend;
+    private int random;
 
     void Start()
     {
