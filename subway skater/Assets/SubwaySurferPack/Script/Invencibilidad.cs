@@ -16,6 +16,7 @@ public class Invencibilidad : MonoBehaviour {
             {
                 PlayerMotor.Instance.slider.value = 0;
             }
+            other.GetComponent<Animator>().SetTrigger("BigRunning");
             powerInvenci = true;
             PS.Play();
             gameObject.SetActive(false);

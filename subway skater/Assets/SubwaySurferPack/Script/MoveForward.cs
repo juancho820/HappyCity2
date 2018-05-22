@@ -19,7 +19,7 @@ public class MoveForward : MonoBehaviour {
 	void Update () {
         if (GameManager.Instance.isDead == false)
         {
-            if (this.transform.position.z - player.transform.position.z > -20)
+            if (this.transform.position.z - player.transform.position.z > -40)
             {
                 if (this.transform.position.z - player.transform.position.z < 40)
                 {

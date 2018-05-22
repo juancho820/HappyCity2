@@ -81,6 +81,7 @@ public class PlayerMotor : MonoBehaviour {
             if (slider.value >= InvCooldown)
             {
                 Invencibilidad.powerInvenci = false;
+                anim.SetTrigger("StartRunning");
                 slider.value = 0;
             }
         }
@@ -139,7 +140,7 @@ public class PlayerMotor : MonoBehaviour {
         // Calculate Y
         if (isGrounded) // if Grounded
         {
-            if(caida == true)
+            if (caida == true)
             {
                 anim.SetTrigger("Roll");
                 caida = false;
@@ -147,17 +148,25 @@ public class PlayerMotor : MonoBehaviour {
             verticalVelocity = -0.1f;
             if (MobileInput.Instance.SwipeUp)
             {
-                //Jump
-                random = Random.Range(1, 3);
-
-                if (random == 1)
+                if(Invencibilidad.powerInvenci== false)
                 {
-                    anim.SetTrigger("Jump");
+                    //Jump
+                    random = Random.Range(1, 3);
+
+                    if (random == 1)
+                    {
+                        anim.SetTrigger("Jump");
+                    }
+                    else
+                    {
+                        anim.SetTrigger("Jump2");
+                    }
                 }
                 else
                 {
-                    anim.SetTrigger("Jump2");
+                    anim.SetTrigger("BigJump");
                 }
+                
                 verticalVelocity = jumpForce;
             }
             else if (MobileInput.Instance.SwipeDown)
@@ -166,6 +175,7 @@ public class PlayerMotor : MonoBehaviour {
                 StartSliding();
                 Invoke("StopSliding", 0.6f);
             }
+            
         }
         else
         {
@@ -177,15 +187,23 @@ public class PlayerMotor : MonoBehaviour {
 
             if(travel < 0)
             {
-                if(random == 1)
+                if(Invencibilidad.powerInvenci== false)
                 {
-                    anim.SetTrigger("Bajando");
+                    if (random == 1)
+                    {
+                        anim.SetTrigger("Bajando");
+                    }
+                    else
+                    {
+                        anim.SetTrigger("Bajando2");
+                        caida = true;
+                    }
                 }
                 else
                 {
-                    anim.SetTrigger("Bajando2");
-                    caida = true;
+                    anim.SetTrigger("BigFall");
                 }
+                
             }
 
             // Fast Falling mechanic
@@ -262,7 +280,7 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Invencibilidad.powerInvenci == true)
         {
-            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Invencibilidad")
+            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Invencibilidad" || other.gameObject.tag == "Obstacle2")
             {
                 other.gameObject.SetActive(false);
             }
@@ -301,7 +319,7 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Invencibilidad")
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Invencibilidad" || hit.gameObject.tag == "Obstacle2")
             {
                 hit.gameObject.SetActive(false);
             }
