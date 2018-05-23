@@ -13,79 +13,79 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: StartRunning
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Death
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Sliding
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Bajando
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Bajando2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Roll
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Death2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: BigRunning
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: BigJump
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: BigFall
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -139,9 +139,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.109550536
   m_TransitionOffset: 0
-  m_ExitTime: 0.39999998
+  m_ExitTime: 0.39999995
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -283,9 +283,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.09794003
   m_TransitionOffset: 0
-  m_ExitTime: 0.39999998
+  m_ExitTime: 0.73018736
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -583,7 +583,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: BigTinFalling
-  m_Speed: 1
+  m_Speed: 1.91
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101498821668009482}
@@ -946,43 +946,43 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102399611419384456}
-    m_Position: {x: 384, y: 192, z: 0}
+    m_Position: {x: -48, y: -84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102834089196385254}
-    m_Position: {x: 24, y: 72, z: 0}
+    m_Position: {x: -156, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102421859736443678}
-    m_Position: {x: 276, y: 84, z: 0}
+    m_Position: {x: -48, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102438777366278720}
-    m_Position: {x: 504, y: 72, z: 0}
+    m_Position: {x: -48, y: 72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102530331659448786}
-    m_Position: {x: -36, y: 180, z: 0}
+    m_Position: {x: 48, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102796856620149310}
-    m_Position: {x: -288, y: 72, z: 0}
+    m_Position: {x: -156, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102696771455224104}
-    m_Position: {x: -120, y: 264, z: 0}
+    m_Position: {x: 48, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102215835297375226}
-    m_Position: {x: 156, y: 276, z: 0}
+    m_Position: {x: 48, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102212604860976214}
-    m_Position: {x: 408, y: -60, z: 0}
+    m_Position: {x: 288, y: 96, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102274796580601638}
-    m_Position: {x: 324, y: 12, z: 0}
+    m_Position: {x: 288, y: 156, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102690405385355732}
-    m_Position: {x: -228, y: -60, z: 0}
+    m_Position: {x: -396, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102086745313823498}
-    m_Position: {x: -300, y: -168, z: 0}
+    m_Position: {x: -396, y: 168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102638612885616992}
-    m_Position: {x: -24, y: -204, z: 0}
+    m_Position: {x: -396, y: 72, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101642591037781520}
@@ -995,8 +995,8 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 48, y: -36, z: 0}
-  m_EntryPosition: {x: 408, y: 276, z: 0}
-  m_ExitPosition: {x: 288, y: -84, z: 0}
+  m_AnyStatePosition: {x: -24, y: -36, z: 0}
+  m_EntryPosition: {x: -24, y: -132, z: 0}
+  m_ExitPosition: {x: -24, y: -192, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102399611419384456}
