@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
     public List<Piece> slidesMR = new List<Piece>();
     public List<Piece> blocksPA = new List<Piece>();
     public List<Piece> blocksCC = new List<Piece>();
+    public List<Piece> blocksCCcarros = new List<Piece>();
     public List<Piece> blocksT = new List<Piece>();
     public List<Piece> FloorZones1 = new List<Piece>();
     public List<Piece> FloorZones2 = new List<Piece>();
@@ -470,6 +471,10 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.blockCC)
             {
                 go = blocksCC[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockCCcarros)
+            {
+                go = blocksCCcarros[visualIndex].gameObject;
             }
             else if (pt == PieceType.blockT)
             {

@@ -26,11 +26,11 @@ public enum PieceType
     jumpMRC = 20,
     jumpMRD = 21,
     jumpMR = 22,
+    blockCCcarros = 23,
 }
 
 public class Piece : MonoBehaviour
 {
     public PieceType type;
     public int visualIndex;
-
 }

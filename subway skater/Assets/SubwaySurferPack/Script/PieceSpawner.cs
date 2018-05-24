@@ -5,6 +5,7 @@ using UnityEngine;
 public class PieceSpawner : MonoBehaviour
 {
     public PieceType type;
+    public bool activo = true;
     private Piece currentPiece;
     int i;
 
@@ -63,6 +64,9 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.blockCC:
                 amtObj = LevelManager.Instance.blocksCC.Count;
                 break;
+            case PieceType.blockCCcarros:
+                amtObj = LevelManager.Instance.blocksCCcarros.Count;
+                break;
             case PieceType.blockT:
                 amtObj = LevelManager.Instance.blocksT.Count;
                 break;
@@ -101,9 +105,10 @@ public class PieceSpawner : MonoBehaviour
 
     public void Update()
     {
-        //if (!transform.GetChild(i-1).gameObject.activeSelf)
+        //if (activo == false)
         //{
         //    StartCoroutine(Activar());
+        //    activo = true;
         //}
     }
 

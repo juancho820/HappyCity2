@@ -83,6 +83,7 @@ public class PlayerMotor : MonoBehaviour {
                 Invencibilidad.powerInvenci = false;
                 anim.SetTrigger("StartRunning");
                 slider.value = 0;
+                speed -= 10;
             }
         }
         if (X2.x2 == 2)
@@ -144,6 +145,10 @@ public class PlayerMotor : MonoBehaviour {
             {
                 anim.SetTrigger("Roll");
                 caida = false;
+            }
+            if(Invencibilidad.powerInvenci == true)
+            {
+                CamaraShake.shakeDuration = 0.1f;
             }
             verticalVelocity = -0.1f;
             if (MobileInput.Instance.SwipeUp)
@@ -319,7 +324,11 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Invencibilidad" || hit.gameObject.tag == "Obstacle2")
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2")
+            {
+                hit.gameObject.SetActive(false);
+            }
+            if ( hit.gameObject.tag == "Invencibilidad")
             {
                 hit.gameObject.SetActive(false);
             }

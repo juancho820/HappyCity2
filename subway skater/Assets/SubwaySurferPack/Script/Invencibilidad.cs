@@ -15,8 +15,10 @@ public class Invencibilidad : MonoBehaviour {
             if(powerInvenci == true)
             {
                 PlayerMotor.Instance.slider.value = 0;
+                PlayerMotor.Instance.speed -= 10;
             }
             other.GetComponent<Animator>().SetTrigger("BigRunning");
+            PlayerMotor.Instance.speed += 10;
             powerInvenci = true;
             PS.Play();
             gameObject.SetActive(false);
