@@ -1,2 +1,18 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  error: 2 plat 21 at (20): CGPROGRAM cannot contain #pragma surface as well as other programs
+  error: 2 plat 21 at (49): Unexpected identifier "vert". Expected: '('
+  insize=2425 outsize=751 ok=0
+Cmd: preprocess
+  error: 2 plat 21 at (18): CGPROGRAM cannot contain #pragma surface as well as other programs
+  error: 2 plat 21 at (47): Unexpected identifier "vert". Expected: '('
+  insize=1979 outsize=667 ok=0
+Cmd: preprocess
+  error: 2 plat 21 at (18): CGPROGRAM cannot contain #pragma surface as well as other programs
+  error: 2 plat 1 at (63): ambiguous overloaded function reference "tex2D(sampler2D, float)"
+  error: 1 plat 1 at (67): implicit cast from "float4" to "half"
+  error: 1 plat 1 at (69): implicit cast from "float4" to "half"
+  insize=1974 outsize=2612 ok=0
+Cmd: preprocess
+  insize=1785 outsize=1440 ok=1
