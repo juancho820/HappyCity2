@@ -105,16 +105,16 @@ public class PieceSpawner : MonoBehaviour
 
     public void Update()
     {
-        //if (activo == false)
-        //{
-        //    StartCoroutine(Activar());
-        //    activo = true;
-        //}
+        if (activo == false)
+        {
+            StartCoroutine(Activar());
+            activo = true;
+        }
     }
 
     private IEnumerator Activar()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.7f);
         transform.GetChild(i-1).gameObject.SetActive(true);
     }
 }

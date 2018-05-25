@@ -41,7 +41,7 @@ public class Coin : MonoBehaviour
         {
             anim.enabled = false;
 
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.5f);
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.75f);
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {

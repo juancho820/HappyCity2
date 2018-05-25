@@ -285,8 +285,13 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Invencibilidad.powerInvenci == true)
         {
-            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Invencibilidad" || other.gameObject.tag == "Obstacle2")
+            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Obstacle2")
             {
+                other.gameObject.SetActive(false);
+            }
+            if (other.gameObject.tag == "Invencibilidad")
+            {
+                other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
                 other.gameObject.SetActive(false);
             }
         }
@@ -330,6 +335,7 @@ public class PlayerMotor : MonoBehaviour {
             }
             if ( hit.gameObject.tag == "Invencibilidad")
             {
+                hit.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
                 hit.gameObject.SetActive(false);
             }
         }
