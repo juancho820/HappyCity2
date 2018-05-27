@@ -18,6 +18,8 @@ public class Magneto : MonoBehaviour {
             powerMagneto = true;
             PS.Play();
             gameObject.SetActive(false);
+            PlayerMotor.Instance.Audio.clip = PlayerMotor.Instance.MagnetAudio;
+            PlayerMotor.Instance.Audio.Play();
         }
     }
 }

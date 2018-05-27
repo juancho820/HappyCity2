@@ -12,6 +12,8 @@ public class PlayerMotor : MonoBehaviour {
     //
     private bool isRunning = false;
 
+    public AudioClip CarrilAudio, MagnetAudio, X2Audio, InvenciAudio;
+
     //Animation
     private Animator anim;
 
@@ -21,6 +23,8 @@ public class PlayerMotor : MonoBehaviour {
     private bool salto2;
     private bool caida;
     private int random, random2;
+
+    public AudioSource Audio;
 
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
@@ -114,10 +118,14 @@ public class PlayerMotor : MonoBehaviour {
         if (MobileInput.Instance.SwipeLeft)
         {
             MoveLane(false);
+            Audio.clip = CarrilAudio;
+            Audio.Play();
         }
         if (MobileInput.Instance.SwipeRight)
         {
             MoveLane(true);
+            Audio.clip = CarrilAudio;
+            Audio.Play();
         }
 
         // Calculate where we should be in the future

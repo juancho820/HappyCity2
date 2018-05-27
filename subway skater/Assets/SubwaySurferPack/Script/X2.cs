@@ -18,6 +18,8 @@ public class X2 : MonoBehaviour {
             x2 = 2;
             PS.Play();
             gameObject.SetActive(false);
+            PlayerMotor.Instance.Audio.clip = PlayerMotor.Instance.X2Audio;
+            PlayerMotor.Instance.Audio.Play();
         }
     }
 }
