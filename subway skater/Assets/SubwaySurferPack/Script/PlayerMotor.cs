@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour {
     //
     private bool isRunning = false;
 
-    public AudioClip CarrilAudio, MagnetAudio, X2Audio, InvenciAudio;
+    public AudioClip CarrilAudio, MagnetAudio, X2Audio, InvenciAudio, JumpAudio, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
 
     //Animation
     private Animator anim;
@@ -161,7 +161,9 @@ public class PlayerMotor : MonoBehaviour {
             verticalVelocity = -0.1f;
             if (MobileInput.Instance.SwipeUp)
             {
-                if(Invencibilidad.powerInvenci== false)
+                Audio.clip = JumpAudio;
+                Audio.Play();
+                if (Invencibilidad.powerInvenci== false)
                 {
                     //Jump
                     random = Random.Range(1, 3);
@@ -185,6 +187,8 @@ public class PlayerMotor : MonoBehaviour {
             else if (MobileInput.Instance.SwipeDown)
             {
                 //Slide
+                Audio.clip = SlideAudio;
+                Audio.Play();
                 StartSliding();
                 Invoke("StopSliding", 0.6f);
             }
@@ -278,12 +282,16 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Crash()
     {
+        Audio.clip = BlockDeadAudio;
+        Audio.Play();
         anim.SetTrigger("Death");
         isRunning = false;
         GameManager.Instance.OnDeath();
     }
     private void Crash2()
     {
+        Audio.clip = JumpDeadAudio;
+        Audio.Play();
         anim.SetTrigger("Death2");
         isRunning = false;
         GameManager.Instance.OnDeath();

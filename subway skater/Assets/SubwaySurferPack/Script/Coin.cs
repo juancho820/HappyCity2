@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
-        if(Magneto.powerMagneto == false)
+        if (Magneto.powerMagneto == false)
         {
             if (other.tag == "Player")
             {
@@ -39,6 +39,9 @@ public class Coin : MonoBehaviour
     {
         if (cogida == true)
         {
+            PlayerMotor.Instance.Audio.clip = PlayerMotor.Instance.TicketAudio;
+            PlayerMotor.Instance.Audio.Play();
+
             anim.enabled = false;
 
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.75f);
