@@ -78,7 +78,18 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<GlacierSpawner>().IsScrolling = true;
                 FindObjectOfType<CamaraMotor>().IsMoving = true;
                 gameCanvas.SetTrigger("Show");
-                coinText.text = coinScore.ToString("0");
+                if (coinScore < 1000)
+                {
+                    coinText.text = coinScore.ToString("0");
+                }
+                if (coinScore > 1000)
+                {
+                    coinText.text = (coinScore / 1000).ToString("0.0 K");
+                }
+                if (coinScore > 1000000)
+                {
+                    coinText.text = (coinScore / 1000000).ToString("0.0 M");
+                }
                 InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
                 InvenciText.text = InvenciPower.ToString("0");
             }
@@ -95,6 +106,18 @@ public class GameManager : MonoBehaviour
             {
                 lastScore = (int)score;
                 scoreText.text = score.ToString("0");
+                if (score < 1000)
+                {
+                    scoreText.text = score.ToString("0");
+                }
+                if (score > 1000)
+                {
+                    scoreText.text = (score / 1000).ToString("0.0 K");
+                }
+                if (score > 1000000)
+                {
+                    scoreText.text = (score / 1000000).ToString("0.0 M");
+                }
             }
         }
     }
@@ -103,9 +126,19 @@ public class GameManager : MonoBehaviour
     {
         CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
-        coinText.text = coinScore.ToString("0");
-        //score += COIN_SCORE_AMOUNT;
-        //scoreText.text = scoreText.text = score.ToString("0");
+
+        if(coinScore < 1000)
+        {
+            coinText.text = coinScore.ToString("0");
+        }
+        if (coinScore > 1000)
+        {
+            coinText.text = (coinScore/1000).ToString("0.0 K");
+        }
+        if (coinScore > 1000000)
+        {
+            coinText.text = (coinScore / 1000000).ToString("0.0 M");
+        }
     }
 
     public void Jugar()

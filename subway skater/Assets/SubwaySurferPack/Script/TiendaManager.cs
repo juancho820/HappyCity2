@@ -59,6 +59,19 @@ public class TiendaManager : MonoBehaviour
         MasMag.text = valorUpgradeMag.ToString("0");
         Masx2.text = valorUpgradex2.ToString("0");
 
+        if (coinScore < 1000)
+        {
+            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        }
+        if (coinScore > 1000)
+        {
+            coinTextTienda.text = "Tickets: " + (coinScore/1000).ToString("0.0 K");
+        }
+        if (coinScore > 1000000)
+        {
+            coinTextTienda.text = "Tickets: " + (coinScore/1000000).ToString("0.0 M");
+        }
+
     }
 
     public void SumarInvici()
