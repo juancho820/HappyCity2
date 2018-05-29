@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
     public void GetCoin()
     {
         CoinUIAnim.SetTrigger("Collect");
-        coinScore += 1 *X2.x2;
+        coinScore += (1 * modifierScore) * X2.x2;
         coinText.text = coinScore.ToString("0");
         //score += COIN_SCORE_AMOUNT;
         //scoreText.text = scoreText.text = score.ToString("0");
@@ -126,16 +126,26 @@ public class GameManager : MonoBehaviour
     {
         if (InvenciPower > 0)
         {
-            Invencibilidad.powerInvenci = true;
             InvenciPower--;
             InvenciText.text = InvenciPower.ToString("0");
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
+
+            if (Invencibilidad.powerInvenci == true)
+            {
+                PlayerMotor.Instance.slider.value = 0;
+                PlayerMotor.Instance.speed -= 10;
+            }
+            PlayerMotor.Instance.GetComponent<Animator>().SetTrigger("BigRunning");
+            PlayerMotor.Instance.speed += 10;
+            Invencibilidad.powerInvenci = true;
+            GetComponent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
+            GetComponent<AudioSource>().Play();
         }
     }
 
     public void UpdateModifier(float modifierAmount)
     {
-        modifierScore = 1.0f + modifierAmount;
+        modifierScore += modifierAmount;
         modifierText.text = "x" + modifierScore.ToString("0.0");
     }
 

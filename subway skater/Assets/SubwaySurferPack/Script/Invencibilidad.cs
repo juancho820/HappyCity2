@@ -22,8 +22,8 @@ public class Invencibilidad : MonoBehaviour {
             powerInvenci = true;
             PS.Play();
             gameObject.SetActive(false);
-            PlayerMotor.Instance.Audio.clip = PlayerMotor.Instance.InvenciAudio;
-            PlayerMotor.Instance.Audio.Play();
+            GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
+            GetComponentInParent<AudioSource>().Play();
         }
     }
 }

@@ -39,15 +39,14 @@ public class Coin : MonoBehaviour
     {
         if (cogida == true)
         {
-            PlayerMotor.Instance.Audio.clip = PlayerMotor.Instance.TicketAudio;
-            PlayerMotor.Instance.Audio.Play();
-
             anim.enabled = false;
 
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.75f);
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {
+                GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.TicketAudio;
+                GetComponentInParent<AudioSource>().Play();
                 gameObject.SetActive(false);
             }
             //transform.position = Vector3.Lerp(transform.position, player.transform.position, 2);

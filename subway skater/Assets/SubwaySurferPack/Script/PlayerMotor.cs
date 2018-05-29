@@ -111,7 +111,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             speedIncreaseLastTick = Time.time;
             speed += speedIncreaseAmount;
-            GameManager.Instance.UpdateModifier(speed - originalSpeed);
+            GameManager.Instance.UpdateModifier(speedIncreaseAmount);
         }
 
         // Gather the inputs on which lane we should be
@@ -186,11 +186,14 @@ public class PlayerMotor : MonoBehaviour {
             }
             else if (MobileInput.Instance.SwipeDown)
             {
-                //Slide
-                Audio.clip = SlideAudio;
-                Audio.Play();
-                StartSliding();
-                Invoke("StopSliding", 0.6f);
+                if(Invencibilidad.powerInvenci == false)
+                {
+                    //Slide
+                    Audio.clip = SlideAudio;
+                    Audio.Play();
+                    StartSliding();
+                    Invoke("StopSliding", 0.6f);
+                }
             }
             
         }
@@ -315,17 +318,9 @@ public class PlayerMotor : MonoBehaviour {
         {
             CamaraMotor.agachar = true;
         }
-        if (other.gameObject.tag == "bajarCamaraCC")
-        {
-            CamaraMotor.agacharCC = true;
-        }
         if (other.gameObject.tag == "subirCamara")
         {
             CamaraMotor.subir = true;
-        }
-        if (other.gameObject.tag == "resetiarCamara")
-        {
-            CamaraMotor.agacharCC = false;
         }
     }
 

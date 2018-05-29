@@ -10,7 +10,6 @@ public class CamaraMotor : MonoBehaviour
     public Vector3 offset3 = new Vector3(0, 7, -0.5f);
     public Vector3 rotation = new Vector3(35, 0, 0);
     public static bool agachar = false;
-    public static bool agacharCC = false;
     public static bool subir = false;
 
     public bool IsMoving { set; get; }
@@ -18,7 +17,6 @@ public class CamaraMotor : MonoBehaviour
     public void Start()
     {
      agachar = false;
-     agacharCC = false;
      subir = false;
     }
 
@@ -36,13 +34,6 @@ public class CamaraMotor : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, desirePosition, 0.1f);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
             StartCoroutine(Resetiar());
-        }
-        if (agacharCC == true)
-        {
-            Vector3 desirePosition = lookAt.position + offset2;
-            desirePosition.x = lookAt.transform.position.x;
-            transform.position = Vector3.Lerp(transform.position, desirePosition, 0.1f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
         }
         if (subir == true)
         {

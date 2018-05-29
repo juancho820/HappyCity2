@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 4803983284978824}
   - component: {fileID: 33320227323895692}
   - component: {fileID: 23527414811718676}
+  - component: {fileID: 65195776016146018}
   m_Layer: 0
   m_Name: SlideCC
-  m_TagString: Untagged
+  m_TagString: subirCamara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893567764131280}
   m_Mesh: {fileID: 4300000, guid: ac4ee89277f9fce458000e4c6cea468d, type: 3}
+--- !u!65 &65195776016146018
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893567764131280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.02, z: 0.17}
+  m_Center: {x: -0.3, y: 0, z: 0}
 --- !u!65 &65532357361671288
 BoxCollider:
   m_ObjectHideFlags: 1
