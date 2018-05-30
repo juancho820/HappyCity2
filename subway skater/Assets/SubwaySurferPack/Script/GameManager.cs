@@ -143,17 +143,19 @@ public class GameManager : MonoBehaviour
 
     public void Jugar()
     {
-        jugarAnim.SetTrigger("Show");
+        iniciado = true;
+        menuAnim.SetTrigger("Hide");
+        TapAnim.gameObject.SetActive(true);
         botonAnim.SetTrigger("Esconder");
     }
 
-    public void Infinito()
-    {
-        iniciado = true;
-        menuAnim.SetTrigger("Hide");
-        jugarAnim.SetTrigger("Hide");
-        TapAnim.gameObject.SetActive(true);
-    }
+    //public void Infinito()
+    //{
+    //    iniciado = true;
+    //    menuAnim.SetTrigger("Hide");
+    //    jugarAnim.SetTrigger("Hide");
+    //    TapAnim.gameObject.SetActive(true);
+    //}
 
     public void Invenci()
     {
@@ -190,27 +192,23 @@ public class GameManager : MonoBehaviour
     public void Tienda()
     {
         SceneManager.LoadScene("Tienda");
-        //botonAnim.SetTrigger("Esconder");
-        //menuAnim.SetTrigger("Hide");
-        //TiendaAnim.SetTrigger("Show");
-        //coinTextTienda.text = coinScore.ToString("0");
     }
-    public void Campana()
-    {
-        jugarAnim.SetTrigger("Hide");
-        nivelesAnim.SetTrigger("Show");
-    }
-    public void VolverJugar()
-    {
-        menuAnim.SetTrigger("Show");
-        botonAnim.SetTrigger("Iniciar");
-        jugarAnim.SetTrigger("Hide");
-    }
-    public void VolverNiveles()
-    {
-        nivelesAnim.SetTrigger("Hide");
-        jugarAnim.SetTrigger("Show");
-    }
+    //public void Campana()
+    //{
+    //    jugarAnim.SetTrigger("Hide");
+    //    nivelesAnim.SetTrigger("Show");
+    //}
+    //public void VolverJugar()
+    //{
+    //    menuAnim.SetTrigger("Show");
+    //    botonAnim.SetTrigger("Iniciar");
+    //    jugarAnim.SetTrigger("Hide");
+    //}
+    //public void VolverNiveles()
+    //{
+    //    nivelesAnim.SetTrigger("Hide");
+    //    jugarAnim.SetTrigger("Show");
+    //}
 
 
     public void OnDeath()
