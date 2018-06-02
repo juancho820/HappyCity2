@@ -27,6 +27,7 @@ public enum PieceType
     jumpMRD = 21,
     jumpMR = 22,
     blockCCcarros = 23,
+    longblockCabeza = 24,
 }
 
 public class Piece : MonoBehaviour

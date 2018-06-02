@@ -55,6 +55,9 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.longblock:
                 amtObj = LevelManager.Instance.longblocks.Count;
                 break;
+            case PieceType.longblockCabeza:
+                amtObj = LevelManager.Instance.longblockscabeza.Count;
+                break;
             case PieceType.ramp:
                 amtObj = LevelManager.Instance.ramps.Count;
                 break;

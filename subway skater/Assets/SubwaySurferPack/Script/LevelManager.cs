@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
     public List<Piece> longblocksS = new List<Piece>();
     public List<Piece> jumpsB = new List<Piece>();
     public List<Piece> longblocks = new List<Piece>();
+    public List<Piece> longblockscabeza = new List<Piece>();
     public List<Piece> jumpsPA = new List<Piece>();
     public List<Piece> jumpsCC = new List<Piece>();
     public List<Piece> jumpsT = new List<Piece>();
@@ -478,6 +479,10 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.longblockS)
             {
                 go = longblocksS[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.longblockCabeza)
+            {
+                go = longblockscabeza[visualIndex].gameObject;
             }
             else if (pt == PieceType.floorZone1)
             {
