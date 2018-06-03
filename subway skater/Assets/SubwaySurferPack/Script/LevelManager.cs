@@ -12,10 +12,7 @@ public class LevelManager : MonoBehaviour
     private const float DISTANCE_BEFORE_SPAWN = 100.0f;
     private const int INITIAL_SEGMENTS = 5;
     private const int INITIAL_TRANSITION_SEGMENTS = 2;
-    private const int MAX_SEGMENTS_ON_SCREEN = 10;
-    private const int MAX_SEGMENTS_ON_SCREEN2 = 10;
-    private const int MAX_SEGMENTS_ON_SCREEN3 = 10;
-    private const int MAX_SEGMENTS_ON_SCREEN4 = 10;
+    private const int MAX_SEGMENTS_ON_SCREEN = 7;
     private Transform cameraContainer;
     private int amountOfActiveSegments;
     private int amountOfActiveSegments2;
@@ -76,9 +73,6 @@ public class LevelManager : MonoBehaviour
     [HideInInspector]
     public List<Segment> segments4 = new List<Segment>();
 
-    //Gameplay
-    //private bool isMoving = false;
-
     private void Awake()
     {
         Instance = this;
@@ -131,17 +125,17 @@ public class LevelManager : MonoBehaviour
             segments[amountOfActiveSegments - 1].DeSpawn();
             amountOfActiveSegments--;
         }
-        if (amountOfActiveSegments2 >= MAX_SEGMENTS_ON_SCREEN2)
+        if (amountOfActiveSegments2 >= MAX_SEGMENTS_ON_SCREEN)
         {
             segments2[amountOfActiveSegments2 - 1].DeSpawn();
             amountOfActiveSegments2--;
         }
-        if (amountOfActiveSegments3 >= MAX_SEGMENTS_ON_SCREEN3)
+        if (amountOfActiveSegments3 >= MAX_SEGMENTS_ON_SCREEN)
         {
             segments3[amountOfActiveSegments3 - 1].DeSpawn();
             amountOfActiveSegments3--;
         }
-        if (amountOfActiveSegments4 >= MAX_SEGMENTS_ON_SCREEN4)
+        if (amountOfActiveSegments4 >= MAX_SEGMENTS_ON_SCREEN)
         {
             segments4[amountOfActiveSegments4 - 1].DeSpawn();
             amountOfActiveSegments4--;
@@ -154,11 +148,9 @@ public class LevelManager : MonoBehaviour
         {
             case 0:
                 SpawnSegment();
-                Debug.Log("zona1");
                 break;
             case 1:
                 SpawnSegment2();
-                Debug.Log("zona2");
                 break;
             case 2:
                 SpawnSegment3();

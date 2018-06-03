@@ -38,11 +38,10 @@ public class Segment : MonoBehaviour
 
     public void DeSpawn()
     {
-        gameObject.SetActive(false);
-
         for (int i = 0; i < pieces.Length; i++)
         {
             pieces[i].Despawn();
         }
+        gameObject.SetActive(false);        
     }
 }

@@ -13,6 +13,5 @@ public class RandomSkin : MonoBehaviour {
         random = Random.Range(0, 3);
         rend = GetComponent<Renderer>();
         rend.material.mainTexture = textures[random];
-        Debug.Log(random);
     }
 }

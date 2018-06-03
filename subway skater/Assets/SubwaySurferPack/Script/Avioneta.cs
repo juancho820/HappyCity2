@@ -28,7 +28,6 @@ public class Avioneta : MonoBehaviour {
     {
         random2 = Random.Range(1, 4);
         random = Random.Range(30, 40);
-        Debug.Log(random2);
 
         switch (random2)
         {
