@@ -22,7 +22,6 @@ public class Coin : MonoBehaviour
             {
                 cogida = true;
                 GameManager.Instance.GetCoin();
-                //anim.SetTrigger("Collected");
             }
         }
         else
@@ -31,7 +30,6 @@ public class Coin : MonoBehaviour
             {
                 cogida = true;
                 GameManager.Instance.GetCoin();
-                //anim.SetTrigger("Collected");
             }
         }
     }
@@ -49,7 +47,6 @@ public class Coin : MonoBehaviour
                 GetComponentInParent<AudioSource>().Play();
                 gameObject.SetActive(false);
             }
-            //transform.position = Vector3.Lerp(transform.position, player.transform.position, 2);
         }
     }
 }

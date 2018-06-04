@@ -149,14 +149,6 @@ public class GameManager : MonoBehaviour
         botonAnim.SetTrigger("Esconder");
     }
 
-    //public void Infinito()
-    //{
-    //    iniciado = true;
-    //    menuAnim.SetTrigger("Hide");
-    //    jugarAnim.SetTrigger("Hide");
-    //    TapAnim.gameObject.SetActive(true);
-    //}
-
     public void Invenci()
     {
         if (InvenciPower > 0)
@@ -193,23 +185,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Tienda");
     }
-    //public void Campana()
-    //{
-    //    jugarAnim.SetTrigger("Hide");
-    //    nivelesAnim.SetTrigger("Show");
-    //}
-    //public void VolverJugar()
-    //{
-    //    menuAnim.SetTrigger("Show");
-    //    botonAnim.SetTrigger("Iniciar");
-    //    jugarAnim.SetTrigger("Hide");
-    //}
-    //public void VolverNiveles()
-    //{
-    //    nivelesAnim.SetTrigger("Hide");
-    //    jugarAnim.SetTrigger("Show");
-    //}
-
 
     public void OnDeath()
     {
