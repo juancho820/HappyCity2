@@ -18,8 +18,10 @@ public class TiendaManager : MonoBehaviour
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
 
-    public Text coinTextTienda, InvenciText, MasInv, MasMag, Masx2;
+    public Text coinTextTienda, InvenciText, MasInv, MasMag, Masx2, GoldenTickts;
     private float coinScore;
+    private float GoldenT;
+
 
     private void Awake()
     {
@@ -42,6 +44,7 @@ public class TiendaManager : MonoBehaviour
 
         InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
         coinScore = PlayerPrefs.GetInt("Score");
+        GoldenT = PlayerPrefs.GetInt("Golden");
         valorEstrella = 100;
         valorUpgradeInv = PlayerPrefs.GetInt("UpgradeInv");
         valorUpgradeMag = PlayerPrefs.GetInt("UpgradeMag");
@@ -50,11 +53,13 @@ public class TiendaManager : MonoBehaviour
 
         InvenciText.text = InvenciPower.ToString("0");
         coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        GoldenTickts.text = GoldenT.ToString("0");
     }
     private void Start()
     {
         InvenciText.text = InvenciPower.ToString("0");
         coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        GoldenTickts.text = GoldenT.ToString("0");
         MasInv.text = valorUpgradeInv.ToString("0");
         MasMag.text = valorUpgradeMag.ToString("0");
         Masx2.text = valorUpgradex2.ToString("0");
@@ -70,6 +75,19 @@ public class TiendaManager : MonoBehaviour
         if (coinScore > 1000000)
         {
             coinTextTienda.text = "Tickets: " + (coinScore/1000000).ToString("0.0 M");
+        }
+
+        if (GoldenT < 1000)
+        {
+            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        }
+        if (GoldenT > 1000)
+        {
+            coinTextTienda.text = "Tickets: " + (coinScore / 1000).ToString("0.0 K");
+        }
+        if (GoldenT > 1000000)
+        {
+            coinTextTienda.text = "Tickets: " + (coinScore / 1000000).ToString("0.0 M");
         }
 
     }
@@ -136,6 +154,19 @@ public class TiendaManager : MonoBehaviour
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 Masx2.text = valorUpgradex2.ToString("0");
             }
+        }
+    }
+
+    public void ComprarGolden()
+    {
+        if(coinScore >= 100)
+        {
+            GoldenT++;
+            coinScore -= 100;
+            PlayerPrefs.SetInt("Score", (int)coinScore);
+            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+            PlayerPrefs.SetInt("Golden", (int)GoldenT);
+            GoldenTickts.text = GoldenT.ToString("0");
         }
     }
 
