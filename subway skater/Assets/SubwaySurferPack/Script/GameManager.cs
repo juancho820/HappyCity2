@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(PlayerPrefs.GetInt("Replay") == 1)
+        {
+            Jugar();
+        }
+        PlayerPrefs.SetInt("Replay", 0);
         if (!PlayerPrefs.HasKey("MagCooldown"))
         {
             PlayerPrefs.SetInt("MagCooldown", 10);
@@ -176,8 +181,14 @@ public class GameManager : MonoBehaviour
         modifierText.text = "x" + modifierScore.ToString("0.0");
     }
 
-    public void OnPlayButton()
+    public void Home()
     {
+        PlayerPrefs.SetInt("Replay", 0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+    public void Replay()
+    {
+        PlayerPrefs.SetInt("Replay", 1);
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
