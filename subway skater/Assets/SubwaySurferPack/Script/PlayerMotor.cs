@@ -33,6 +33,8 @@ public class PlayerMotor : MonoBehaviour {
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
 
+    public int invencibilidad;
+
 
     // Movement
     private CharacterController controller;
@@ -62,6 +64,10 @@ public class PlayerMotor : MonoBehaviour {
         speed = originalSpeed;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        if (PlayerPrefs.GetInt("IntInvencibilidad") > 0)
+        {
+            slider.gameObject.SetActive(true);
+        }
     }
 
     private void Update()
@@ -88,6 +94,10 @@ public class PlayerMotor : MonoBehaviour {
                 anim.SetTrigger("StartRunning");
                 slider.value = 0;
                 speed -= 10;
+                if (PlayerPrefs.GetInt("IntInvencibilidad") == 0)
+                {
+                    slider.gameObject.SetActive(false);
+                }
             }
         }
         if (X2.x2 == 2)
@@ -299,6 +309,14 @@ public class PlayerMotor : MonoBehaviour {
         isRunning = false;
         GameManager.Instance.OnDeath();
     }
+    private void Crash3()
+    {
+        Audio.clip = JumpDeadAudio;
+        Audio.Play();
+        anim.SetTrigger("Death3");
+        isRunning = false;
+        GameManager.Instance.OnDeath();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -335,6 +353,9 @@ public class PlayerMotor : MonoBehaviour {
                     break;
                 case "Obstacle2":
                     Crash2();
+                    break;
+                case "Obstacle3":
+                    Crash3();
                     break;
             }
         }
