@@ -86,6 +86,7 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
+            slider.gameObject.SetActive(true);
             slider.maxValue = InvCooldown;
             slider.value += Time.deltaTime;
             if (slider.value >= InvCooldown)

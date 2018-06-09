@@ -4469,15 +4469,15 @@ RectTransform:
   m_GameObject: {fileID: 524069400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
   m_Father: {fileID: 1560178644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -2.9, y: 46.7}
-  m_SizeDelta: {x: 127.75, y: 85.96}
+  m_AnchoredPosition: {x: -4.3, y: 45.855}
+  m_SizeDelta: {x: 136.27, y: 91.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524069402
 MonoBehaviour:
@@ -6688,7 +6688,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789176373}
   m_LocalRotation: {x: 0.015208612, y: -0.013487186, z: 0.011126834, w: 0.9997315}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1.0510182, y: 0.79513013, z: 1}
   m_Children: []
   m_Father: {fileID: 1560178644}
@@ -6696,8 +6696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.7600001, y: -1.5270001, z: 1.2520001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0006008183, y: -85.39993}
-  m_SizeDelta: {x: 115.32, y: 115.32}
+  m_AnchoredPosition: {x: -0.00061893, y: -87.1}
+  m_SizeDelta: {x: 106.19, y: 95.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &789176375
 MonoBehaviour:
@@ -23526,6 +23526,7 @@ GameObject:
   - component: {fileID: 2097718138}
   - component: {fileID: 2097718140}
   - component: {fileID: 2097718139}
+  - component: {fileID: 2097718141}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -23584,6 +23585,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2097718137}
+--- !u!114 &2097718141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097718137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb034aec48daf274ba8196e7ecd0ef4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2099434479
 Prefab:
   m_ObjectHideFlags: 0
