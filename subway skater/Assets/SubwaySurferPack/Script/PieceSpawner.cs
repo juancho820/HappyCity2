@@ -22,8 +22,14 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.jumpPA:
                 amtObj = LevelManager.Instance.jumpsPA.Count;
                 break;
+            case PieceType.jumpPALiquido:
+                amtObj = LevelManager.Instance.jumpsPALiquido.Count;
+                break;
             case PieceType.jumpCC:
                 amtObj = LevelManager.Instance.jumpsCC.Count;
+                break;
+            case PieceType.jumpCCLiquido:
+                amtObj = LevelManager.Instance.jumpsCCLiquido.Count;
                 break;
             case PieceType.jumpT:
                 amtObj = LevelManager.Instance.jumpsT.Count;

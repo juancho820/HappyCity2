@@ -309,6 +309,14 @@ public class PlayerMotor : MonoBehaviour {
         isRunning = false;
         GameManager.Instance.OnDeath();
     }
+    private void Crash3()
+    {
+        Audio.clip = JumpDeadAudio;
+        Audio.Play();
+        anim.SetTrigger("Death3");
+        isRunning = false;
+        GameManager.Instance.OnDeath();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -345,6 +353,9 @@ public class PlayerMotor : MonoBehaviour {
                     break;
                 case "Obstacle2":
                     Crash2();
+                    break;
+                case "Obstacle3":
+                    Crash3();
                     break;
             }
         }
