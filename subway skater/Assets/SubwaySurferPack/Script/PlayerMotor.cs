@@ -355,7 +355,7 @@ public class PlayerMotor : MonoBehaviour {
                 case "Obstacle2":
                     Crash2();
                     break;
-                case "Obstacle3":
+                case "Obstacle4":
                     Crash3();
                     break;
             }
