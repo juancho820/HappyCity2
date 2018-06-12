@@ -1,0 +1,49 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "parameters": {
+                "Common Parameters": {
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                },
+                "Parallax Occlusion Mapping": {
+                    "maxPOMSamples": 16,
+                    "minPOMSamples": 4,
+                    "pomStrength": 4.110000133514404,
+                    "usePOM": false
+                },
+                "height_force": 1
+            },
+            "shader": "pbr-metal-rough",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "Bottom": {
+            "shader": "Main shader"
+        },
+        "Material _1": {
+            "shader": "Main shader"
+        },
+        "Material _3": {
+            "shader": "Main shader"
+        },
+        "Material _8": {
+            "shader": "Main shader"
+        },
+        "Material _9": {
+            "shader": "Main shader"
+        },
+        "Mid": {
+            "shader": "Main shader"
+        },
+        "Top": {
+            "shader": "Main shader"
+        }
+    }
+}
