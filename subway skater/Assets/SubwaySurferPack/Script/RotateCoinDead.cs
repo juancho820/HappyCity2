@@ -8,6 +8,9 @@ public class RotateCoinDead : MonoBehaviour {
         {
             transform.Rotate(0, 0, 0 + Time.deltaTime*20);
         }
-		
+        if (GameObject.Find("ResplandorTitulo"))
+        {
+            transform.Rotate(0, 0, 0 + Time.deltaTime * 10);
+        }		
 	}
 }

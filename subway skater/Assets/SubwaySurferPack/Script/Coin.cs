@@ -43,6 +43,7 @@ public class Coin : MonoBehaviour
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {
+                GetComponentInParent<AudioSource>().pitch = 1 + GameManager.Instance.pitch;
                 GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.TicketAudio;
                 GetComponentInParent<AudioSource>().Play();
                 gameObject.SetActive(false);

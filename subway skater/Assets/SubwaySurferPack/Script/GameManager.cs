@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public Camera camara;
     public Button boton1, boton2, boton3;
     public Sprite sprite1, sprite2, sprite3, none;
+    public float pitch;
+    public float pitchTimer;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim, TapAnim;
@@ -56,6 +58,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
         modifierScore = 1;
 
+        Invencibilidad.powerInvenci = false;
+        Magneto.powerMagneto = false;
+        X2.x2 = 1;
+
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
@@ -68,10 +74,20 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        if(pitch > 0)
+        {
+            pitchTimer -= Time.deltaTime;
+            if(pitchTimer <= 0)
+            {
+                pitch = 0;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             coinScore += 100;
         }
+
         if (iniciado == true)
         {
             if (MobileInput.Instance.Tap && !isGameStarted)
@@ -129,6 +145,8 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin()
     {
+        pitch += 0.05f;
+        pitchTimer = 0.5f;
         CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
 

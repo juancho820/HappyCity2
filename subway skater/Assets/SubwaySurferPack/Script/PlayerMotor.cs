@@ -323,7 +323,7 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Invencibilidad.powerInvenci == true)
         {
-            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Obstacle2" || other.gameObject.tag == "Obstacle3")
+            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Obstacle2" || other.gameObject.tag == "Obstacle3" || other.gameObject.tag == "Obstacle4")
             {
                 Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
             }
@@ -362,7 +362,7 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3")
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4")
             {
                 Physics.IgnoreCollision(hit.collider, GetComponent<Collider>());
             }
