@@ -38,8 +38,15 @@ public class Coin : MonoBehaviour
         if (cogida == true)
         {
             anim.enabled = false;
+            if(Invencibilidad.powerInvenci == false)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.6f);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.9f);
+            }         
 
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.75f);
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {

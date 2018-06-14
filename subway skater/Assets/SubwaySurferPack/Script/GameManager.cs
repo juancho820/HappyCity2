@@ -199,6 +199,12 @@ public class GameManager : MonoBehaviour
         modifierText.text = "x" + modifierScore.ToString("0.0");
     }
 
+    public void HomePause()
+    {
+        Pausar();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+
     public void Home()
     {
         PlayerPrefs.SetInt("Replay", 0);
