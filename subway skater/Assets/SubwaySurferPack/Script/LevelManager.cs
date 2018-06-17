@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { set; get; }
 
     //Level Spawning
+    public GameObject entrada, salida;
     private const float DISTANCE_BEFORE_SPAWN = 100.0f;
     private const int INITIAL_SEGMENTS = 5;
     private const int INITIAL_TRANSITION_SEGMENTS = 2;
@@ -166,6 +167,7 @@ public class LevelManager : MonoBehaviour
                 s.Spawn();
                 break;
             case 1:
+                
                 List<Segment> possibleSeg2 = availableSegments2.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
                 int id2 = Random.Range(0, possibleSeg2.Count);
 
@@ -200,6 +202,17 @@ public class LevelManager : MonoBehaviour
                 s3.Spawn();
                 break;
             case 3:
+
+                if (Contador == 1)
+                {
+                    entrada.SetActive(true);
+                    entrada.transform.position = new Vector3(-0.03f, 11.2f, 1 * currentSpawnZ);
+                }
+                if (Contador == 5)
+                {
+                    salida.SetActive(true);
+                    salida.transform.position = new Vector3(-0.75f, 8.55f, 1 * currentSpawnZ + 24);
+                }
                 List<Segment> possibleSeg4 = availableSegments4.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
                 int id4 = Random.Range(0, possibleSeg4.Count);
 
