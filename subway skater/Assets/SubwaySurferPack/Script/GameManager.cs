@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
     {
         pitch += 0.05f;
         pitchTimer = 0.7f;
-        CoinUIAnim.SetTrigger("Collect");
+        //CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
 
         if(coinScore < 1000)
@@ -245,7 +245,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SlidingNumbers());
 
         PlayerPrefs.SetInt("Score", (int)coinScore);
-
+        
+        /*
         if (score > 30 && score < 50)
         {
             if (boton1.image.sprite == none)
@@ -323,7 +324,7 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("CofreOro", 3);
             }
         }
-
+        */
         //Check if this is a highscore
         if (score > PlayerPrefs.GetInt("Hiscore"))
         {
