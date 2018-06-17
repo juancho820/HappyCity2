@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     public void GetCoin()
     {
         pitch += 0.05f;
-        pitchTimer = 0.5f;
+        pitchTimer = 0.7f;
         CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
 

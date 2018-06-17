@@ -170,12 +170,12 @@ public class PlayerMotor : MonoBehaviour {
                 CamaraShake.shakeDuration = 0.1f;
             }
             verticalVelocity = -0.1f;
-            if (MobileInput.Instance.SwipeUp)
+            if(Invencibilidad.powerInvenci == false)
             {
-                Audio.clip = JumpAudio;
-                Audio.Play();
-                if (Invencibilidad.powerInvenci== false)
+                if (MobileInput.Instance.SwipeUp)
                 {
+                    Audio.clip = JumpAudio;
+                    Audio.Play();
                     //Jump
                     random = Random.Range(1, 3);
 
@@ -187,17 +187,10 @@ public class PlayerMotor : MonoBehaviour {
                     {
                         anim.SetTrigger("Jump2");
                     }
+
+                    verticalVelocity = jumpForce;
                 }
-                else
-                {
-                    anim.SetTrigger("BigJump");
-                }
-                
-                verticalVelocity = jumpForce;
-            }
-            else if (MobileInput.Instance.SwipeDown)
-            {
-                if(Invencibilidad.powerInvenci == false)
+                else if (MobileInput.Instance.SwipeDown)
                 {
                     //Slide
                     Audio.clip = SlideAudio;
@@ -205,8 +198,7 @@ public class PlayerMotor : MonoBehaviour {
                     StartSliding();
                     Invoke("StopSliding", 0.6f);
                 }
-            }
-            
+            }          
         }
         else
         {
@@ -330,7 +322,8 @@ public class PlayerMotor : MonoBehaviour {
             if (other.gameObject.tag == "Invencibilidad")
             {
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
-                other.gameObject.SetActive(false);
+                //other.gameObject.SetActive(false);
+                //other.gameObject.transform.position = new Vector3(0, 0, 0);
             }
         }
         if(other.gameObject.tag == "bajarCamara")
@@ -369,7 +362,8 @@ public class PlayerMotor : MonoBehaviour {
             if ( hit.gameObject.tag == "Invencibilidad")
             {
                 hit.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
-                hit.gameObject.SetActive(false);
+                //hit.gameObject.SetActive(false);
+                //hit.gameObject.transform.position = new Vector3(0, 0, 0);
             }
         }
     }
