@@ -22,6 +22,10 @@ public class RandomSkin : MonoBehaviour {
         {
             random = Random.Range(0, 4);
         }
+        if (textures.Equals(5))
+        {
+            random = Random.Range(0, 5);
+        }
         rend = GetComponent<Renderer>();
         rend.material.mainTexture = textures[random];
     }

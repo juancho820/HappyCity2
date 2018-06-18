@@ -9,34 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1764305130127930}
+  m_RootGameObject: {fileID: 1593867067043644}
   m_IsPrefabParent: 1
---- !u!1 &1230348977170658
+--- !u!1 &1593867067043644
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4071388826144076}
-  - component: {fileID: 33372086403109862}
-  - component: {fileID: 23538495249897316}
-  m_Layer: 0
-  m_Name: Visual
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1764305130127930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4231303709390774}
-  - component: {fileID: 114676046060124854}
+  - component: {fileID: 4540188072541914}
+  - component: {fileID: 114694585318170826}
   m_Layer: 0
   m_Name: P1
   m_TagString: Invencibilidad
@@ -44,39 +27,56 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4071388826144076
+--- !u!1 &1879567948292704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4362484644959892}
+  - component: {fileID: 33216084318288220}
+  - component: {fileID: 23825624156713760}
+  m_Layer: 0
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4362484644959892
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230348977170658}
+  m_GameObject: {fileID: 1879567948292704}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 1.96, z: 3.184}
+  m_LocalPosition: {x: 0.399, y: 1.96, z: 3.384}
   m_LocalScale: {x: 108.909, y: 108.908966, z: 108.908966}
   m_Children: []
-  m_Father: {fileID: 4231303709390774}
+  m_Father: {fileID: 4540188072541914}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
---- !u!4 &4231303709390774
+--- !u!4 &4540188072541914
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1764305130127930}
+  m_GameObject: {fileID: 1593867067043644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.398, y: 0, z: 0.064}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4071388826144076}
+  - {fileID: 4362484644959892}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23538495249897316
+--- !u!23 &23825624156713760
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230348977170658}
+  m_GameObject: {fileID: 1879567948292704}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -105,19 +105,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33372086403109862
+--- !u!33 &33216084318288220
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230348977170658}
-  m_Mesh: {fileID: 4300000, guid: 0e62cfc5379ab474095c0e3231105742, type: 3}
---- !u!114 &114676046060124854
+  m_GameObject: {fileID: 1879567948292704}
+  m_Mesh: {fileID: 4300000, guid: 7ba30aa4c98410643bb7287d93287442, type: 3}
+--- !u!114 &114694585318170826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1764305130127930}
+  m_GameObject: {fileID: 1593867067043644}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 145cfee2e480aa143a27996d3e8ffbbd, type: 3}

@@ -46,10 +46,12 @@ public class LevelManager : MonoBehaviour
     public List<Piece> jumpsMRD = new List<Piece>();
     public List<Piece> jumpsMR = new List<Piece>();
     public List<Piece> slidesB = new List<Piece>();
+    public List<Piece> slidesA = new List<Piece>();
     public List<Piece> slidesPA = new List<Piece>();
     public List<Piece> slidesCC = new List<Piece>();
     public List<Piece> slidesT = new List<Piece>();
     public List<Piece> slidesMR = new List<Piece>();
+    public List<Piece> blocksA = new List<Piece>();
     public List<Piece> blocksPA = new List<Piece>();
     public List<Piece> blocksCC = new List<Piece>();
     public List<Piece> blocksCCcarros = new List<Piece>();
@@ -116,7 +118,7 @@ public class LevelManager : MonoBehaviour
                 zona++;
                 Contador = 0;
             }
-            if(zona == 2)
+            if(zona == 4)
             {
                 zona = 0;
             }
@@ -140,6 +142,7 @@ public class LevelManager : MonoBehaviour
         }
         if (amountOfActiveSegments4 >= MAX_SEGMENTS_ON_SCREEN)
         {
+            Debug.Log("Borrando");
             segments4[amountOfActiveSegments4 - 1].DeSpawn();
             amountOfActiveSegments4--;
         }
@@ -226,7 +229,7 @@ public class LevelManager : MonoBehaviour
                 s4.transform.localPosition = Vector3.forward * currentSpawnZ;
 
                 currentSpawnZ += s4.lenght;
-                amountOfActiveSegments3++;
+                amountOfActiveSegments4++;
                 s4.Spawn();
                 break;
         }
@@ -347,7 +350,7 @@ public class LevelManager : MonoBehaviour
     public Segment GetSegment4(int id, bool transition)
     {
         Segment s4 = null;
-        s4 = segments4.Find(x => x.SegId == id && x.transition == transition && !x.gameObject.activeSelf);
+        s4 = segments3.Find(x => x.SegId == id && x.transition == transition && !x.gameObject.activeSelf);
 
         if (s4 == null)
         {
@@ -423,6 +426,10 @@ public class LevelManager : MonoBehaviour
             {
                 go = slidesMR[visualIndex].gameObject;
             }
+            else if (pt == PieceType.slideA)
+            {
+                go = slidesA[visualIndex].gameObject;
+            }
             else if (pt == PieceType.slidePA)
             {
                 go = slidesPA[visualIndex].gameObject;
@@ -442,6 +449,10 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.blockCC)
             {
                 go = blocksCC[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockA)
+            {
+                go = blocksA[visualIndex].gameObject;
             }
             else if (pt == PieceType.blockCCcarros)
             {

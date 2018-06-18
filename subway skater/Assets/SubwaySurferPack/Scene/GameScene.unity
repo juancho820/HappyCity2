@@ -14013,10 +14013,10 @@ MonoBehaviour:
   jumpsB:
   - {fileID: 114301633450642564, guid: 0073bc95e33181c448fd34d1c0d845e5, type: 2}
   longblocks:
-  - {fileID: 114694585318170826, guid: dcb3d22f5f896e24ba9b8aa250500b65, type: 2}
   - {fileID: 114676046060124854, guid: c5124857651e943479672176c197f252, type: 2}
+  - {fileID: 114694585318170826, guid: dcb3d22f5f896e24ba9b8aa250500b65, type: 2}
+  longblockscabeza:
   - {fileID: 114985371533833026, guid: 1206223ed7d7a21458d5d39594d868f9, type: 2}
-  longblockscabeza: []
   jumpsPA:
   - {fileID: 114810337720203220, guid: 0a9c06662bfda034b8f77dfb5bc85369, type: 2}
   jumpsPALiquido:
@@ -14026,23 +14026,29 @@ MonoBehaviour:
   - {fileID: 114905349238301216, guid: 30eb9d99d3d92b140af3fca7da6d5506, type: 2}
   jumpsCCLiquido:
   - {fileID: 114563220629103124, guid: 0cabb8c6c54fe9f4697066ef771f7479, type: 2}
-  jumpsT: []
-  jumpsA: []
+  jumpsT:
+  - {fileID: 114810337720203220, guid: 31b04b43703cf194ebfa221512c82991, type: 2}
+  jumpsA:
+  - {fileID: 114025172491530928, guid: 55f3045364ef9af498f49f95d5053abc, type: 2}
   jumpsMRC: []
   jumpsMRD: []
   jumpsMR:
   - {fileID: 114273262691393578, guid: 2df9802b582a0ea489cde4957a2307cc, type: 2}
   slidesB:
   - {fileID: 114768478884648686, guid: 2f8a1bd868d422e45b2e7aa258d716a3, type: 2}
+  slidesA: []
   slidesPA:
   - {fileID: 114431446031423690, guid: 390d937b59c65c748a7e266dde4f40ba, type: 2}
   - {fileID: 114418627216537092, guid: 933a4cff2b8fc2e41acf5697f801e5c1, type: 2}
   slidesCC:
   - {fileID: 114406866025420460, guid: 5b696166e53f0cd4e833d496ec5b08db, type: 2}
   - {fileID: 114403619872272376, guid: dd5662c5404ccbf4789e79a83178c1bd, type: 2}
-  slidesT: []
+  slidesT:
+  - {fileID: 114418627216537092, guid: 070f1f9dd2d68d743a0fa450834f6c29, type: 2}
   slidesMR:
   - {fileID: 114071783252718932, guid: 0712195a8ec74a34d8b3027f96945149, type: 2}
+  blocksA:
+  - {fileID: 114477098862483322, guid: b3d16a8e42b459748b7db4a6ce13034d, type: 2}
   blocksPA:
   - {fileID: 114919318397227120, guid: b7238a043a76e9b428e5680fa239ad02, type: 2}
   - {fileID: 114812508999856180, guid: caeb0c5a48598db46b85743c1d4bad6f, type: 2}
@@ -14067,7 +14073,8 @@ MonoBehaviour:
   - {fileID: 114797069460663218, guid: 4dc6baa26c8c1af41925ea97ced2fd20, type: 2}
   FloorZones3:
   - {fileID: 114590592066464802, guid: 0f0e767bf8d34a14d963881ef71c7e8f, type: 2}
-  FloorZones4: []
+  FloorZones4:
+  - {fileID: 114476369470214258, guid: ce11534c05059ca459f2dac540a959cf, type: 2}
   pieces: []
   availableSegments:
   - {fileID: 114614439966034928, guid: 2949222b6ac22614dab1b5d9088908dd, type: 2}
@@ -14091,7 +14098,12 @@ MonoBehaviour:
   - {fileID: 114504690745995284, guid: 694d1d324e0fc6d41aaae9ff32166128, type: 2}
   - {fileID: 114096262848026468, guid: 8986173e7863a7d4b96564d00cd1d45b, type: 2}
   - {fileID: 114316535607539596, guid: 8956d142678bee741adf0c25f35669c5, type: 2}
-  availableSegments4: []
+  availableSegments4:
+  - {fileID: 114868712386903246, guid: 50d24b017e140704a89fd70cc4f8bdeb, type: 2}
+  - {fileID: 114923852789317148, guid: 727c846ba8d6d1f42b68e70f792627e8, type: 2}
+  - {fileID: 114719053730747790, guid: bde000f734532d74880abb43f8f5b0cc, type: 2}
+  - {fileID: 114917364509348936, guid: ed4c5cf5614058b4bb46cbe1ebe67da2, type: 2}
+  - {fileID: 114003744437859396, guid: 1fb84b31ad49422439a491236b22d823, type: 2}
   availableTransitions:
   - {fileID: 114489184555565106, guid: fb5d96ccc8aea93498d2b94205279e75, type: 2}
   segments: []
