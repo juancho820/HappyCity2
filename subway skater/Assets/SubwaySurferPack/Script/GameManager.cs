@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
     public Camera camara;
     public Button boton1, boton2, boton3;
     public Sprite sprite1, sprite2, sprite3, none;
+    public GameObject botonPlay, botonTienda;
     public float pitch;
     public float pitchTimer;
+
+    public AudioClip BotonMain, BotonTienda, Loop;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim, TapAnim;
@@ -92,6 +95,8 @@ public class GameManager : MonoBehaviour
         {
             if (MobileInput.Instance.Tap && !isGameStarted)
             {
+                GetComponent<AudioSource>().clip = Loop;
+                GetComponent<AudioSource>().Play();
                 Once = true;
                 isGameStarted = true;
                 TapAnim.gameObject.SetActive(false);
@@ -145,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin()
     {
-        pitch += 0.05f;
+        pitch += 0.1f;
         pitchTimer = 0.7f;
         //CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
@@ -166,6 +171,8 @@ public class GameManager : MonoBehaviour
 
     public void Jugar()
     {
+        botonPlay.GetComponent<AudioSource>().clip = BotonMain;
+        botonPlay.GetComponent<AudioSource>().Play();
         iniciado = true;
         menuAnim.SetTrigger("Hide");
         TapAnim.gameObject.SetActive(true);
@@ -190,6 +197,7 @@ public class GameManager : MonoBehaviour
             Invencibilidad.powerInvenci = true;
             GetComponent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
             GetComponent<AudioSource>().Play();
+            Pasos.iniciadoPasos = true;
         }
     }
 
@@ -230,11 +238,14 @@ public class GameManager : MonoBehaviour
 
     public void Tienda()
     {
+        botonTienda.GetComponent<AudioSource>().clip = BotonTienda;
+        botonTienda.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene("Tienda");
     }
 
     public void OnDeath()
     {
+        Pasos.pararPasos = true;
         isDead = true;
         FindObjectOfType<GlacierSpawner>().IsScrolling = false;
         //deadScoreText.text = score.ToString("0");

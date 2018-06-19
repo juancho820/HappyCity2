@@ -16,6 +16,7 @@ public class Invencibilidad : MonoBehaviour {
                 PlayerMotor.Instance.slider.value = 0;
                 PlayerMotor.Instance.speed -= 10;
             }
+            Pasos.iniciadoPasos = true;
             other.GetComponent<Animator>().SetTrigger("BigRunning");
             PlayerMotor.Instance.speed += 10;
             powerInvenci = true;

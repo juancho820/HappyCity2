@@ -18,6 +18,10 @@ public class TiendaManager : MonoBehaviour
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
 
+    public GameObject Inv, Mag, X2, Invenci, GT;
+
+    public AudioClip BotonComprar;
+
     public Text coinTextTienda, InvenciText, MasInv, MasMag, Masx2, GoldenTickts;
     private float coinScore;
     private float GoldenT;
@@ -96,6 +100,8 @@ public class TiendaManager : MonoBehaviour
     {
         if(coinScore >= valorEstrella)
         {
+            Invenci.GetComponent<AudioSource>().clip = BotonComprar;
+            Invenci.GetComponent<AudioSource>().Play();
             InvenciPower++;
             coinScore -= valorEstrella;
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
@@ -111,6 +117,8 @@ public class TiendaManager : MonoBehaviour
         {
             if(InvCooldown < 20)
             {
+                Inv.GetComponent<AudioSource>().clip = BotonComprar;
+                Inv.GetComponent<AudioSource>().Play();
                 InvCooldown += 2;
                 coinScore -= valorUpgradeInv;
                 PlayerPrefs.SetInt("InvCooldown", InvCooldown);
@@ -128,6 +136,8 @@ public class TiendaManager : MonoBehaviour
         {
             if (MagCooldown < 20)
             {
+                Mag.GetComponent<AudioSource>().clip = BotonComprar;
+                Mag.GetComponent<AudioSource>().Play();
                 MagCooldown += 2;
                 coinScore -= valorUpgradeMag;
                 PlayerPrefs.SetInt("MagCooldown", MagCooldown);
@@ -145,6 +155,8 @@ public class TiendaManager : MonoBehaviour
         {
             if (x2Cooldown < 20)
             {
+                X2.GetComponent<AudioSource>().clip = BotonComprar;
+                X2.GetComponent<AudioSource>().Play();
                 x2Cooldown += 2;
                 coinScore -= valorUpgradex2;
                 PlayerPrefs.SetInt("x2Cooldown", x2Cooldown);
@@ -161,6 +173,8 @@ public class TiendaManager : MonoBehaviour
     {
         if(coinScore >= 100)
         {
+            GT.GetComponent<AudioSource>().clip = BotonComprar;
+            GT.GetComponent<AudioSource>().Play();
             GoldenT++;
             coinScore -= 100;
             PlayerPrefs.SetInt("Score", (int)coinScore);

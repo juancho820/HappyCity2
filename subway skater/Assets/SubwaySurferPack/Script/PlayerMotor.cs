@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour {
     //
     private bool isRunning = false;
 
-    public AudioClip CarrilAudio, MagnetAudio, X2Audio, InvenciAudio, JumpAudio, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
+    public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
 
     //Animation
     private Animator anim;
@@ -22,6 +22,7 @@ public class PlayerMotor : MonoBehaviour {
     private float posicionAnterior;
     private bool salto2;
     private bool caida;
+    private bool cayo;
     private int random, random2;
 
     public AudioSource Audio;
@@ -72,6 +73,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Update()
     {
+
         if (Magneto.powerMagneto == true)
         {
             slider3.gameObject.SetActive(true);
@@ -91,6 +93,7 @@ public class PlayerMotor : MonoBehaviour {
             slider.value += Time.deltaTime;
             if (slider.value >= InvCooldown)
             {
+                Pasos.iniciadoPasos = true;
                 Invencibilidad.powerInvenci = false;
                 anim.SetTrigger("StartRunning");
                 slider.value = 0;
@@ -129,13 +132,39 @@ public class PlayerMotor : MonoBehaviour {
         if (MobileInput.Instance.SwipeLeft)
         {
             MoveLane(false);
-            Audio.clip = CarrilAudio;
+            int random1;
+            random1 = Random.Range(0, 3);
+            switch (random1)
+            {
+                case 0:
+                    Audio.clip = Whoosh1;
+                    break;
+                case 1:
+                    Audio.clip = Whoosh2;
+                    break;
+                case 2:
+                    Audio.clip = Whoosh3;
+                    break;
+            }
             Audio.Play();
         }
         if (MobileInput.Instance.SwipeRight)
         {
             MoveLane(true);
-            Audio.clip = CarrilAudio;
+            int random2;
+            random2 = Random.Range(0, 3);
+            switch (random2)
+            {
+                case 0:
+                    Audio.clip = Whoosh1;
+                    break;
+                case 1:
+                    Audio.clip = Whoosh2;
+                    break;
+                case 2:
+                    Audio.clip = Whoosh3;
+                    break;
+            }
             Audio.Play();
         }
 
@@ -160,6 +189,11 @@ public class PlayerMotor : MonoBehaviour {
         // Calculate Y
         if (isGrounded) // if Grounded
         {
+            if(cayo == true)
+            {
+                Pasos.iniciadoPasos = true;
+                cayo = false;
+            }
             if (caida == true)
             {
                 anim.SetTrigger("Roll");
@@ -174,7 +208,22 @@ public class PlayerMotor : MonoBehaviour {
             {
                 if (MobileInput.Instance.SwipeUp)
                 {
-                    Audio.clip = JumpAudio;
+                    Pasos.pararPasos = true;
+                    cayo = true;
+                    int random3;
+                    random3 = Random.Range(0, 3);
+                    switch (random3)
+                    {
+                        case 0:
+                            Audio.clip = Salto1;
+                            break;
+                        case 1:
+                            Audio.clip = Salto2;
+                            break;
+                        case 2:
+                            Audio.clip = Salto3;
+                            break;
+                    }
                     Audio.Play();
                     //Jump
                     random = Random.Range(1, 3);
@@ -193,6 +242,7 @@ public class PlayerMotor : MonoBehaviour {
                 else if (MobileInput.Instance.SwipeDown)
                 {
                     //Slide
+                    Pasos.pararPasos = true;
                     Audio.clip = SlideAudio;
                     Audio.Play();
                     StartSliding();
@@ -233,7 +283,22 @@ public class PlayerMotor : MonoBehaviour {
             if (MobileInput.Instance.SwipeDown)
             {
                 verticalVelocity -= jumpForce;
-                
+                int random4;
+                random4 = Random.Range(0, 3);
+                switch (random4)
+                {
+                    case 0:
+                        Audio.clip = Whoosh1;
+                        break;
+                    case 1:
+                        Audio.clip = Whoosh2;
+                        break;
+                    case 2:
+                        Audio.clip = Whoosh3;
+                        break;
+                }
+                Audio.Play();
+
             }
         }
 
@@ -264,6 +329,7 @@ public class PlayerMotor : MonoBehaviour {
         anim.SetBool("Sliding", false);
         controller.height *= 2;
         controller.center = new Vector3(controller.center.x, controller.center.y*2, controller.center.z);
+        Pasos.iniciadoPasos = true;
     }
 
     private void MoveLane(bool goingRight)

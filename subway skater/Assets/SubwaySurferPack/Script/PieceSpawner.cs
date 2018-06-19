@@ -32,6 +32,12 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.jumpCCLiquido:
                 amtObj = LevelManager.Instance.jumpsCCLiquido.Count;
                 break;
+            case PieceType.jumpABolos:
+                amtObj = LevelManager.Instance.jumpsABolos.Count;
+                break;
+            case PieceType.jumpALiquido:
+                amtObj = LevelManager.Instance.jumpsALiquido.Count;
+                break;
             case PieceType.jumpT:
                 amtObj = LevelManager.Instance.jumpsT.Count;
                 break;
@@ -58,6 +64,9 @@ public class PieceSpawner : MonoBehaviour
                 break;
             case PieceType.slideT:
                 amtObj = LevelManager.Instance.slidesT.Count;
+                break;
+            case PieceType.slideTBlocker:
+                amtObj = LevelManager.Instance.slidesTBlocker.Count;
                 break;
             case PieceType.longblock:
                 amtObj = LevelManager.Instance.longblocks.Count;
