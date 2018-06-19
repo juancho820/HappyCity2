@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     public Camera camara;
     public Button boton1, boton2, boton3;
     public Sprite sprite1, sprite2, sprite3, none;
-    public GameObject botonPlay, botonTienda;
+    public GameObject botonPlay, botonTienda, botonInvenci;
     public float pitch;
     public float pitchTimer;
 
-    public AudioClip BotonMain, BotonTienda, Loop;
+    public AudioClip BotonMain, BotonTienda, Loop, Main;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim, TapAnim;
@@ -38,7 +38,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(PlayerPrefs.GetInt("Replay") == 1)
+        GetComponent<AudioSource>().clip = Main;
+        GetComponent<AudioSource>().Play();
+        if (PlayerPrefs.GetInt("Replay") == 1)
         {
             Jugar();
         }
@@ -195,8 +197,8 @@ public class GameManager : MonoBehaviour
             PlayerMotor.Instance.GetComponent<Animator>().SetTrigger("BigRunning");
             PlayerMotor.Instance.speed += 10;
             Invencibilidad.powerInvenci = true;
-            GetComponent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
-            GetComponent<AudioSource>().Play();
+            botonInvenci.GetComponent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
+            botonInvenci.GetComponent<AudioSource>().Play();
             Pasos.iniciadoPasos = true;
         }
     }
@@ -245,6 +247,7 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
+        GetComponent<AudioSource>().Stop();
         Pasos.pararPasos = true;
         isDead = true;
         FindObjectOfType<GlacierSpawner>().IsScrolling = false;

@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4668893680836472}
   - component: {fileID: 114192653479282622}
+  - component: {fileID: 65772296034017780}
   m_Layer: 0
   m_Name: P1
   m_TagString: Invencibilidad
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823342678242948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.398, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4670791049054682}
@@ -66,13 +67,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462711765738284}
-  m_LocalRotation: {x: 0.017552072, y: 0.7068889, z: 0.7068889, w: -0.017552072}
-  m_LocalPosition: {x: 0, y: 2.79, z: 2.9}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: -0}
+  m_LocalPosition: {x: 0.4, y: 2.79, z: 2.9}
   m_LocalScale: {x: 108.908905, y: 108.90891, z: 108.9089}
   m_Children: []
   m_Father: {fileID: 4668893680836472}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: -180, z: 2.844986}
+  m_LocalEulerAnglesHint: {x: 270, y: -180, z: 0}
 --- !u!23 &23001482603928314
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -114,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1462711765738284}
   m_Mesh: {fileID: 4300000, guid: 864d729d9791ca64aae39524a76748d9, type: 3}
+--- !u!65 &65772296034017780
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1823342678242948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.423377, y: 3.6244593, z: 8.579557}
+  m_Center: {x: -0, y: 2.23, z: 3.7897787}
 --- !u!95 &95002502043308328
 Animator:
   serializedVersion: 3

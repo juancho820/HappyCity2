@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998161820049804}
   - component: {fileID: 114069136927821436}
+  - component: {fileID: 65986538576807412}
   m_Layer: 0
   m_Name: P0
   m_TagString: Invencibilidad
@@ -52,13 +53,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672232325652642}
-  m_LocalRotation: {x: 0.0036945615, y: 0.7070972, z: 0.7070972, w: -0.0036945615}
-  m_LocalPosition: {x: 0, y: 2.61, z: 2.83}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: -0}
+  m_LocalPosition: {x: 0.36, y: 2.64, z: 2.83}
   m_LocalScale: {x: 108.908905, y: 108.90891, z: 108.9089}
   m_Children: []
   m_Father: {fileID: 4998161820049804}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: -180, z: 0.598999}
+  m_LocalEulerAnglesHint: {x: 270, y: -180, z: 0}
 --- !u!4 &4998161820049804
 Transform:
   m_ObjectHideFlags: 1
@@ -114,6 +115,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672232325652642}
   m_Mesh: {fileID: 4300000, guid: 986b708061370644fbd1b49469eb1231, type: 3}
+--- !u!65 &65986538576807412
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1039337727360746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7216042, y: 2.4970605, z: 5.01729}
+  m_Center: {x: -0.005385101, y: 1.6101474, z: 2.4933047}
 --- !u!95 &95649636596909122
 Animator:
   serializedVersion: 3
