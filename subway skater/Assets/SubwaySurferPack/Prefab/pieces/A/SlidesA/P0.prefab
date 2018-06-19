@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4353214605083994}
   - component: {fileID: 33802936578069636}
   - component: {fileID: 23370968513031886}
+  - component: {fileID: 65614398115347038}
   m_Layer: 0
   m_Name: slideArcade
-  m_TagString: Untagged
+  m_TagString: subirCamara
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995328047955970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.12}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4353214605083994}
@@ -125,6 +126,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.87, y: 3.23, z: 0.49}
   m_Center: {x: 0, y: 3, z: 0.45}
+--- !u!65 &65614398115347038
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1432437890565254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02357835, y: 0.08814745, z: 0.034648225}
+  m_Center: {x: 0, y: -0.14, z: 0}
 --- !u!114 &114515884658474370
 MonoBehaviour:
   m_ObjectHideFlags: 1
