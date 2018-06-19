@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4980321202191782}
   - component: {fileID: 33782648329282476}
   - component: {fileID: 23545956760675224}
+  - component: {fileID: 95565283818949452}
+  - component: {fileID: 114939195698676876}
   m_Layer: 0
   m_Name: T_CabinaHelado
   m_TagString: Untagged
@@ -34,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729215635236144}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 1.95, z: 0}
-  m_LocalScale: {x: 108.908905, y: 108.908905, z: 108.908905}
+  m_LocalRotation: {x: 0.017552072, y: 0.7068889, z: 0.7068889, w: -0.017552072}
+  m_LocalPosition: {x: 0, y: 2.21, z: 3.383999}
+  m_LocalScale: {x: 108.90892, y: 108.90892, z: 108.9089}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 270, y: -180, z: 2.844986}
 --- !u!23 &23545956760675224
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -55,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0e62cfc5379ab474095c0e3231105742, type: 3}
+  - {fileID: 2100000, guid: 8de3ff6e546e2db429e460d34e742e9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,4 +83,35 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729215635236144}
-  m_Mesh: {fileID: 4300000, guid: 0e62cfc5379ab474095c0e3231105742, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 864d729d9791ca64aae39524a76748d9, type: 3}
+--- !u!95 &95565283818949452
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729215635236144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 864d729d9791ca64aae39524a76748d9, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114939195698676876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729215635236144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8660f24d246d0547b45cc54abc63f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 013ddd64aef23574fbb0b36299f13b0a, type: 3}
+  - {fileID: 2800000, guid: 65472fc1e4e7ee14298c57a9e502f59d, type: 3}
