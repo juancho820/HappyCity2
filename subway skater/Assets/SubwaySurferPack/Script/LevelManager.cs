@@ -121,7 +121,7 @@ public class LevelManager : MonoBehaviour
                 zona++;
                 Contador = 0;
             }
-            if(zona == 4)
+            if(zona >= 4)
             {
                 zona = 0;
             }
@@ -145,7 +145,6 @@ public class LevelManager : MonoBehaviour
         }
         if (amountOfActiveSegments4 >= MAX_SEGMENTS_ON_SCREEN)
         {
-            Debug.Log("Borrando");
             segments4[amountOfActiveSegments4 - 1].DeSpawn();
             amountOfActiveSegments4--;
         }
@@ -304,17 +303,17 @@ public class LevelManager : MonoBehaviour
 
         return s;
     }
-    public Segment GetSegment2(int id, bool transition)
+    public Segment GetSegment2(int id2, bool transition)
     {
         Segment s2 = null;
-        s2 = segments2.Find(x => x.SegId == id && x.transition == transition && !x.gameObject.activeSelf);
+        s2 = segments2.Find(x => x.SegId == id2 && x.transition == transition && !x.gameObject.activeSelf);
 
         if (s2 == null)
         {
-            GameObject go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments2[id].gameObject) as GameObject;
+            GameObject go = Instantiate((transition) ? availableTransitions[id2].gameObject : availableSegments2[id2].gameObject) as GameObject;
             s2 = go.GetComponent<Segment>();
 
-            s2.SegId = id;
+            s2.SegId = id2;
             s2.transition = transition;
 
             segments2.Insert(0, s2);
@@ -327,17 +326,17 @@ public class LevelManager : MonoBehaviour
 
         return s2;
     }
-    public Segment GetSegment3(int id, bool transition)
+    public Segment GetSegment3(int id3, bool transition)
     {
         Segment s3 = null;
-        s3 = segments3.Find(x => x.SegId == id && x.transition == transition && !x.gameObject.activeSelf);
+        s3 = segments3.Find(x => x.SegId == id3 && x.transition == transition && !x.gameObject.activeSelf);
 
         if (s3 == null)
         {
-            GameObject go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments3[id].gameObject) as GameObject;
+            GameObject go = Instantiate((transition) ? availableTransitions[id3].gameObject : availableSegments3[id3].gameObject) as GameObject;
             s3 = go.GetComponent<Segment>();
 
-            s3.SegId = id;
+            s3.SegId = id3;
             s3.transition = transition;
 
             segments3.Insert(0, s3);
@@ -350,17 +349,17 @@ public class LevelManager : MonoBehaviour
 
         return s3;
     }
-    public Segment GetSegment4(int id, bool transition)
+    public Segment GetSegment4(int id4, bool transition)
     {
         Segment s4 = null;
-        s4 = segments3.Find(x => x.SegId == id && x.transition == transition && !x.gameObject.activeSelf);
+        s4 = segments4.Find(x => x.SegId == id4 && x.transition == transition && !x.gameObject.activeSelf);
 
         if (s4 == null)
         {
-            GameObject go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments4[id].gameObject) as GameObject;
+            GameObject go = Instantiate((transition) ? availableTransitions[id4].gameObject : availableSegments4[id4].gameObject) as GameObject;
             s4 = go.GetComponent<Segment>();
 
-            s4.SegId = id;
+            s4.SegId = id4;
             s4.transition = transition;
 
             segments4.Insert(0, s4);
