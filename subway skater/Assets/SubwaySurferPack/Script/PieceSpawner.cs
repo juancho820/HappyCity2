@@ -9,11 +9,6 @@ public class PieceSpawner : MonoBehaviour
     private Piece currentPiece;
     int i;
 
-    public void Start()
-    {
-        i = transform.childCount;
-    }
-
     public void Spawn()
     {
         int amtObj = 0;
@@ -138,6 +133,7 @@ public class PieceSpawner : MonoBehaviour
 
     private IEnumerator Activar()
     {
+        i = transform.childCount;
         transform.GetChild(i - 1).gameObject.transform.position = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(0.9f);
         transform.GetChild(i - 1).gameObject.transform.localPosition = new Vector3(0, 0, 0);
