@@ -73,7 +73,6 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Update()
     {
-
         if (Magneto.powerMagneto == true)
         {
             slider3.gameObject.SetActive(true);
@@ -379,6 +378,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Choco");
         if (Invencibilidad.powerInvenci == true)
         {
             if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Obstacle2" || other.gameObject.tag == "Obstacle3" || other.gameObject.tag == "Obstacle4")
@@ -392,7 +392,22 @@ public class PlayerMotor : MonoBehaviour {
                 //other.gameObject.transform.position = new Vector3(0, 0, 0);
             }
         }
-        if(other.gameObject.tag == "bajarCamara")
+        if (Invencibilidad.powerInvenci == false)
+        {
+            switch (other.gameObject.tag)
+            {
+                case "Obstacle":
+                    Crash();
+                    break;
+                case "Obstacle2":
+                    Crash2();
+                    break;
+                case "Obstacle4":
+                    Crash3();
+                    break;
+            }
+        }
+        if (other.gameObject.tag == "bajarCamara")
         {
             CamaraMotor.agachar = true;
         }
@@ -425,12 +440,12 @@ public class PlayerMotor : MonoBehaviour {
             {
                 Physics.IgnoreCollision(hit.collider, GetComponent<Collider>());
             }
-            if ( hit.gameObject.tag == "Invencibilidad")
-            {
-                hit.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
-                //hit.gameObject.SetActive(false);
-                //hit.gameObject.transform.position = new Vector3(0, 0, 0);
-            }
+            //if ( hit.gameObject.tag == "Invencibilidad")
+            //{
+            //    hit.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
+            //    //hit.gameObject.SetActive(false);
+            //    //hit.gameObject.transform.position = new Vector3(0, 0, 0);
+            //}
         }
     }
 }

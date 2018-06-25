@@ -7,6 +7,7 @@ public class PieceSpawner : MonoBehaviour
     public PieceType type;
     public bool activo = true;
     private Piece currentPiece;
+    private Vector3 posicion;
     int i;
 
     public void Spawn()
@@ -134,9 +135,10 @@ public class PieceSpawner : MonoBehaviour
     private IEnumerator Activar()
     {
         i = transform.childCount;
+        posicion = transform.GetChild(i - 1).gameObject.transform.position;
         transform.GetChild(i - 1).gameObject.transform.position = new Vector3(0, 0, 0);
         yield return new WaitForSeconds(0.9f);
-        transform.GetChild(i - 1).gameObject.transform.localPosition = new Vector3(0, 0, 0);
+        transform.GetChild(i - 1).gameObject.transform.position = posicion;
         //transform.GetChild(i-1).gameObject.SetActive(true);
     }
 }
