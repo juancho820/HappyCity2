@@ -56,13 +56,13 @@ public class TiendaManager : MonoBehaviour
         Instance = this;
 
         InvenciText.text = InvenciPower.ToString("0");
-        coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        coinTextTienda.text = coinScore.ToString("0");
         GoldenTickts.text = GoldenT.ToString("0");
     }
     private void Start()
     {
         InvenciText.text = InvenciPower.ToString("0");
-        coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+        coinTextTienda.text = coinScore.ToString("0");
         GoldenTickts.text = GoldenT.ToString("0");
         MasInv.text = valorUpgradeInv.ToString("0");
         MasMag.text = valorUpgradeMag.ToString("0");
@@ -70,28 +70,15 @@ public class TiendaManager : MonoBehaviour
 
         if (coinScore < 1000)
         {
-            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+            coinTextTienda.text = coinScore.ToString("0");
         }
         if (coinScore > 1000)
         {
-            coinTextTienda.text = "Tickets: " + (coinScore/1000).ToString("0.0 K");
+            coinTextTienda.text = (coinScore/1000).ToString("0.0 K");
         }
         if (coinScore > 1000000)
         {
-            coinTextTienda.text = "Tickets: " + (coinScore/1000000).ToString("0.0 M");
-        }
-
-        if (GoldenT < 1000)
-        {
-            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
-        }
-        if (GoldenT > 1000)
-        {
-            coinTextTienda.text = "Tickets: " + (coinScore / 1000).ToString("0.0 K");
-        }
-        if (GoldenT > 1000000)
-        {
-            coinTextTienda.text = "Tickets: " + (coinScore / 1000000).ToString("0.0 M");
+            coinTextTienda.text = (coinScore/1000000).ToString("0.0 M");
         }
 
     }
@@ -106,7 +93,20 @@ public class TiendaManager : MonoBehaviour
             coinScore -= valorEstrella;
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
             PlayerPrefs.SetInt("Score", (int)coinScore);
-            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+            coinTextTienda.text = coinScore.ToString("0");
+            if (coinScore < 1000)
+            {
+                coinTextTienda.text = coinScore.ToString("0");
+            }
+            if (coinScore > 1000)
+            {
+                coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+            }
+            if (coinScore > 1000000)
+            {
+                coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+            }
+
             InvenciText.text = InvenciPower.ToString("0");
         }
     }
@@ -124,7 +124,19 @@ public class TiendaManager : MonoBehaviour
                 PlayerPrefs.SetInt("InvCooldown", InvCooldown);
                 valorUpgradeInv += 100;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
-                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+                coinTextTienda.text = coinScore.ToString("0");
+                if (coinScore < 1000)
+                {
+                    coinTextTienda.text = coinScore.ToString("0");
+                }
+                if (coinScore > 1000)
+                {
+                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                }
+                if (coinScore > 1000000)
+                {
+                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                }
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
                 MasInv.text = valorUpgradeInv.ToString("0");
             }
@@ -143,7 +155,20 @@ public class TiendaManager : MonoBehaviour
                 PlayerPrefs.SetInt("MagCooldown", MagCooldown);
                 valorUpgradeMag += 100;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
-                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+                coinTextTienda.text = coinScore.ToString("0");
+                if (coinScore < 1000)
+                {
+                    coinTextTienda.text = coinScore.ToString("0");
+                }
+                if (coinScore > 1000)
+                {
+                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                }
+                if (coinScore > 1000000)
+                {
+                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                }
+
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
                 MasMag.text = valorUpgradeMag.ToString("0");
             }
@@ -162,7 +187,20 @@ public class TiendaManager : MonoBehaviour
                 PlayerPrefs.SetInt("x2Cooldown", x2Cooldown);
                 valorUpgradex2 += 100;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
-                coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+                coinTextTienda.text = coinScore.ToString("0");
+                if (coinScore < 1000)
+                {
+                    coinTextTienda.text = coinScore.ToString("0");
+                }
+                if (coinScore > 1000)
+                {
+                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                }
+                if (coinScore > 1000000)
+                {
+                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                }
+
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 Masx2.text = valorUpgradex2.ToString("0");
             }
@@ -178,7 +216,20 @@ public class TiendaManager : MonoBehaviour
             GoldenT++;
             coinScore -= 100;
             PlayerPrefs.SetInt("Score", (int)coinScore);
-            coinTextTienda.text = "Tickets: " + coinScore.ToString("0");
+            coinTextTienda.text = coinScore.ToString("0");
+            if (coinScore < 1000)
+            {
+                coinTextTienda.text = coinScore.ToString("0");
+            }
+            if (coinScore > 1000)
+            {
+                coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+            }
+            if (coinScore > 1000000)
+            {
+                coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+            }
+
             PlayerPrefs.SetInt("Golden", (int)GoldenT);
             GoldenTickts.text = GoldenT.ToString("0");
         }

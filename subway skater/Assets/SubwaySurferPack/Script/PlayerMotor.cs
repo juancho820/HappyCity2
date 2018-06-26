@@ -20,10 +20,9 @@ public class PlayerMotor : MonoBehaviour {
     private float posicionActual;
     private float travel;
     private float posicionAnterior;
-    private bool salto2;
     private bool caida;
     private bool cayo;
-    private int random, random2;
+    private int random;
 
     public AudioSource Audio;
 
@@ -33,8 +32,6 @@ public class PlayerMotor : MonoBehaviour {
     public int InvCooldown = 10;
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
-
-    public int invencibilidad;
 
 
     // Movement
@@ -381,30 +378,11 @@ public class PlayerMotor : MonoBehaviour {
         Debug.Log("Choco");
         if (Invencibilidad.powerInvenci == true)
         {
-            if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Obstacle2" || other.gameObject.tag == "Obstacle3" || other.gameObject.tag == "Obstacle4")
-            {
-                Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
-            }
             if (other.gameObject.tag == "Invencibilidad")
             {
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
                 //other.gameObject.SetActive(false);
                 //other.gameObject.transform.position = new Vector3(0, 0, 0);
-            }
-        }
-        if (Invencibilidad.powerInvenci == false)
-        {
-            switch (other.gameObject.tag)
-            {
-                case "Obstacle":
-                    Crash();
-                    break;
-                case "Obstacle2":
-                    Crash2();
-                    break;
-                case "Obstacle4":
-                    Crash3();
-                    break;
             }
         }
         if (other.gameObject.tag == "bajarCamara")
@@ -438,14 +416,8 @@ public class PlayerMotor : MonoBehaviour {
         {
             if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4")
             {
-                Physics.IgnoreCollision(hit.collider, GetComponent<Collider>());
+                Physics.IgnoreCollision(hit.collider, controller);
             }
-            //if ( hit.gameObject.tag == "Invencibilidad")
-            //{
-            //    hit.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
-            //    //hit.gameObject.SetActive(false);
-            //    //hit.gameObject.transform.position = new Vector3(0, 0, 0);
-            //}
         }
     }
 }
