@@ -193,6 +193,7 @@ public class GameManager : MonoBehaviour
             {
                 PlayerMotor.Instance.slider.value = 0;
                 PlayerMotor.Instance.speed -= 10;
+                Invencibilidad.powerInvenci = false;
             }
             PlayerMotor.Instance.GetComponent<Animator>().SetTrigger("BigRunning");
             PlayerMotor.Instance.speed += 10;
