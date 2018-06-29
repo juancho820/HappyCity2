@@ -375,14 +375,20 @@ public class PlayerMotor : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Choco");
+        if (Invencibilidad.powerInvenci == false)
+        {
+            switch (other.gameObject.tag)
+            {
+                case "Obstacle":
+                    Crash();
+                    break;
+            }
+        }
         if (Invencibilidad.powerInvenci == true)
         {
             if (other.gameObject.tag == "Invencibilidad")
             {
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
-                //other.gameObject.SetActive(false);
-                //other.gameObject.transform.position = new Vector3(0, 0, 0);
             }
         }
         if (other.gameObject.tag == "bajarCamara")

@@ -10,23 +10,27 @@ public class RandomSkin : MonoBehaviour {
 
     void Start()
     {
-        if (textures.Equals(2))
+        if (textures.Length == 2)
         {
+            Debug.Log("1");
             random = Random.Range(0, 2);
         }
-        if (textures.Equals(3))
+        if (textures.Length == 3)
         {
+            Debug.Log("2");
             random = Random.Range(0, 3);
         }
-        if (textures.Equals(4))
+        if (textures.Length == 4)
         {
+            Debug.Log("3");
             random = Random.Range(0, 4);
         }
-        if (textures.Equals(5))
+        if (textures.Length == 5)
         {
             random = Random.Range(0, 5);
         }
         rend = GetComponent<Renderer>();
         rend.material.mainTexture = textures[random];
+        Debug.Log("start");
     }
 }

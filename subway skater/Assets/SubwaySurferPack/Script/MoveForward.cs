@@ -29,7 +29,7 @@ public class MoveForward : MonoBehaviour {
             else
             {
                 llego = false;
-                transform.position = position;
+                SlidingNumbers();
             }
             if (llego == true)
             {
@@ -42,4 +42,9 @@ public class MoveForward : MonoBehaviour {
             }
         }		
 	}
+    private IEnumerator SlidingNumbers()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = position;
+    }
 }

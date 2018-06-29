@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public AudioClip BotonMain, BotonTienda, Loop, Main;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, jugarAnim, nivelesAnim, TapAnim;
+    public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TapAnim;
     public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -154,7 +154,6 @@ public class GameManager : MonoBehaviour
     {
         pitch += 0.1f;
         pitchTimer = 0.7f;
-        //CoinUIAnim.SetTrigger("Collect");
         coinScore += (1 * modifierScore) * X2.x2;
 
         if(coinScore < 1000)
