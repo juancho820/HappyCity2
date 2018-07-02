@@ -14,6 +14,8 @@ public class PlayerMotor : MonoBehaviour {
 
     public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
 
+    //public ParticleSystem ps;
+
     //Animation
     private Animator anim;
 
@@ -23,6 +25,7 @@ public class PlayerMotor : MonoBehaviour {
     private bool caida;
     private bool cayo;
     private int random;
+    private int LaneIn;
 
     public AudioSource Audio;
 
@@ -331,6 +334,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void MoveLane(bool goingRight)
     {
+        LaneIn = desireLane;
         desireLane += (goingRight) ? 1 : -1;
         desireLane = Mathf.Clamp(desireLane, 0, 2);
     }
@@ -383,12 +387,17 @@ public class PlayerMotor : MonoBehaviour {
                 case "Obstacle":
                     Crash();
                     break;
+                case "Obstacle3":
+                    CamaraShake.shakeDuration = 0.4f;
+                    desireLane = LaneIn;
+                    break;
             }
         }
         if (Invencibilidad.powerInvenci == true)
         {
             if (other.gameObject.tag == "Invencibilidad")
             {
+                //ps.Play();
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
             }
         }
@@ -399,6 +408,14 @@ public class PlayerMotor : MonoBehaviour {
         if (other.gameObject.tag == "subirCamara")
         {
             CamaraMotor.subir = true;
+        }
+        if (other.gameObject.tag == "bajarCamaraTren")
+        {
+            CamaraMotor.agacharTren = true;
+        }
+        if (other.gameObject.tag == "subirCamaraTren")
+        {
+            CamaraMotor.subirTren = true;
         }
     }
 
@@ -413,6 +430,10 @@ public class PlayerMotor : MonoBehaviour {
                     break;
                 case "Obstacle2":
                     Crash2();
+                    break;
+                case "Obstacle3":
+                    CamaraShake.shakeDuration = 0.4f;
+                    desireLane = LaneIn;
                     break;
                 case "Obstacle4":
                     Crash3();

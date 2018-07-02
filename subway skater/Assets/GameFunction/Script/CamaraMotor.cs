@@ -11,13 +11,18 @@ public class CamaraMotor : MonoBehaviour
     public Vector3 rotation = new Vector3(35, 0, 0);
     public static bool agachar = false;
     public static bool subir = false;
+    public static bool agacharTren = false;
+    public static bool subirTren = false;
+    public bool normal = false;
 
     public bool IsMoving { set; get; }
 
     public void Start()
     {
-     agachar = false;
-     subir = false;
+        agachar = false;
+        subir = false;
+        agacharTren = false;
+        subirTren = false;
     }
 
     private void LateUpdate()
@@ -26,8 +31,7 @@ public class CamaraMotor : MonoBehaviour
         {
             return;
         }
-        
-        if(agachar == true)
+        if (agachar == true)
         {
             Vector3 desirePosition = lookAt.position + offset2;
             desirePosition.x = lookAt.transform.position.x;
@@ -43,6 +47,28 @@ public class CamaraMotor : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
             StartCoroutine(Resetiar());
         }
+        if (agacharTren == true)
+        {
+            Debug.Log("Bajada");
+            Vector3 desirePosition = lookAt.position + offset2;
+            desirePosition.x = lookAt.transform.position.x;
+            transform.position = Vector3.Lerp(transform.position, desirePosition, 0.1f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
+            //StartCoroutine(Resetiar());
+        }
+        if(subirTren == true)
+        {
+            agacharTren = false;
+            normal = true;
+            StartCoroutine(Resetiar());
+        }
+        if(normal == true)
+        {
+            Vector3 desirePosition = lookAt.position + offset;
+            desirePosition.x = lookAt.transform.position.x;
+            transform.position = Vector3.Lerp(transform.position, desirePosition, 0.1f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
+        }
         else
         {
             Vector3 desirePosition = lookAt.position + offset;
@@ -56,5 +82,8 @@ public class CamaraMotor : MonoBehaviour
         yield return new WaitForSeconds(1.2f);
         agachar = false;
         subir = false;
+        agacharTren = false;
+        subirTren = false;
+        normal = false;
     }
 }

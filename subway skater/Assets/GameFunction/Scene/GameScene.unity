@@ -860,6 +860,7 @@ MonoBehaviour:
   offset2: {x: 0, y: 1.5, z: -2}
   offset3: {x: 0, y: 7, z: -2}
   rotation: {x: 27.27, y: 0, z: 0}
+  normal: 0
 --- !u!114 &131846778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4305,7 +4306,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4329,7 +4330,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &579911817
 GameObject:
   m_ObjectHideFlags: 0
@@ -14653,6 +14654,11 @@ Prefab:
         type: 2}
       propertyPath: originalSpeed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: ps
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54853019667425686, guid: 6f84532f825f2df4691dec55911afadf, type: 2}
