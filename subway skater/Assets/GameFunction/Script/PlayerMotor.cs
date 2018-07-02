@@ -44,8 +44,9 @@ public class PlayerMotor : MonoBehaviour {
     private int desireLane = 1; // 0=L, 1=M , 2=R
 
     // Speed Modifier
-    private float originalSpeed = 7.0f;
     [SerializeField]
+    private float originalSpeed = 7.0f;
+    
     public float speed = 7.0f;
     private float speedTurn = 20;
     private float speedIncreaseLastTick;

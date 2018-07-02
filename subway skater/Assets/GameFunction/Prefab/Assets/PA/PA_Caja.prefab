@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4685662286510540}
   - component: {fileID: 33793529691017844}
   - component: {fileID: 23933034883432522}
+  - component: {fileID: 114720045122019578}
   m_Layer: 0
   m_Name: PA_Caja
   m_TagString: Untagged
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051660878884278}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0.086197935, y: 0.7018333, z: 0.7018333, w: -0.086197935}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 31.830399, y: 31.830399, z: 31.830399}
+  m_LocalScale: {x: 64.996506, y: 64.996506, z: 64.996506}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 194.004}
 --- !u!23 &23933034883432522
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,3 +83,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051660878884278}
   m_Mesh: {fileID: 4300000, guid: 83bb4889d0632f24583970b81c3a7c34, type: 3}
+--- !u!114 &114720045122019578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1051660878884278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8660f24d246d0547b45cc54abc63f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: afe2a150485fb0d42924beb2c227060f, type: 3}
+  - {fileID: 2800000, guid: 658d51e1d0d25e041b57dfd4b0230298, type: 3}
+  - {fileID: 2800000, guid: 6a9b50da41b69124b8b5ab9447ab84ae, type: 3}
