@@ -14,7 +14,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
 
-    //public ParticleSystem ps;
+    public ParticleSystem ps;
 
     //Animation
     private Animator anim;
@@ -397,7 +397,8 @@ public class PlayerMotor : MonoBehaviour {
         {
             if (other.gameObject.tag == "Invencibilidad")
             {
-                //ps.Play();
+                ps.transform.position = transform.position + Vector3.forward * 5;
+                ps.Play();
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
             }
         }
