@@ -59,6 +59,8 @@ public class LevelManager : MonoBehaviour
     public List<Piece> blocksCC = new List<Piece>();
     public List<Piece> blocksCCcarros = new List<Piece>();
     public List<Piece> blocksT = new List<Piece>();
+    public List<Piece> blocksPABig = new List<Piece>();
+    public List<Piece> blocksPALittle = new List<Piece>();
     public List<Piece> FloorZones1 = new List<Piece>();
     public List<Piece> FloorZones2 = new List<Piece>();
     public List<Piece> FloorZones3 = new List<Piece>();
@@ -507,6 +509,14 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.floorZone4)
             {
                 go = FloorZones4[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockPABig)
+            {
+                go = blocksPABig[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.blockPALittle)
+            {
+                go = blocksPALittle[visualIndex].gameObject;
             }
 
             go = Instantiate(go);

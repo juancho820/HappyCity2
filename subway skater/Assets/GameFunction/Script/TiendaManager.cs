@@ -14,6 +14,8 @@ public class TiendaManager : MonoBehaviour
     private int valorUpgradeMag = 100;
     private int valorUpgradex2 = 100;
 
+    public Animator anim;
+
     public int InvCooldown = 10;
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
@@ -108,6 +110,7 @@ public class TiendaManager : MonoBehaviour
             }
 
             InvenciText.text = InvenciPower.ToString("0");
+            anim.SetTrigger("Comprado");
         }
     }
 
@@ -139,6 +142,7 @@ public class TiendaManager : MonoBehaviour
                 }
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
                 MasInv.text = valorUpgradeInv.ToString("0");
+                anim.SetTrigger("Comprado");
             }
         }      
     }
@@ -171,6 +175,7 @@ public class TiendaManager : MonoBehaviour
 
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
                 MasMag.text = valorUpgradeMag.ToString("0");
+                anim.SetTrigger("Comprado");
             }
         }
     }
@@ -203,6 +208,7 @@ public class TiendaManager : MonoBehaviour
 
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 Masx2.text = valorUpgradex2.ToString("0");
+                anim.SetTrigger("Comprado");
             }
         }
     }
@@ -232,6 +238,7 @@ public class TiendaManager : MonoBehaviour
 
             PlayerPrefs.SetInt("Golden", (int)GoldenT);
             GoldenTickts.text = GoldenT.ToString("0");
+            anim.SetTrigger("Comprado");
         }
     }
 

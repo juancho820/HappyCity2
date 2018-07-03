@@ -1081,6 +1081,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544424128}
   m_Mesh: {fileID: 4300010, guid: 1e1bf808fc0c9d24191783cd95be84f1, type: 3}
+--- !u!95 &545861389 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95033732363850052, guid: 6f84532f825f2df4691dec55911afadf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1882363413}
 --- !u!1 &559208578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.85004, y: 136.00017}
+  m_AnchoredPosition: {x: -407.85, y: 136.00017}
   m_SizeDelta: {x: 1500, y: 273}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &593092238
@@ -2644,6 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465da18ab7f862b4d8eba0a757116496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 545861389}
   InvCooldown: 10
   MagCooldown: 10
   x2Cooldown: 10
@@ -3549,8 +3555,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 218267390}
   m_HandleRect: {fileID: 218267389}
   m_Direction: 0
-  m_Value: 0.00000008919355
-  m_Size: 0.5437995
+  m_Value: 0
+  m_Size: 0.5438
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

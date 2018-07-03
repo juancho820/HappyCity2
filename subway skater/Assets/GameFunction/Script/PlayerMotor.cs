@@ -443,7 +443,7 @@ public class PlayerMotor : MonoBehaviour {
         }
         if (Invencibilidad.powerInvenci == true)
         {
-            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4")
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4" || hit.gameObject.tag == "Ramp")
             {
                 Physics.IgnoreCollision(hit.collider, controller);
             }

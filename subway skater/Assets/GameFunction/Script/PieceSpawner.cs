@@ -111,6 +111,12 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.floorZone4:
                 amtObj = LevelManager.Instance.FloorZones4.Count;
                 break;
+            case PieceType.blockPABig:
+                amtObj = LevelManager.Instance.blocksPABig.Count;
+                break;
+            case PieceType.blockPALittle:
+                amtObj = LevelManager.Instance.blocksPALittle.Count;
+                break;
         }
 
         currentPiece = LevelManager.Instance.GetPiece(type, Random.Range(0,amtObj));
