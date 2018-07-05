@@ -1081,11 +1081,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544424128}
   m_Mesh: {fileID: 4300010, guid: 1e1bf808fc0c9d24191783cd95be84f1, type: 3}
---- !u!95 &545861389 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95033732363850052, guid: 6f84532f825f2df4691dec55911afadf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1882363413}
 --- !u!1 &559208578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.85, y: 136.00017}
+  m_AnchoredPosition: {x: -201.71289, y: 136.00017}
   m_SizeDelta: {x: 1500, y: 273}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &593092238
@@ -1829,6 +1824,7 @@ GameObject:
   - component: {fileID: 869631038}
   - component: {fileID: 869631040}
   - component: {fileID: 869631039}
+  - component: {fileID: 869631041}
   m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
@@ -1892,6 +1888,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869631037}
   m_Mesh: {fileID: 4300004, guid: 1e1bf808fc0c9d24191783cd95be84f1, type: 3}
+--- !u!95 &869631041
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 869631037}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e42467cf2460274b853b76e13b7e8d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &875008031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465da18ab7f862b4d8eba0a757116496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 545861389}
+  anim: {fileID: 869631041}
   InvCooldown: 10
   MagCooldown: 10
   x2Cooldown: 10
@@ -3556,7 +3569,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 218267389}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.5438
+  m_Size: 0.27190003
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
