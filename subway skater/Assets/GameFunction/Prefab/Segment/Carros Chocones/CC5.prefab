@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1016014700560302
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -64,7 +64,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1083944370034064
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -375,7 +375,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1378307522925548
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -810,7 +810,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1881042833553312
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -843,7 +843,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1994064270009386
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -863,14 +863,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1083944370034064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11, y: 0, z: 19.2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 0, z: 20.320002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4650686800856444}
   - {fileID: 4869067761524272}
-  m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 5
+  m_Father: {fileID: 4269999786774528}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4012718123379426
 Transform:
@@ -991,7 +991,7 @@ Transform:
   m_Children:
   - {fileID: 4953253548579514}
   m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4163634300869172
 Transform:
@@ -1100,7 +1100,12 @@ Transform:
   - {fileID: 4142995906226694}
   - {fileID: 4676137906296472}
   - {fileID: 4012718123379426}
+  - {fileID: 4009170644837436}
+  - {fileID: 4468582242607548}
+  - {fileID: 4761941990759694}
+  - {fileID: 4512377827457300}
   - {fileID: 4684998750739618}
+  - {fileID: 4658164971615172}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1206,14 +1211,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881042833553312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.23, y: 0, z: 5.06}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: 6.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4715382610231162}
   - {fileID: 4838360918424654}
-  m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 6
+  m_Father: {fileID: 4269999786774528}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4474572880948656
 Transform:
@@ -1234,15 +1239,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994064270009386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25, y: 0, z: 9.88}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4810302957292126}
   - {fileID: 4053868957193336}
   - {fileID: 4652940594583202}
-  m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 8
+  m_Father: {fileID: 4269999786774528}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4522967310612252
 Transform:
@@ -1336,14 +1341,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016014700560302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 16.08}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 17.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4106854996125360}
   - {fileID: 4670223616963172}
-  m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 3
+  m_Father: {fileID: 4269999786774528}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4670223616963172
 Transform:
@@ -1365,7 +1370,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476713310955196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.23, y: 0, z: 1.77}
+  m_LocalPosition: {x: -3.5, y: 0, z: 1.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4960110059154624}
@@ -1385,14 +1390,9 @@ Transform:
   - {fileID: 4911366938028200}
   - {fileID: 4573711169497516}
   - {fileID: 4231804593237294}
-  - {fileID: 4658164971615172}
   - {fileID: 4158044734447420}
-  - {fileID: 4009170644837436}
-  - {fileID: 4468582242607548}
-  - {fileID: 4761941990759694}
-  - {fileID: 4512377827457300}
   m_Father: {fileID: 4269999786774528}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4715382610231162
 Transform:
@@ -1413,13 +1413,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378307522925548}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 0, z: 19.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: 20.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4962291407450584}
-  m_Father: {fileID: 4684998750739618}
-  m_RootOrder: 7
+  m_Father: {fileID: 4269999786774528}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4805866080082998
 Transform:
@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300afa26a79271e4fb5658b4fd57c902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCoin: 3
+  maxCoin: 4
   chanceToSpawn: 0.5
   forceSpawnAll: 1
 --- !u!114 &114167515182506308

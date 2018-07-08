@@ -566,7 +566,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1866396030411416
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -811,15 +811,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866396030411416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.28, y: 0, z: -11.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 0, z: 1.5600004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4913511451525224}
   - {fileID: 4222115134550628}
   - {fileID: 4073497540382414}
-  m_Father: {fileID: 4339774501111552}
-  m_RootOrder: 4
+  m_Father: {fileID: 4891790522381602}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4298888547390718
 Transform:
@@ -861,9 +861,8 @@ Transform:
   - {fileID: 4483050912288006}
   - {fileID: 4051487994416212}
   - {fileID: 4580324019868184}
-  - {fileID: 4290584316802646}
   m_Father: {fileID: 4891790522381602}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4367003624366232
 Transform:
@@ -878,7 +877,7 @@ Transform:
   - {fileID: 4695583243486444}
   - {fileID: 4603657859321274}
   m_Father: {fileID: 4891790522381602}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4369628639186836
 Transform:
@@ -1153,6 +1152,7 @@ Transform:
   m_Children:
   - {fileID: 4040045786282340}
   - {fileID: 4369628639186836}
+  - {fileID: 4290584316802646}
   - {fileID: 4339774501111552}
   - {fileID: 4367003624366232}
   m_Father: {fileID: 0}
@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300afa26a79271e4fb5658b4fd57c902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCoin: 3
+  maxCoin: 4
   chanceToSpawn: 0.5
   forceSpawnAll: 1
 --- !u!114 &114099610082811866

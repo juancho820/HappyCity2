@@ -6,6 +6,7 @@ public class RandomSkin : MonoBehaviour {
 
     public Texture[] textures;
     private Renderer rend;
+    private SkinnedMeshRenderer rend2;
     private int random;
 
     void Start()
@@ -30,7 +31,15 @@ public class RandomSkin : MonoBehaviour {
             random = Random.Range(0, 5);
         }
         rend = GetComponent<Renderer>();
-        rend.material.mainTexture = textures[random];
+        if(rend == null)
+        {
+            rend2 = GetComponent<SkinnedMeshRenderer>();
+            rend2.material.mainTexture = textures[random];
+        }
+        else
+        {
+            rend.material.mainTexture = textures[random];
+        }
         Debug.Log("start");
     }
 }
