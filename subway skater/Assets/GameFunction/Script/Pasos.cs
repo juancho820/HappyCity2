@@ -51,7 +51,6 @@ public class Pasos : MonoBehaviour {
             if(pararPasos == true)
             {
                 Audio.Stop();
-                Audio2.Stop();
                 pararPasos = false;
             }
         }
