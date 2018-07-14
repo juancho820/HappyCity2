@@ -120,13 +120,14 @@ public class LevelManager : MonoBehaviour
             SpawnSegment();
             if (Contador >= NumeroDeSpawns)
             {
-                zona++;
+                int random = Random.Range(0, 5);
+                zona = random;
                 Contador = 0;
             }
-            if(zona >= 4)
-            {
-                zona = 0;
-            }
+            //if(zona >= 4)
+            //{
+            //    zona = 0;
+            //}
             
         }
 
