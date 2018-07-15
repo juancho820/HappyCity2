@@ -8,6 +8,7 @@ public class MoveForward : MonoBehaviour {
     private Vector3 position;
     private bool llego = false;
     private bool una = false;
+    public bool invenci = true;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +39,10 @@ public class MoveForward : MonoBehaviour {
                     transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 40);
                     una = true;
                 }
-                transform.Translate((-Vector3.forward * PlayerMotor.Instance.speed) * Time.deltaTime);
+                if(invenci == true)
+                {
+                    transform.Translate((-Vector3.forward * PlayerMotor.Instance.speed) * Time.deltaTime);
+                }
             }
         }		
 	}

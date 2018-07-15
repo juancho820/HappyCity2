@@ -400,6 +400,10 @@ public class PlayerMotor : MonoBehaviour {
                 ps.transform.position = transform.position + Vector3.forward * 5;
                 ps.Play();
                 other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
+                if (other.GetComponentInParent<MoveForward>() != null)
+                {
+                    other.GetComponentInParent<MoveForward>().invenci = false;
+                }
             }
         }
         if (other.gameObject.tag == "bajarCamara")
