@@ -418,6 +418,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1385225189248436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4161826351041854}
+  - component: {fileID: 33935079872479444}
+  - component: {fileID: 23274344479175008}
+  m_Layer: 0
+  m_Name: gramaoutpista
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1464524570280320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1059,19 @@ Transform:
   m_Father: {fileID: 4284538685053576}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: -7.5290003, y: 268.409, z: -0.83300006}
+--- !u!4 &4161826351041854
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385225189248436}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: -0.34, z: 12.4}
+  m_LocalScale: {x: 15.129697, y: 34.320255, z: 20.962872}
+  m_Children: []
+  m_Father: {fileID: 4284538685053576}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4163622801979774
 Transform:
   m_ObjectHideFlags: 1
@@ -1180,6 +1210,7 @@ Transform:
   - {fileID: 4575246030972208}
   - {fileID: 4679056435673602}
   - {fileID: 4783798762964660}
+  - {fileID: 4161826351041854}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1959,6 +1990,40 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: bfd036da69bf30243bb41b71831e11fa, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23274344479175008
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385225189248436}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 4fe0aaccfcad9804495d6e434a0035ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2970,6 +3035,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920130023377526}
   m_Mesh: {fileID: 4300000, guid: 3bcec31b458815545a6a1f7334ecef81, type: 3}
+--- !u!33 &33935079872479444
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385225189248436}
+  m_Mesh: {fileID: 4300000, guid: 1e420e3172367ed4183cc9a3ea506c8b, type: 3}
 --- !u!33 &33972519748685838
 MeshFilter:
   m_ObjectHideFlags: 1
