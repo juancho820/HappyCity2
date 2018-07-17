@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour {
     //
     private bool isRunning = false;
 
-    public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, JumpDeadAudio, TicketAudio;
+    public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, BlockDeadAudio2, JumpDeadAudio, TicketAudio;
 
     public ParticleSystem ps;
 
@@ -355,7 +355,16 @@ public class PlayerMotor : MonoBehaviour {
 
     private void Crash()
     {
-        Audio.clip = BlockDeadAudio;
+        int random5 = Random.Range(0, 2);
+        Debug.Log(random5);
+        if(random5 == 0)
+        {
+            Audio.clip = BlockDeadAudio;
+        }
+        else
+        {
+            Audio.clip = BlockDeadAudio2;
+        }
         Audio.Play();
         anim.SetTrigger("Death");
         isRunning = false;
