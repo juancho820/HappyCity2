@@ -4001,7 +4001,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15097,6 +15097,36 @@ Prefab:
       propertyPath: ps
       value: 
       objectReference: {fileID: 1814392943}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: X2Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d4e9a9fae7e826489f46018ecd31c49, type: 3}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: MagnetAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d4e9a9fae7e826489f46018ecd31c49, type: 3}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: InvenciAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 2666be70e15fde543bde2cd436ce0648, type: 3}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: BlockDeadAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: b8287e236c99e2a46914a314c6cd3906, type: 3}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: BlockDeadAudio2
+      value: 
+      objectReference: {fileID: 8300000, guid: 877295c27c7b16f45966a151e1488e55, type: 3}
+    - target: {fileID: 114182134686186170, guid: 6f84532f825f2df4691dec55911afadf,
+        type: 2}
+      propertyPath: JumpDeadAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: ae664dacf4d323a41a00f8d71aab436f, type: 3}
     m_RemovedComponents:
     - {fileID: 54853019667425686, guid: 6f84532f825f2df4691dec55911afadf, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6f84532f825f2df4691dec55911afadf, type: 2}
