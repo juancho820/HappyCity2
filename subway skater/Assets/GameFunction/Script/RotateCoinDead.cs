@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class RotateCoinDead : MonoBehaviour {
 	void Update () {
-        if(GameManager.Instance.isDead == true)
+        if(GameManager.Instance == null)
         {
-            transform.Rotate(0, 0, 0 + Time.deltaTime*20);
+            if(GameManagerTutorial.Instance.isDead == true)
+            {
+                transform.Rotate(0, 0, 0 + Time.deltaTime * 20);
+            }
+            if (GameObject.Find("ResplandorTitulo"))
+            {
+                transform.Rotate(0, 0, 0 + Time.deltaTime * 10);
+            }
+
         }
-        if (GameObject.Find("ResplandorTitulo"))
+        else
         {
-            transform.Rotate(0, 0, 0 + Time.deltaTime * 10);
-        }		
+            if (GameManager.Instance.isDead == true)
+            {
+                transform.Rotate(0, 0, 0 + Time.deltaTime * 20);
+            }
+            if (GameObject.Find("ResplandorTitulo"))
+            {
+                transform.Rotate(0, 0, 0 + Time.deltaTime * 10);
+            }
+        }
+	
 	}
 }
