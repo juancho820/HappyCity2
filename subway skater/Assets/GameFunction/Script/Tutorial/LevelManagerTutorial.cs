@@ -10,7 +10,7 @@ public class LevelManagerTutorial : MonoBehaviour
 
     //Level Spawning
     private const float DISTANCE_BEFORE_SPAWN = 100.0f;
-    private const int INITIAL_SEGMENTS = 5;
+    private const int INITIAL_SEGMENTS = 4;
     private const int INITIAL_TRANSITION_SEGMENTS = 2;
     private const int MAX_SEGMENTS_ON_SCREEN = 9;
     private Transform cameraContainer;
@@ -21,9 +21,12 @@ public class LevelManagerTutorial : MonoBehaviour
     private int y1, y2, y3;
     public bool Iniciado = false;
 
+    public GameObject final;
+
     public int NumeroDeSpawns = 5;
     public int Contador = 0;
     public int zona;
+    private int segmento;
 
 
     //List of pieces
@@ -55,6 +58,7 @@ public class LevelManagerTutorial : MonoBehaviour
         cameraContainer = Camera.main.transform;
         currentSpawnZ = 0;
         zona = 0;
+        segmento = 0;
     }
     private void Start()
     {
@@ -83,9 +87,9 @@ public class LevelManagerTutorial : MonoBehaviour
         {
             Contador++;
             SpawnSegment();
-            if (Contador >= NumeroDeSpawns)
+            if (segmento >= 3)
             {
-                
+                final.transform.position = Vector3.forward * 120;
             }
         }
 
@@ -93,6 +97,10 @@ public class LevelManagerTutorial : MonoBehaviour
         {
             segments[amountOfActiveSegments - 1].DeSpawn();
             amountOfActiveSegments--;
+        }
+        if(segmento >= 3)
+        {
+            segmento = 3;
         }
     }
 
@@ -103,8 +111,9 @@ public class LevelManagerTutorial : MonoBehaviour
             case 0:
                 List<SegmentTutorial> possibleSeg = availableSegments.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
                 int id = Random.Range(0, possibleSeg.Count);
+                Debug.Log(segmento);
 
-                SegmentTutorial s = GetSegment(id, false);
+                SegmentTutorial s = GetSegment(segmento, false);
 
                 y1 = s.endY1;
                 y2 = s.endY2;
@@ -116,6 +125,7 @@ public class LevelManagerTutorial : MonoBehaviour
                 currentSpawnZ += s.lenght;
                 amountOfActiveSegments++;
                 s.Spawn();
+                segmento++;
                 break;
         }
     }
@@ -160,7 +170,6 @@ public class LevelManagerTutorial : MonoBehaviour
             segments.Remove(s);
             segments.Insert(0, s);
         }
-
         return s;
     }
 

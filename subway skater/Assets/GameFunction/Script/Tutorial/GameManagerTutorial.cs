@@ -56,8 +56,6 @@ public class GameManagerTutorial : MonoBehaviour
         {
             PlayerPrefs.SetInt("x2Cooldown", 10);
         }
-
-        coinScore = PlayerPrefs.GetInt("Score");
         Once = false;
         Instance = this;
         modifierScore = 1;
@@ -236,8 +234,6 @@ public class GameManagerTutorial : MonoBehaviour
         gameCanvas.SetTrigger("Hide");
 
         StartCoroutine(SlidingNumbers());
-
-        PlayerPrefs.SetInt("Score", (int)coinScore);
     }
 
     private IEnumerator SlidingNumbers()
