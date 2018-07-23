@@ -36,6 +36,10 @@ public class GameManagerTutorial : MonoBehaviour
 
     private void Awake()
     {
+        if(PlayerPrefs.GetInt("TutorialCompleto") == 1)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
         GetComponent<AudioSource>().clip = Main;
         GetComponent<AudioSource>().Play();
         if (PlayerPrefs.GetInt("Replay") == 1)
