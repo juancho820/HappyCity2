@@ -110,7 +110,7 @@ public class LevelManagerTutorial : MonoBehaviour
         {
             case 0:
                 List<SegmentTutorial> possibleSeg = availableSegments.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-                int id = Random.Range(0, possibleSeg.Count);
+                //int id = Random.Range(0, possibleSeg.Count);
                 Debug.Log(segmento);
 
                 SegmentTutorial s = GetSegment(segmento, false);
