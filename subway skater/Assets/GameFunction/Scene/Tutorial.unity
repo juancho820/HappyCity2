@@ -1507,6 +1507,7 @@ GameObject:
   - component: {fileID: 110675149}
   - component: {fileID: 110675151}
   - component: {fileID: 110675150}
+  - component: {fileID: 110675152}
   m_Layer: 5
   m_Name: Tutorial2
   m_TagString: Untagged
@@ -1565,6 +1566,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110675148}
+--- !u!95 &110675152
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 110675148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: adcb4b6459490e34289ada9e71c3173b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &111852121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2363,7 @@ GameObject:
   - component: {fileID: 241436869}
   - component: {fileID: 241436871}
   - component: {fileID: 241436870}
+  - component: {fileID: 241436872}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -2403,6 +2422,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 241436868}
+--- !u!95 &241436872
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241436868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c4f849a7250b0642b80db9646154d6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &246893179
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,6 +4014,7 @@ GameObject:
   - component: {fileID: 431605339}
   - component: {fileID: 431605341}
   - component: {fileID: 431605340}
+  - component: {fileID: 431605342}
   m_Layer: 5
   m_Name: Tutorial1
   m_TagString: Untagged
@@ -4000,7 +4037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 47.9386}
+  m_AnchoredPosition: {x: 9, y: -23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431605340
@@ -4036,6 +4073,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 431605338}
+--- !u!95 &431605342
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 431605338}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33fed995ab9afa445ac12d633185dee8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &468876778 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4944165735630742, guid: cdaeeaa89932b68449aef16cef3ec262,
@@ -24073,6 +24127,7 @@ GameObject:
   - component: {fileID: 2141137067}
   - component: {fileID: 2141137069}
   - component: {fileID: 2141137068}
+  - component: {fileID: 2141137070}
   m_Layer: 5
   m_Name: Tutorial3
   m_TagString: Untagged
@@ -24131,6 +24186,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2141137066}
+--- !u!95 &2141137070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141137066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 993329bd938385649b64b079fabc7226, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2144977803
 GameObject:
   m_ObjectHideFlags: 0

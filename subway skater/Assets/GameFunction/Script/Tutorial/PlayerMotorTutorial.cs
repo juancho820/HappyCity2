@@ -510,22 +510,22 @@ public class PlayerMotorTutorial : MonoBehaviour {
                     desireLane = LaneIn;
                     break;
                 case "Tutorial":
-                    Time.timeScale = 0;
+                    Time.timeScale = 0.1f;
                     tutorial.SetActive(true);
                     Tutorial = true;
                     break;
                 case "Tutorial1":
-                    Time.timeScale = 0;
+                    Time.timeScale = 0.1f;
                     tutorial1.SetActive(true);
                     Tutorial1 = true;
                     break;
                 case "Tutorial2":
-                    Time.timeScale = 0;
+                    Time.timeScale = 0.1f;
                     tutorial2.SetActive(true);
                     Tutorial2 = true;
                     break;
                 case "Tutorial3":
-                    Time.timeScale = 0;
+                    Time.timeScale = 0.1f;
                     tutorial3.SetActive(true);
                     Tutorial3 = true;
                     break;

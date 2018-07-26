@@ -46,6 +46,7 @@ public class GameManagerTutorial : MonoBehaviour
         GetComponent<AudioSource>().Play();
         if (PlayerPrefs.GetInt("Replay") == 1)
         {
+            PlayerPrefs.SetInt("ReplayTuto", 1);
             tutorialCards.SetActive(false);
             Jugar();
         }

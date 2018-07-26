@@ -80,8 +80,16 @@ public class CamaraMotor : MonoBehaviour
 
     public void Cinematic()
     {
-        GameManagerTutorial.cinematica = false;
-        GameManagerTutorial.Instance.tutorialCards.SetActive(true);
+        if(PlayerPrefs.GetInt("ReplayTuto") == 0)
+        {
+            GameManagerTutorial.cinematica = false;
+            GameManagerTutorial.Instance.tutorialCards.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ReplayTuto", 0);
+        }
+
     }
     private IEnumerator Resetiar()
     {
