@@ -77,6 +77,12 @@ public class CamaraMotor : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), 0.1f);
         }
     }
+
+    public void Cinematic()
+    {
+        GameManagerTutorial.cinematica = false;
+        GameManagerTutorial.Instance.tutorialCards.SetActive(true);
+    }
     private IEnumerator Resetiar()
     {
         yield return new WaitForSeconds(1.2f);

@@ -21,6 +21,7 @@ public class GameManagerTutorial : MonoBehaviour
     public Camera camara;
     public float pitch;
     public float pitchTimer;
+    public static bool cinematica = true;
 
     public AudioClip Loop, Main;
 
@@ -36,6 +37,7 @@ public class GameManagerTutorial : MonoBehaviour
 
     private void Awake()
     {
+
         if(PlayerPrefs.GetInt("TutorialCompleto") == 1)
         {
             SceneManager.LoadScene("GameScene");
@@ -77,74 +79,79 @@ public class GameManagerTutorial : MonoBehaviour
     }
     private void Update()
     {
-        if(pitch > 0)
+        if(cinematica == false)
         {
-            pitchTimer -= Time.deltaTime;
-            if(pitchTimer <= 0)
+            if (pitch > 0)
             {
-                pitch = 0;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            coinScore += 100;
-        }
-
-        if (iniciado == true)
-        {
-            if (MobileInput.Instance.Tap && !isGameStarted)
-            {
-                GetComponent<AudioSource>().clip = Loop;
-                GetComponent<AudioSource>().Play();
-                Once = true;
-                isGameStarted = true;
-                TapAnim.gameObject.SetActive(false);
-                motor.StartRunning();
-                FindObjectOfType<GlacierSpawner>().IsScrolling = true;
-                FindObjectOfType<CamaraMotor>().IsMoving = true;
-                gameCanvas.SetTrigger("Show");
-                if (coinScore < 1000)
+                pitchTimer -= Time.deltaTime;
+                if (pitchTimer <= 0)
                 {
-                    coinText.text = coinScore.ToString("0");
+                    pitch = 0;
                 }
-                if (coinScore > 1000)
-                {
-                    coinText.text = (coinScore / 1000).ToString("0.0 K");
-                }
-                if (coinScore > 1000000)
-                {
-                    coinText.text = (coinScore / 1000000).ToString("0.0 M");
-                }
-                InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
             }
-        }
 
-        if (isGameStarted && !isDead)
-        {
-            // Bump score up
-            if(GameObject.FindGameObjectWithTag("Player").transform.position.z > 0)
+            if (Input.GetKeyDown(KeyCode.K))
             {
-                score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+                coinScore += 100;
             }
-            if(lastScore != (int)score)
+
+            if (iniciado == true)
             {
-                lastScore = (int)score;
-                scoreText.text = score.ToString("0");
-                if (score < 1000)
+                if (MobileInput.Instance.Tap && !isGameStarted)
                 {
+                    GetComponent<AudioSource>().clip = Loop;
+                    GetComponent<AudioSource>().Play();
+                    Once = true;
+                    isGameStarted = true;
+                    TapAnim.gameObject.SetActive(false);
+                    camara.GetComponent<Animator>().enabled = false;
+                    motor.StartRunning();
+                    FindObjectOfType<GlacierSpawner>().IsScrolling = true;
+                    FindObjectOfType<CamaraMotor>().IsMoving = true;
+                    gameCanvas.SetTrigger("Show");
+                    if (coinScore < 1000)
+                    {
+                        coinText.text = coinScore.ToString("0");
+                    }
+                    if (coinScore > 1000)
+                    {
+                        coinText.text = (coinScore / 1000).ToString("0.0 K");
+                    }
+                    if (coinScore > 1000000)
+                    {
+                        coinText.text = (coinScore / 1000000).ToString("0.0 M");
+                    }
+                    InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
+                }
+            }
+
+            if (isGameStarted && !isDead)
+            {
+                // Bump score up
+                if (GameObject.FindGameObjectWithTag("Player").transform.position.z > 0)
+                {
+                    score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+                }
+                if (lastScore != (int)score)
+                {
+                    lastScore = (int)score;
                     scoreText.text = score.ToString("0");
-                }
-                if (score > 1000)
-                {
-                    scoreText.text = (score / 1000).ToString("0.0 K");
-                }
-                if (score > 1000000)
-                {
-                    scoreText.text = (score / 1000000).ToString("0.0 M");
+                    if (score < 1000)
+                    {
+                        scoreText.text = score.ToString("0");
+                    }
+                    if (score > 1000)
+                    {
+                        scoreText.text = (score / 1000).ToString("0.0 K");
+                    }
+                    if (score > 1000000)
+                    {
+                        scoreText.text = (score / 1000000).ToString("0.0 M");
+                    }
                 }
             }
         }
+        
     }
 
     public void GetCoin()
