@@ -181,6 +181,14 @@ public class GameManagerTutorial : MonoBehaviour
         menuAnim.SetTrigger("Hide");
         TapAnim.gameObject.SetActive(true);
     }
+
+    public void Finish()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameScene");
+        
+    }
+
     public void Invenci()
     {
         if (InvenciPower > 0)

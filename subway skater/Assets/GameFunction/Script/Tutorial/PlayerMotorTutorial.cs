@@ -15,7 +15,7 @@ public class PlayerMotorTutorial : MonoBehaviour {
 
     public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, BlockDeadAudio2, JumpDeadAudio, TicketAudio;
 
-    public GameObject tutorial, tutorial1, tutorial2, tutorial3;
+    public GameObject tutorial, tutorial1, tutorial2, tutorial3, tutorial4;
 
     public ParticleSystem ps;
 
@@ -531,7 +531,8 @@ public class PlayerMotorTutorial : MonoBehaviour {
                     break;
                 case "Final":
                     PlayerPrefs.SetInt("TutorialCompleto", 1);
-                    SceneManager.LoadScene("GameScene");
+                    tutorial4.SetActive(true);
+                    Time.timeScale = 0;
                     break;
 
             }

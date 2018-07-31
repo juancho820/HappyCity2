@@ -87,7 +87,7 @@ public class LevelManagerTutorial : MonoBehaviour
         {
             Contador++;
             SpawnSegment();
-            if (segmento >= 3)
+            if (segmento >= 4)
             {
                 final.transform.position = Vector3.forward * 120;
             }
@@ -98,9 +98,9 @@ public class LevelManagerTutorial : MonoBehaviour
             segments[amountOfActiveSegments - 1].DeSpawn();
             amountOfActiveSegments--;
         }
-        if(segmento >= 3)
+        if(segmento >= 4)
         {
-            segmento = 3;
+            segmento = 4;
         }
     }
 
