@@ -37,6 +37,7 @@ public enum PieceType
     slideTBlocker = 31,
     blockPALittle = 32,
     blockPABig = 33,
+    longblock2 = 34,
 }
 
 public class Piece : MonoBehaviour

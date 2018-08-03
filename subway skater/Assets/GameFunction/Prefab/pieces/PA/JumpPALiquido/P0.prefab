@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4733597934268794}
   - component: {fileID: 33212347818269354}
   - component: {fileID: 23283339587261248}
+  - component: {fileID: 114560742123885826}
   m_Layer: 0
   m_Name: helado2
   m_TagString: Untagged
@@ -138,4 +139,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 25
-  visualIndex: 1
+  visualIndex: 0
+--- !u!114 &114560742123885826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1878203001724608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8660f24d246d0547b45cc54abc63f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: c1e225b34042887489cf7ded0847cbe9, type: 3}
+  - {fileID: 2800000, guid: 62b01aad64005734c972d7899aa9bad0, type: 3}

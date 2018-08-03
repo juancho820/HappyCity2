@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     public List<Piece> longblocksS = new List<Piece>();
     public List<Piece> jumpsB = new List<Piece>();
     public List<Piece> longblocks = new List<Piece>();
+    public List<Piece> longblocks2 = new List<Piece>();
     public List<Piece> longblockscabeza = new List<Piece>();
     public List<Piece> jumpsPA = new List<Piece>();
     public List<Piece> jumpsPALiquido = new List<Piece>();
@@ -214,7 +215,7 @@ public class LevelManager : MonoBehaviour
                 if (Contador == 1)
                 {
                     entrada.SetActive(true);
-                    entrada.transform.position = new Vector3(-0.03f, 11.2f, 1 * currentSpawnZ);
+                    entrada.transform.position = new Vector3(-0.03f, 11.2f, 1 * currentSpawnZ + 1);
                 }
                 if (Contador == 9)
                 {
@@ -390,6 +391,10 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.longblock)
             {
                 go = longblocks[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.longblock2)
+            {
+                go = longblocks2[visualIndex].gameObject;
             }
             else if (pt == PieceType.jumpPA)
             {
