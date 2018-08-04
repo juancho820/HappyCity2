@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpsSpawner : MonoBehaviour {
 
-    public float chanceToSpawn = 0.25f;
+    private float chanceToSpawn = 0.4f;
 
     private void Awake()
     {

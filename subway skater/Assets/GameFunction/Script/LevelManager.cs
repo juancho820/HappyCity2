@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
 
     //Level Spawning
     public GameObject entrada, salida;
-    private const float DISTANCE_BEFORE_SPAWN = 100.0f;
+    private const float DISTANCE_BEFORE_SPAWN = 150.0f;
     private const int INITIAL_SEGMENTS = 5;
     private const int INITIAL_TRANSITION_SEGMENTS = 2;
     private const int MAX_SEGMENTS_ON_SCREEN = 9;

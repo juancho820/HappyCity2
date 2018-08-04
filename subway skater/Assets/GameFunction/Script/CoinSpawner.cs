@@ -3,7 +3,7 @@
 public class CoinSpawner : MonoBehaviour
 {
     public int maxCoin = 5;
-    public float chanceToSpawn = 0.5f;
+    private float chanceToSpawn = 0.8f;
     public bool forceSpawnAll = false;
 
     private GameObject[] coins;

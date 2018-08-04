@@ -230,10 +230,12 @@ public class GameManager : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
+            Pasos.pararPasos = true;
             Time.timeScale = 0;
         }
         else
         {
+            Pasos.iniciadoPasos = true;
             Time.timeScale = 1;
         }
     }
