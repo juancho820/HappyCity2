@@ -146,7 +146,7 @@ public class PieceSpawner : MonoBehaviour
         i = transform.childCount;
         posicion = transform.GetChild(i - 1).gameObject.transform.position;
         transform.GetChild(i - 1).gameObject.transform.position = new Vector3(0, 0, 0);
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.8f);
         transform.GetChild(i - 1).gameObject.transform.position = posicion;
         //transform.GetChild(i-1).gameObject.SetActive(true);
     }
