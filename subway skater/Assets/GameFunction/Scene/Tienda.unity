@@ -1190,7 +1190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251.67274, y: 136.00017}
+  m_AnchoredPosition: {x: -168.23387, y: 136.00017}
   m_SizeDelta: {x: 1500, y: 273}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &593092238
@@ -2645,6 +2645,8 @@ GameObject:
   - component: {fileID: 1174276350}
   - component: {fileID: 1174276349}
   - component: {fileID: 1174276351}
+  - component: {fileID: 1174276352}
+  - component: {fileID: 1174276353}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2772,6 +2774,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1174276352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174276348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d4aaee1497cab4889c0d49e0b32831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+--- !u!114 &1174276353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174276348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3713a4d8741b84e49822d3e6c73320fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1229179438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,7 +3675,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 218267389}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.27189997
+  m_Size: 0.2719
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
