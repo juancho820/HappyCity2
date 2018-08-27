@@ -33,14 +33,14 @@ public class Coin : MonoBehaviour
             }
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (cogida == true)
         {
             anim.enabled = false;
             if(Invencibilidad.powerInvenci == false)
             {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.6f);
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.9f);
             }
             else
             {

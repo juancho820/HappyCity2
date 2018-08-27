@@ -356,7 +356,6 @@ public class PlayerMotor : MonoBehaviour {
     private void Crash()
     {
         int random5 = Random.Range(0, 2);
-        Debug.Log(random5);
         if(random5 == 0)
         {
             Audio.clip = BlockDeadAudio;

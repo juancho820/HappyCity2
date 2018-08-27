@@ -13,17 +13,14 @@ public class RandomSkin : MonoBehaviour {
     {
         if (textures.Length == 2)
         {
-            Debug.Log("1");
             random = Random.Range(0, 2);
         }
         if (textures.Length == 3)
         {
-            Debug.Log("2");
             random = Random.Range(0, 3);
         }
         if (textures.Length == 4)
         {
-            Debug.Log("3");
             random = Random.Range(0, 4);
         }
         if (textures.Length == 5)
@@ -40,6 +37,5 @@ public class RandomSkin : MonoBehaviour {
         {
             rend.material.mainTexture = textures[random];
         }
-        Debug.Log("start");
     }
 }
