@@ -14,6 +14,18 @@ public class TiendaManager : MonoBehaviour
     private int valorUpgradeMag = 100;
     private int valorUpgradex2 = 100;
 
+    private int frameInv = 0;
+    private int frameMag = 0;
+    private int frameX2 = 0;
+
+    public Image upgInvenci;
+    public Image upgMagneto;
+    public Image upgX2;
+
+    public Sprite[] arrayInv;
+    public Sprite[] arrayMag;
+    public Sprite[] arrayX2;
+
     public Animator anim;
 
     public int InvCooldown = 10;
@@ -51,7 +63,7 @@ public class TiendaManager : MonoBehaviour
         InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
         coinScore = PlayerPrefs.GetInt("Score");
         GoldenT = PlayerPrefs.GetInt("Golden");
-        valorEstrella = 100;
+        valorEstrella = 1000;
         valorUpgradeInv = PlayerPrefs.GetInt("UpgradeInv");
         valorUpgradeMag = PlayerPrefs.GetInt("UpgradeMag");
         valorUpgradex2 = PlayerPrefs.GetInt("Upgradex2");
@@ -63,12 +75,46 @@ public class TiendaManager : MonoBehaviour
     }
     private void Start()
     {
+
+        frameInv = PlayerPrefs.GetInt("frameInv");
+        frameMag = PlayerPrefs.GetInt("frameMag");
+        frameX2 = PlayerPrefs.GetInt("frameX2");
+
+        upgInvenci.sprite = arrayInv[frameInv];
+        upgMagneto.sprite = arrayMag[frameMag];
+        upgX2.sprite = arrayX2[frameX2];
+
+
         InvenciText.text = InvenciPower.ToString("0");
         coinTextTienda.text = coinScore.ToString("0");
         GoldenTickts.text = GoldenT.ToString("0");
-        MasInv.text = valorUpgradeInv.ToString("0");
-        MasMag.text = valorUpgradeMag.ToString("0");
-        Masx2.text = valorUpgradex2.ToString("0");
+
+        if (InvCooldown < 16)
+        {
+            MasInv.text = valorUpgradeInv.ToString("0");
+        }
+        else
+        {
+            MasInv.text = ("Mejorado!");
+        }
+
+        if (MagCooldown < 16)
+        {
+            MasMag.text = valorUpgradeMag.ToString("0");
+        }
+        else
+        {
+            MasMag.text = ("Mejorado!");
+        }
+
+        if (x2Cooldown < 16)
+        {
+            Masx2.text = valorUpgradex2.ToString("0");
+        }
+        else
+        {
+            Masx2.text = ("Mejorado!");
+        }
 
         if (coinScore < 1000)
         {
@@ -118,14 +164,18 @@ public class TiendaManager : MonoBehaviour
     {
         if (coinScore >= valorUpgradeInv)
         {
-            if(InvCooldown < 20)
+            if(InvCooldown < 16)
             {
+                frameInv++;
+                PlayerPrefs.SetInt("frameInv", frameInv);
+                upgInvenci.sprite = arrayInv[frameInv];
+
                 Inv.GetComponent<AudioSource>().clip = BotonComprar;
                 Inv.GetComponent<AudioSource>().Play();
-                InvCooldown += 2;
+                InvCooldown += 1;
                 coinScore -= valorUpgradeInv;
                 PlayerPrefs.SetInt("InvCooldown", InvCooldown);
-                valorUpgradeInv += 100;
+                valorUpgradeInv *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
                 if (coinScore < 1000)
@@ -141,7 +191,15 @@ public class TiendaManager : MonoBehaviour
                     coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
                 }
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
-                MasInv.text = valorUpgradeInv.ToString("0");
+                if(InvCooldown < 16)
+                {
+                    MasInv.text = valorUpgradeInv.ToString("0");
+                }
+                else
+                {
+                    MasInv.text = ("Mejorado!");
+                }
+
                 anim.SetTrigger("Comprado");
             }
         }      
@@ -150,14 +208,18 @@ public class TiendaManager : MonoBehaviour
     {
         if (coinScore >= valorUpgradeMag)
         {
-            if (MagCooldown < 20)
+            if (MagCooldown < 16)
             {
+                frameMag++;
+                PlayerPrefs.SetInt("frameMag", frameMag);
+                upgMagneto.sprite = arrayMag[frameMag];
+
                 Mag.GetComponent<AudioSource>().clip = BotonComprar;
                 Mag.GetComponent<AudioSource>().Play();
-                MagCooldown += 2;
+                MagCooldown += 1;
                 coinScore -= valorUpgradeMag;
                 PlayerPrefs.SetInt("MagCooldown", MagCooldown);
-                valorUpgradeMag += 100;
+                valorUpgradeMag *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
                 if (coinScore < 1000)
@@ -174,7 +236,14 @@ public class TiendaManager : MonoBehaviour
                 }
 
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
-                MasMag.text = valorUpgradeMag.ToString("0");
+                if (MagCooldown < 16)
+                {
+                    MasMag.text = valorUpgradeMag.ToString("0");
+                }
+                else
+                {
+                    MasMag.text = ("Mejorado!");
+                }
                 anim.SetTrigger("Comprado");
             }
         }
@@ -183,14 +252,18 @@ public class TiendaManager : MonoBehaviour
     {
         if (coinScore >= valorUpgradex2)
         {
-            if (x2Cooldown < 20)
+            if (x2Cooldown < 16)
             {
+                frameX2++;
+                PlayerPrefs.SetInt("frameX2", frameX2);
+                upgX2.sprite = arrayX2[frameX2];
+
                 X2.GetComponent<AudioSource>().clip = BotonComprar;
                 X2.GetComponent<AudioSource>().Play();
-                x2Cooldown += 2;
+                x2Cooldown += 1;
                 coinScore -= valorUpgradex2;
                 PlayerPrefs.SetInt("x2Cooldown", x2Cooldown);
-                valorUpgradex2 += 100;
+                valorUpgradex2 *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
                 if (coinScore < 1000)
@@ -207,7 +280,15 @@ public class TiendaManager : MonoBehaviour
                 }
 
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
-                Masx2.text = valorUpgradex2.ToString("0");
+                
+                if (x2Cooldown < 16)
+                {
+                    Masx2.text = valorUpgradex2.ToString("0");
+                }
+                else
+                {
+                    Masx2.text = ("Mejorado!");
+                }
                 anim.SetTrigger("Comprado");
             }
         }
@@ -215,12 +296,12 @@ public class TiendaManager : MonoBehaviour
 
     public void ComprarGolden()
     {
-        if(coinScore >= 100)
+        if(coinScore >= 2000)
         {
             GT.GetComponent<AudioSource>().clip = BotonComprar;
             GT.GetComponent<AudioSource>().Play();
             GoldenT++;
-            coinScore -= 100;
+            coinScore -= 2000;
             PlayerPrefs.SetInt("Score", (int)coinScore);
             coinTextTienda.text = coinScore.ToString("0");
             if (coinScore < 1000)
