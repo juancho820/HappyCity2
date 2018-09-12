@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataLoader : MonoBehaviour {
 
     public string[] items;
 
+    public Text codigo;
+
     IEnumerator Start()
     {
-        WWW itemsData = new WWW("http://localhost/Corre_Tin/Codigos.php");
+        WWW itemsData = new WWW("https://corretin.000webhostapp.com/Codigos.php");
         yield return itemsData;
         string itemsDataString = itemsData.text;
         print(itemsDataString);
         items = itemsDataString.Split(';');
         print(GetDataValue(items[0], "Codigo:"));
+        GetComponent<DataLoader>().enabled = false;
+        string lastItem = items[items.Length - 2];
+        codigo.text = lastItem;
     }
 
     string GetDataValue(string data, string index)

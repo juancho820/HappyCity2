@@ -15,6 +15,6 @@ public class DataInserter : MonoBehaviour {
 
     public void CreateUser()
     {
-        WWW itemsData = new WWW("http://localhost/Corre_Tin/InsertCodes.php");
+        new WWW("https://corretin.000webhostapp.com/InsertCodes.php");
     }
 }
