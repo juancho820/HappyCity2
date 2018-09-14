@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class TiendaManager : MonoBehaviour
 {
-	public static TiendaManager Instance { set; get; }
+    public static TiendaManager Instance { set; get; }
 
     public static int InvenciPower = 0;
-    private int valorEstrella = 0;
+    private int valorEstrella = 1000;
     private int valorUpgradeInv = 100;
     private int valorUpgradeMag = 100;
     private int valorUpgradex2 = 100;
+    private int valorGT = 2000;
 
     private int frameInv = 0;
     private int frameMag = 0;
@@ -36,7 +37,7 @@ public class TiendaManager : MonoBehaviour
 
     public AudioClip BotonComprar;
 
-    public Text coinTextTienda, InvenciText, MasInv, MasMag, Masx2, GoldenTickts;
+    public Text coinTextTienda, InvenciText, InvenciPriceText, MasInv, MasMag, Masx2, GoldenTickts, GTPriceText;
     private float coinScore;
     private float GoldenT;
 
@@ -68,8 +69,10 @@ public class TiendaManager : MonoBehaviour
         valorUpgradeMag = PlayerPrefs.GetInt("UpgradeMag");
         valorUpgradex2 = PlayerPrefs.GetInt("Upgradex2");
         Instance = this;
-
+        InvenciPriceText.text = valorEstrella.ToString("0");
         InvenciText.text = InvenciPower.ToString("0");
+
+        GTPriceText.text = valorGT.ToString("0");
         coinTextTienda.text = coinScore.ToString("0");
         GoldenTickts.text = GoldenT.ToString("0");
     }
@@ -296,12 +299,12 @@ public class TiendaManager : MonoBehaviour
 
     public void ComprarGolden()
     {
-        if(coinScore >= 2000)
+        if(coinScore >= valorGT)
         {
             GT.GetComponent<AudioSource>().clip = BotonComprar;
             GT.GetComponent<AudioSource>().Play();
             GoldenT++;
-            coinScore -= 2000;
+            coinScore -= valorGT;
             PlayerPrefs.SetInt("Score", (int)coinScore);
             coinTextTienda.text = coinScore.ToString("0");
             if (coinScore < 1000)
