@@ -9,14 +9,16 @@ public class X2 : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        var Player = other.GetComponent<PlayerMotor>();
+        if (Player != null)
         {
+            Player.ActivateX2Particles();
             if (x2 == 2)
             {
                 PlayerMotor.Instance.slider2.value = 0;
             }
             x2 = 2;
-            PS.Play();
+           // PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.X2Audio;
             GetComponentInParent<AudioSource>().Play();

@@ -9,14 +9,16 @@ public class Magneto : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        var Player = other.GetComponent<PlayerMotor>();
+        if (Player != null)
         {
+            Player.ActivateMagnetoParticles();
             if (powerMagneto == true)
             {
                 PlayerMotor.Instance.slider3.value = 0;
             }
             powerMagneto = true;
-            PS.Play();
+            //PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.MagnetAudio;
             GetComponentInParent<AudioSource>().Play();

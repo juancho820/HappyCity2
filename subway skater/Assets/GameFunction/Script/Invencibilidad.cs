@@ -9,9 +9,11 @@ public class Invencibilidad : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        var Player = other.GetComponent<PlayerMotor>();
+        if (Player != null)
         {
-            if(powerInvenci == true)
+            Player.ActivateStarParticles();
+            if (powerInvenci == true)
             {
                 PlayerMotor.Instance.slider.value = 0;
                 PlayerMotor.Instance.speed -= 10;
@@ -20,7 +22,7 @@ public class Invencibilidad : MonoBehaviour {
             other.GetComponent<Animator>().SetTrigger("BigRunning");
             PlayerMotor.Instance.speed += 10;
             powerInvenci = true;
-            PS.Play();
+            //PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
             GetComponentInParent<AudioSource>().Play();

@@ -28,7 +28,8 @@ public class PlayerMotor : MonoBehaviour {
     private int LaneIn;
 
     public AudioSource Audio;
-
+    public GameObject obj_magnetoPartPick, obj_x2PartPick, obj_starPartPick, obj_magnetoPartIdle, obj_x2PartIdle, obj_starPartIdle;
+    public ParticleSystem magnetoPartPick, x2PartPick, starPartPick;
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
     public RadialSliderMag slider3;
@@ -76,21 +77,44 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Magneto.powerMagneto == true)
         {
+
+
             slider3.gameObject.SetActive(true);
             slider3.maxValue = MagCooldown;
             slider3.value += Time.deltaTime;
+
+
+            if (magnetoPartPick.IsAlive() == false)
+            {
+
+                obj_magnetoPartPick.SetActive(false);
+                obj_magnetoPartIdle.SetActive(true);
+            }
+
+
             if (slider3.value >= MagCooldown)
             {
                 Magneto.powerMagneto = false;
                 slider3.value = 0;
+                obj_magnetoPartIdle.SetActive(false);
                 slider3.gameObject.SetActive(false);
+               
             }
+
+
         }
         if (Invencibilidad.powerInvenci == true)
         {
             slider.gameObject.SetActive(true);
             slider.maxValue = InvCooldown;
             slider.value += Time.deltaTime;
+            if (starPartPick.IsAlive() == false)
+            {
+
+                obj_starPartPick.SetActive(false);
+                obj_starPartIdle.SetActive(true);
+            }
+
             if (slider.value >= InvCooldown)
             {
                 Pasos.iniciadoPasos = true;
@@ -98,6 +122,7 @@ public class PlayerMotor : MonoBehaviour {
                 anim.SetTrigger("StartRunning");
                 slider.value = 0;
                 speed -= 10;
+                obj_starPartIdle.SetActive(false);
                 if (PlayerPrefs.GetInt("IntInvencibilidad") == 0)
                 {
                     slider.gameObject.SetActive(false);
@@ -109,11 +134,20 @@ public class PlayerMotor : MonoBehaviour {
             slider2.gameObject.SetActive(true);
             slider2.maxValue = x2Cooldown;
             slider2.value += Time.deltaTime;
+            if (x2PartPick.IsAlive() == false)
+            {
+
+                obj_x2PartPick.SetActive(false);
+                obj_x2PartIdle.SetActive(true);
+            }
+
+
             if (slider2.value >= x2Cooldown)
             {
                 X2.x2 = 1;
                 slider2.value = 0;
                 slider2.gameObject.SetActive(false);
+                obj_x2PartIdle.SetActive(false);
             }
         }
         if (!isRunning)
@@ -432,6 +466,8 @@ public class PlayerMotor : MonoBehaviour {
         }
     }
 
+
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(Invencibilidad.powerInvenci == false)
@@ -461,4 +497,22 @@ public class PlayerMotor : MonoBehaviour {
             }
         }
     }
+
+
+    public void ActivateX2Particles()
+    {
+        //activacion de particulas
+      
+            obj_x2PartPick.SetActive(true);
+  
+    }
+    public void ActivateMagnetoParticles()
+    {
+        obj_magnetoPartPick.SetActive(true);
+    }
+    public void ActivateStarParticles()
+    {
+        obj_starPartPick.SetActive(true);
+    }
+
 }
