@@ -718,7 +718,7 @@ RectTransform:
   m_Father: {fileID: 1261153493}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.000000040690104, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.54380006, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 520724170}
   - component: {fileID: 520724172}
   - component: {fileID: 520724171}
+  - component: {fileID: 520724173}
   m_Layer: 5
   m_Name: slidearrowizq
   m_TagString: Untagged
@@ -1217,6 +1218,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520724169}
   m_CullTransparentMesh: 0
+--- !u!95 &520724173
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 520724169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1aafb6be315d449b9aa370cefa99bdf7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &544424128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4336,7 @@ GameObject:
   - component: {fileID: 1568910676}
   - component: {fileID: 1568910678}
   - component: {fileID: 1568910677}
+  - component: {fileID: 1568910679}
   m_Layer: 5
   m_Name: slidearrowizq (1)
   m_TagString: Untagged
@@ -4376,6 +4396,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1568910675}
   m_CullTransparentMesh: 0
+--- !u!95 &1568910679
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568910675}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bd0630da4d104b2f8ec9c87ef7c9be2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1614447835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,7 +4746,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 218267390}
   m_HandleRect: {fileID: 218267389}
   m_Direction: 0
-  m_Value: 0.00000008919356
+  m_Value: 0
   m_Size: 0.5438
   m_NumberOfSteps: 0
   m_OnValueChanged:
