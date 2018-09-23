@@ -112,7 +112,7 @@ public class PlayerMotor : MonoBehaviour {
             {
 
                 obj_starPartPick.SetActive(false);
-                obj_starPartIdle.SetActive(true);
+
             }
 
             if (slider.value >= InvCooldown)
@@ -513,6 +513,7 @@ public class PlayerMotor : MonoBehaviour {
     public void ActivateStarParticles()
     {
         obj_starPartPick.SetActive(true);
+        obj_starPartIdle.SetActive(true);
     }
 
 }
