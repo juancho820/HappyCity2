@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
         motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotor>();
     
-        hiscoreText.text = PlayerPrefs.GetInt("Hiscore").ToString();
+   //     hiscoreText.text = PlayerPrefs.GetInt("Hiscore").ToString();
         botonAnim.SetTrigger("Iniciar");
     }
     private void Update()
