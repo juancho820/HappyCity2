@@ -10,8 +10,6 @@ public class GameManagerTutorial : MonoBehaviour
 
 	public static GameManagerTutorial Instance { set; get; }
 
-    public int InvenciPower = 0;
-
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
@@ -26,7 +24,7 @@ public class GameManagerTutorial : MonoBehaviour
     public AudioClip Loop, Main;
 
     // UI and UI fields
-    public Animator gameCanvas, menuAnim, CoinUIAnim, TapAnim;
+    public Animator gameCanvas, CoinUIAnim, TapAnim;
     public Text scoreText, coinText, modifierText;
     private float score, coinScore, modifierScore;
     private int lastScore;
@@ -67,14 +65,9 @@ public class GameManagerTutorial : MonoBehaviour
         Instance = this;
         modifierScore = 1;
 
-        Invencibilidad.powerInvenci = false;
-        Magneto.powerMagneto = false;
-        X2.x2 = 1;
-
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
-
 
         motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotorTutorial>();
     }
@@ -122,7 +115,6 @@ public class GameManagerTutorial : MonoBehaviour
                     {
                         coinText.text = (coinScore / 1000000).ToString("0.0 M");
                     }
-                    InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
                 }
             }
 
@@ -178,7 +170,6 @@ public class GameManagerTutorial : MonoBehaviour
     public void Jugar()
     {
         iniciado = true;
-        menuAnim.SetTrigger("Hide");
         TapAnim.gameObject.SetActive(true);
     }
 
@@ -187,26 +178,6 @@ public class GameManagerTutorial : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
         
-    }
-
-    public void Invenci()
-    {
-        if (InvenciPower > 0)
-        {
-            InvenciPower--;
-            PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
-
-            if (Invencibilidad.powerInvenci == true)
-            {
-                PlayerMotorTutorial.Instance.slider.value = 0;
-                PlayerMotorTutorial.Instance.speed -= 10;
-                Invencibilidad.powerInvenci = false;
-            }
-            PlayerMotorTutorial.Instance.GetComponent<Animator>().SetTrigger("BigRunning");
-            PlayerMotorTutorial.Instance.speed += 10;
-            Invencibilidad.powerInvenci = true;
-            Pasos.iniciadoPasos = true;
-        }
     }
 
     public void UpdateModifier(float modifierAmount)

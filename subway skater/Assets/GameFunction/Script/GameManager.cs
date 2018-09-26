@@ -1,16 +1,16 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private const int COIN_SCORE_AMOUNT = 5;
-
 	public static GameManager Instance { set; get; }
 
     public int InvenciPower = 0;
+
+    private AudioSource audiSourc;
+    private GameObject player;
 
     public bool isDead { set; get; }
     private bool isGameStarted = false;
@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
     public static bool Once = false;
     private PlayerMotor motor;
     public Camera camara;
-    public Button boton1, boton2, boton3;
-    public Sprite sprite1, sprite2, sprite3, none;
     public GameObject botonPlay, botonTienda, botonInvenci;
     public float pitch;
     public float pitchTimer;
@@ -28,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TapAnim;
-    public Text scoreText, coinText, modifierText, hiscoreText, InvenciText;
+    public Text scoreText, coinText, modifierText, InvenciText;
     private float score, coinScore, modifierScore;
     private int lastScore;
 
@@ -38,8 +36,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<AudioSource>().clip = Main;
-        GetComponent<AudioSource>().Play();
+        player = GameObject.FindGameObjectWithTag("Player");
+        audiSourc = GetComponent<AudioSource>();
+        audiSourc.clip = Main;
+        audiSourc.Play();
         if (PlayerPrefs.GetInt("Replay") == 1)
         {
             Jugar();
@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
 
         motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotor>();
     
-   //     hiscoreText.text = PlayerPrefs.GetInt("Hiscore").ToString();
         botonAnim.SetTrigger("Iniciar");
     }
     private void Update()
@@ -97,8 +96,8 @@ public class GameManager : MonoBehaviour
         {
             if (MobileInput.Instance.Tap && !isGameStarted)
             {
-                GetComponent<AudioSource>().clip = Loop;
-                GetComponent<AudioSource>().Play();
+                audiSourc.clip = Loop;
+                audiSourc.Play();
                 Once = true;
                 isGameStarted = true;
                 TapAnim.gameObject.SetActive(false);
@@ -126,9 +125,9 @@ public class GameManager : MonoBehaviour
         if (isGameStarted && !isDead)
         {
             // Bump score up
-            if(GameObject.FindGameObjectWithTag("Player").transform.position.z > 0)
+            if(player.transform.position.z > 0)
             {
-                score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
+                score = player.transform.position.z;
             }
             if(lastScore != (int)score)
             {
@@ -249,12 +248,10 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
-        GetComponent<AudioSource>().Stop();
+        audiSourc.Stop();
         Pasos.pararPasos = true;
         isDead = true;
         FindObjectOfType<GlacierSpawner>().IsScrolling = false;
-        //deadScoreText.text = score.ToString("0");
-        //deadCoinText.text = coinScore.ToString("0");
         deathMenuAnim.SetTrigger("Dead");
         gameCanvas.SetTrigger("Hide");
 
@@ -262,86 +259,6 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Score", (int)coinScore);
         
-        /*
-        if (score > 30 && score < 50)
-        {
-            if (boton1.image.sprite == none)
-            {
-                boton1.image.sprite = sprite1;
-                PlayerPrefs.SetInt("CofreMadera", 1);
-                //boton1.gameObject.SetActive(true);
-                boton1.GetComponent<Chest>().ActivateChest();
-
-            }
-            else if (boton2.image.sprite == none)
-            {
-                boton2.image.sprite = sprite1;
-                PlayerPrefs.SetInt("CofrePlata", 1);
-                //boton2.gameObject.SetActive(true);
-                boton2.GetComponent<ChestPlata>().ActivateChest();
-
-            }
-            else if (boton3.image.sprite == none)
-            {
-                boton3.image.sprite = sprite1;
-                PlayerPrefs.SetInt("CofreOro", 1);
-                //boton3.gameObject.SetActive(true);
-                boton3.GetComponent<ChestOro>().ActivateChest();
-            }
-        }
-        else if (score > 50 && score < 100)
-        {
-            if (boton1.image.sprite == none)
-            {
-                boton1.image.sprite = sprite2;
-                PlayerPrefs.SetInt("CofreMadera", 2);
-                //boton1.gameObject.SetActive(true);
-                boton1.GetComponent<Chest>().ActivateChest();
-
-            }
-            else if (boton2.image.sprite == none)
-            {
-                boton2.image.sprite = sprite2;
-                PlayerPrefs.SetInt("CofrePlata", 2);
-                //boton2.gameObject.SetActive(true);
-                boton2.GetComponent<ChestPlata>().ActivateChest();
-
-            }
-            else if (boton3.image.sprite == none)
-            {
-                boton3.image.sprite = sprite2;
-                PlayerPrefs.SetInt("CofreOro", 2);
-                //boton3.gameObject.SetActive(true);
-                boton3.GetComponent<ChestOro>().ActivateChest();
-
-            }
-        }
-        else if (score > 100)
-        {
-            if (boton1.image.sprite == none)
-            {
-                boton1.image.sprite = sprite3;
-                //boton1.gameObject.SetActive(true);
-                boton1.GetComponent<Chest>().ActivateChest();
-                PlayerPrefs.SetInt("CofreMadera", 3);
-            }
-            else if (boton2.image.sprite == none)
-            {
-                boton2.image.sprite = sprite3;
-                //boton2.gameObject.SetActive(true);
-                boton2.GetComponent<ChestPlata>().ActivateChest();
-                PlayerPrefs.SetInt("CofrePlata", 3);
-            }
-            else if (boton3.image.sprite == none)
-            {
-                boton3.image.sprite = sprite3;
-                //boton3.gameObject.SetActive(true);
-                boton3.GetComponent<ChestOro>().ActivateChest();
-                PlayerPrefs.SetInt("CofreOro", 3);
-            }
-        }
-        */
-        //Check if this is a highscore
         if (score > PlayerPrefs.GetInt("Hiscore"))
         {
             float s = score;

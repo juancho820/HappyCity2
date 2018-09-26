@@ -9,8 +9,7 @@ public class RadialSliderInv : MonoBehaviour {
     public Image background;
     public Color Full;
     public Color Low;
-
-
+    
     public float maxValue = 10;
     public float value = 0;
 

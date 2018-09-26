@@ -18,7 +18,6 @@ public class X2 : MonoBehaviour {
                 PlayerMotor.Instance.slider2.value = 0;
             }
             x2 = 2;
-           // PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.X2Audio;
             GetComponentInParent<AudioSource>().Play();

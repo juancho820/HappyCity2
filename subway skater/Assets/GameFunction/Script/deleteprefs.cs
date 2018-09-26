@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class deleteprefs : MonoBehaviour {
-
+public class deleteprefs : MonoBehaviour
+{
 	public void borrar()
     {
         PlayerPrefs.DeleteAll();

@@ -18,7 +18,6 @@ public class Magneto : MonoBehaviour {
                 PlayerMotor.Instance.slider3.value = 0;
             }
             powerMagneto = true;
-            //PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.MagnetAudio;
             GetComponentInParent<AudioSource>().Play();

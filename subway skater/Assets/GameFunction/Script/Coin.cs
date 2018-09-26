@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
@@ -46,7 +44,6 @@ public class Coin : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.9f);
             }         
-
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {

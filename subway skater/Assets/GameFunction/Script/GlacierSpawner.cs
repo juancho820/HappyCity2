@@ -32,7 +32,6 @@ public class GlacierSpawner : MonoBehaviour
         {
             transform.GetChild(0).localPosition += Vector3.forward * totalLenght;
             transform.GetChild(0).SetSiblingIndex(transform.childCount);
-
             transform.GetChild(0).localPosition += Vector3.forward * totalLenght;
             transform.GetChild(0).SetSiblingIndex(transform.childCount);
         }

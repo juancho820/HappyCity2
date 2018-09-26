@@ -27,6 +27,5 @@ public class RotateCoinDead : MonoBehaviour {
                 transform.Rotate(0, 0, 0 + Time.deltaTime * 10);
             }
         }
-	
 	}
 }

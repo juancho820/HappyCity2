@@ -9,14 +9,12 @@ public class PlayerMotor : MonoBehaviour {
     private const float LANE_DISTANCE = 3.5f;
     private const float TURN_SPEED = 0.05f;
 
-    //
     private bool isRunning = false;
 
     public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, BlockDeadAudio2, JumpDeadAudio, TicketAudio;
 
     public ParticleSystem ps;
 
-    //Animation
     private Animator anim;
 
     private float posicionActual;
@@ -37,8 +35,6 @@ public class PlayerMotor : MonoBehaviour {
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
 
-
-    // Movement
     private CharacterController controller;
     [SerializeField]
     private float jumpForce = 6.0f;
@@ -47,7 +43,6 @@ public class PlayerMotor : MonoBehaviour {
     private float verticalVelocity;    
     private int desireLane = 1; // 0=L, 1=M , 2=R
 
-    // Speed Modifier
     [SerializeField]
     private float originalSpeed = 7.0f;
     
@@ -77,20 +72,15 @@ public class PlayerMotor : MonoBehaviour {
     {
         if (Magneto.powerMagneto == true)
         {
-
-
             slider3.gameObject.SetActive(true);
             slider3.maxValue = MagCooldown;
             slider3.value += Time.deltaTime;
 
-
             if (magnetoPartPick.IsAlive() == false)
             {
-
                 obj_magnetoPartPick.SetActive(false);
                 obj_magnetoPartIdle.SetActive(true);
             }
-
 
             if (slider3.value >= MagCooldown)
             {
@@ -98,7 +88,6 @@ public class PlayerMotor : MonoBehaviour {
                 slider3.value = 0;
                 obj_magnetoPartIdle.SetActive(false);
                 slider3.gameObject.SetActive(false);
-               
             }
 
 
@@ -110,9 +99,7 @@ public class PlayerMotor : MonoBehaviour {
             slider.value += Time.deltaTime;
             if (starPartPick.IsAlive() == false)
             {
-
                 obj_starPartPick.SetActive(false);
-
             }
 
             if (slider.value >= InvCooldown)
@@ -136,7 +123,6 @@ public class PlayerMotor : MonoBehaviour {
             slider2.value += Time.deltaTime;
             if (x2PartPick.IsAlive() == false)
             {
-
                 obj_x2PartPick.SetActive(false);
                 obj_x2PartIdle.SetActive(true);
             }
@@ -465,8 +451,6 @@ public class PlayerMotor : MonoBehaviour {
             CamaraMotor.subirTren = true;
         }
     }
-
-
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

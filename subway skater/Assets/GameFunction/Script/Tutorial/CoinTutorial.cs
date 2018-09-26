@@ -16,21 +16,10 @@ public class CoinTutorial : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
-        if (MagnetoTutorial.powerMagneto == false)
+        if (other.tag == "Player")
         {
-            if (other.tag == "Player")
-            {
-                cogida = true;
-                GameManagerTutorial.Instance.GetCoin();
-            }
-        }
-        else
-        {
-            if (other.tag == "Magneto")
-            {
-                cogida = true;
-                GameManagerTutorial.Instance.GetCoin();
-            }
+            cogida = true;
+            GameManagerTutorial.Instance.GetCoin();
         }
     }
     private void Update()
@@ -38,15 +27,7 @@ public class CoinTutorial : MonoBehaviour
         if (cogida == true)
         {
             anim.enabled = false;
-            if(InvencibilidadTutorial.powerInvenci == false)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.6f);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.9f);
-            }         
-
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.6f);    
 
             if ((transform.position - player.transform.position).magnitude < 0.1)
             {

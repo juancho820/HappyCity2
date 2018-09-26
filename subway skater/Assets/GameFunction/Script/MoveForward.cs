@@ -10,13 +10,11 @@ public class MoveForward : MonoBehaviour {
     private bool una = false;
     public bool invenci = true;
 
-	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         position = this.transform.position;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         if (GameManager.Instance.isDead == false)
         {

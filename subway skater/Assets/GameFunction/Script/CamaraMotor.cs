@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CamaraMotor : MonoBehaviour
@@ -89,7 +88,6 @@ public class CamaraMotor : MonoBehaviour
         {
             PlayerPrefs.SetInt("ReplayTuto", 0);
         }
-
     }
     private IEnumerator Resetiar()
     {

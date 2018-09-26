@@ -4,23 +4,21 @@ using UnityEngine;
 public class Avioneta : MonoBehaviour {
 
     private Animator avionetaAnim;
-    public float random;
-    public int random2;
+    private float random;
+    private int random2;
     private bool avionetaOn;
 
-	// Use this for initialization
 	void Start () {
         avionetaAnim = GetComponent<Animator>();
     }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if(avionetaOn == false)
         {
             StartCoroutine(EscogerAnim());
             avionetaOn = true;
         }
-        
     }
 
     private IEnumerator EscogerAnim()

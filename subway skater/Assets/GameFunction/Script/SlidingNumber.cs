@@ -67,10 +67,6 @@ public class SlidingNumber : MonoBehaviour
                 }
             }
 
-            //Score.text = CurrentNumber.ToString("0");
-            //Coins.text = CurrentNumber2.ToString("0");
-
-
             //1
             if (CurrentNumber < 1000)
             {

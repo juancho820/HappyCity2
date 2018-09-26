@@ -22,7 +22,6 @@ public class Invencibilidad : MonoBehaviour {
             other.GetComponent<Animator>().SetTrigger("BigRunning");
             PlayerMotor.Instance.speed += 10;
             powerInvenci = true;
-            //PS.Play();
             gameObject.SetActive(false);
             GetComponentInParent<AudioSource>().clip = PlayerMotor.Instance.InvenciAudio;
             GetComponentInParent<AudioSource>().Play();

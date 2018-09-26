@@ -80,48 +80,6 @@ public class PlayerMotorTutorial : MonoBehaviour {
     {
         if(Tutorial == false && Tutorial1 == false && Tutorial2 == false && Tutorial3 == false)
         {
-            if (MagnetoTutorial.powerMagneto == true)
-            {
-                slider3.gameObject.SetActive(true);
-                slider3.maxValue = MagCooldown;
-                slider3.value += Time.deltaTime;
-                if (slider3.value >= MagCooldown)
-                {
-                    MagnetoTutorial.powerMagneto = false;
-                    slider3.value = 0;
-                    slider3.gameObject.SetActive(false);
-                }
-            }
-            if (InvencibilidadTutorial.powerInvenci == true)
-            {
-                slider.gameObject.SetActive(true);
-                slider.maxValue = InvCooldown;
-                slider.value += Time.deltaTime;
-                if (slider.value >= InvCooldown)
-                {
-                    Pasos.iniciadoPasos = true;
-                    InvencibilidadTutorial.powerInvenci = false;
-                    anim.SetTrigger("StartRunning");
-                    slider.value = 0;
-                    speed -= 10;
-                    if (PlayerPrefs.GetInt("IntInvencibilidad") == 0)
-                    {
-                        slider.gameObject.SetActive(false);
-                    }
-                }
-            }
-            if (X2Tutorial.x2 == 2)
-            {
-                slider2.gameObject.SetActive(true);
-                slider2.maxValue = x2Cooldown;
-                slider2.value += Time.deltaTime;
-                if (slider2.value >= x2Cooldown)
-                {
-                    X2Tutorial.x2 = 1;
-                    slider2.value = 0;
-                    slider2.gameObject.SetActive(false);
-                }
-            }
             if (!isRunning)
             {
                 return;
@@ -205,56 +163,50 @@ public class PlayerMotorTutorial : MonoBehaviour {
                     anim.SetTrigger("Roll");
                     caida = false;
                 }
-                if (InvencibilidadTutorial.powerInvenci == true)
-                {
-                    CamaraShake.shakeDuration = 0.1f;
-                }
                 verticalVelocity = -0.1f;
-                if (InvencibilidadTutorial.powerInvenci == false)
+                if (MobileInput.Instance.SwipeUp)
                 {
-                    if (MobileInput.Instance.SwipeUp)
+                    Pasos.pararPasos = true;
+                    cayo = true;
+                    int random3;
+                    random3 = Random.Range(0, 3);
+                    switch (random3)
                     {
-                        Pasos.pararPasos = true;
-                        cayo = true;
-                        int random3;
-                        random3 = Random.Range(0, 3);
-                        switch (random3)
-                        {
-                            case 0:
-                                Audio.clip = Salto1;
-                                break;
-                            case 1:
-                                Audio.clip = Salto2;
-                                break;
-                            case 2:
-                                Audio.clip = Salto3;
-                                break;
-                        }
-                        Audio.Play();
-                        //Jump
-                        random = Random.Range(1, 3);
-
-                        if (random == 1)
-                        {
-                            anim.SetTrigger("Jump");
-                        }
-                        else
-                        {
-                            anim.SetTrigger("Jump2");
-                        }
-
-                        verticalVelocity = jumpForce;
+                        case 0:
+                            Audio.clip = Salto1;
+                            break;
+                        case 1:
+                            Audio.clip = Salto2;
+                            break;
+                        case 2:
+                            Audio.clip = Salto3;
+                            break;
                     }
-                    else if (MobileInput.Instance.SwipeDown)
+                    Audio.Play();
+                    //Jump
+                    random = Random.Range(1, 3);
+
+                    if (random == 1)
                     {
-                        //Slide
-                        Pasos.pararPasos = true;
-                        Audio.clip = SlideAudio;
-                        Audio.Play();
-                        StartSliding();
-                        Invoke("StopSliding", 0.6f);
+                        anim.SetTrigger("Jump");
                     }
+                    else
+                    {
+                        anim.SetTrigger("Jump2");
+                    }
+
+                    verticalVelocity = jumpForce;
                 }
+                else if (MobileInput.Instance.SwipeDown)
+                {
+                    //Slide
+                    Pasos.pararPasos = true;
+                    Audio.clip = SlideAudio;
+                    Audio.Play();
+                    StartSliding();
+                    Invoke("StopSliding", 0.6f);
+                }
+                
             }
             else
             {
@@ -266,21 +218,14 @@ public class PlayerMotorTutorial : MonoBehaviour {
 
                 if (travel < 0)
                 {
-                    if (InvencibilidadTutorial.powerInvenci == false)
+                    if (random == 1)
                     {
-                        if (random == 1)
-                        {
-                            anim.SetTrigger("Bajando");
-                        }
-                        else
-                        {
-                            anim.SetTrigger("Bajando2");
-                            caida = true;
-                        }
+                        anim.SetTrigger("Bajando");
                     }
                     else
                     {
-                        anim.SetTrigger("BigFall");
+                        anim.SetTrigger("Bajando2");
+                        caida = true;
                     }
 
                 }
@@ -304,7 +249,6 @@ public class PlayerMotorTutorial : MonoBehaviour {
                             break;
                     }
                     Audio.Play();
-
                 }
             }
 
@@ -498,57 +442,41 @@ public class PlayerMotorTutorial : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (InvencibilidadTutorial.powerInvenci == false)
+        switch (other.gameObject.tag)
         {
-            switch (other.gameObject.tag)
-            {
-                case "Obstacle":
-                    Crash();
-                    break;
-                case "Obstacle3":
-                    CamaraShake.shakeDuration = 0.4f;
-                    desireLane = LaneIn;
-                    break;
-                case "Tutorial":
-                    Time.timeScale = 0.1f;
-                    tutorial.SetActive(true);
-                    Tutorial = true;
-                    break;
-                case "Tutorial1":
-                    Time.timeScale = 0.1f;
-                    tutorial1.SetActive(true);
-                    Tutorial1 = true;
-                    break;
-                case "Tutorial2":
-                    Time.timeScale = 0.1f;
-                    tutorial2.SetActive(true);
-                    Tutorial2 = true;
-                    break;
-                case "Tutorial3":
-                    Time.timeScale = 0.1f;
-                    tutorial3.SetActive(true);
-                    Tutorial3 = true;
-                    break;
-                case "Final":
-                    PlayerPrefs.SetInt("TutorialCompleto", 1);
-                    tutorial4.SetActive(true);
-                    Time.timeScale = 0;
-                    break;
+            case "Obstacle":
+                Crash();
+                break;
+            case "Obstacle3":
+                CamaraShake.shakeDuration = 0.4f;
+                desireLane = LaneIn;
+                break;
+            case "Tutorial":
+                Time.timeScale = 0.1f;
+                tutorial.SetActive(true);
+                Tutorial = true;
+                break;
+            case "Tutorial1":
+                Time.timeScale = 0.1f;
+                tutorial1.SetActive(true);
+                Tutorial1 = true;
+                break;
+            case "Tutorial2":
+                Time.timeScale = 0.1f;
+                tutorial2.SetActive(true);
+                Tutorial2 = true;
+                break;
+            case "Tutorial3":
+                Time.timeScale = 0.1f;
+                tutorial3.SetActive(true);
+                Tutorial3 = true;
+                break;
+            case "Final":
+                PlayerPrefs.SetInt("TutorialCompleto", 1);
+                tutorial4.SetActive(true);
+                Time.timeScale = 0;
+                break;
 
-            }
-        }
-        if (InvencibilidadTutorial.powerInvenci == true)
-        {
-            if (other.gameObject.tag == "Invencibilidad")
-            {
-                ps.transform.position = transform.position + Vector3.forward * 5;
-                ps.Play();
-                other.gameObject.GetComponentInParent<PieceSpawnerTutorial>().activo = false;
-                if (other.GetComponentInParent<MoveForward>() != null)
-                {
-                    other.GetComponentInParent<MoveForward>().invenci = false;
-                }
-            }
         }
         if (other.gameObject.tag == "bajarCamara")
         {
@@ -570,31 +498,21 @@ public class PlayerMotorTutorial : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(InvencibilidadTutorial.powerInvenci == false)
+        switch (hit.gameObject.tag)
         {
-            switch (hit.gameObject.tag)
-            {
-                case "Obstacle":
-                    Crash();
-                    break;
-                case "Obstacle2":
-                    Crash2();
-                    break;
-                case "Obstacle3":
-                    CamaraShake.shakeDuration = 0.4f;
-                    desireLane = LaneIn;
-                    break;
-                case "Obstacle4":
-                    Crash3();
-                    break;
-            }
-        }
-        if (InvencibilidadTutorial.powerInvenci == true)
-        {
-            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4" || hit.gameObject.tag == "Ramp")
-            {
-                Physics.IgnoreCollision(hit.collider, controller);
-            }
+            case "Obstacle":
+                Crash();
+                break;
+            case "Obstacle2":
+                Crash2();
+                break;
+            case "Obstacle3":
+                CamaraShake.shakeDuration = 0.4f;
+                desireLane = LaneIn;
+                break;
+            case "Obstacle4":
+                Crash3();
+                break;
         }
     }
 }

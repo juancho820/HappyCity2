@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
 
     public static LevelManager Instance { set; get; }
 
-    //Level Spawning
     public GameObject entrada, salida;
     private const float DISTANCE_BEFORE_SPAWN = 150.0f;
     private const int INITIAL_SEGMENTS = 5;
@@ -21,16 +20,12 @@ public class LevelManager : MonoBehaviour
     private int amountOfActiveSegments4;
     private int continiousSegments;
     private int currentSpawnZ;
-    //private int currentLevel;
     private int y1, y2, y3;
     public bool Iniciado = false;
+    private int NumeroDeSpawns = 5;
+    private int Contador = 0;
+    private int zona;
 
-    public int NumeroDeSpawns = 5;
-    public int Contador = 0;
-    public int zona;
-
-
-    //List of pieces
     public List<Piece> ramps = new List<Piece>();
     public List<Piece> longblocksS = new List<Piece>();
     public List<Piece> jumpsB = new List<Piece>();
@@ -89,7 +84,6 @@ public class LevelManager : MonoBehaviour
         Instance = this;
         cameraContainer = Camera.main.transform;
         currentSpawnZ = 0;
-        //currentLevel = 0;
         zona = 0;
     }
     private void Start()
@@ -124,12 +118,7 @@ public class LevelManager : MonoBehaviour
                 int random = Random.Range(0, 5);
                 zona = random;
                 Contador = 0;
-            }
-            //if(zona >= 4)
-            //{
-            //    zona = 0;
-            //}
-            
+            }           
         }
 
         if(amountOfActiveSegments >= MAX_SEGMENTS_ON_SCREEN)
@@ -260,21 +249,6 @@ public class LevelManager : MonoBehaviour
         s.Spawn();
     }
 
-    //private void SpawnMoveCamara()
-    //{
-    //    if(MovedorDeCamaraCC == true)
-    //    {
-    //        BajadorDeCamara.SetActive(true);
-    //        BajadorDeCamara.transform.localPosition = Vector3.forward * currentSpawnZ;
-    //    }
-    //    else
-    //    {
-    //        SubidorDeCamara.SetActive(true);
-    //        SubidorDeCamara.transform.localPosition = Vector3.forward * currentSpawnZ;
-    //    }
-
-    //}
-
     public Segment GetSegment(int id, bool transition)
     {
         Segment s = null;
@@ -282,16 +256,7 @@ public class LevelManager : MonoBehaviour
 
         if(s == null)
         {
-            //GameObject go;
-            //if (Iniciado == false)
-            //{
             GameObject go = Instantiate((transition) ? availableTransitions[id].gameObject : availableSegments[id].gameObject) as GameObject;
-            //}
-            //else
-            //{
-            //    go = Instantiate(availableSegments[id].gameObject) as GameObject;
-            //}
-            
             s = go.GetComponent<Segment>();
 
             s.SegId = id;
