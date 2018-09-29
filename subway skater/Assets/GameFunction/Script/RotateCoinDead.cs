@@ -6,6 +6,7 @@ public class RotateCoinDead : MonoBehaviour {
 	void Update () {
         if(GameManager.Instance == null)
         {
+
             if(GameManagerTutorial.Instance.isDead == true)
             {
                 transform.Rotate(0, 0, 0 + Time.deltaTime * 20);

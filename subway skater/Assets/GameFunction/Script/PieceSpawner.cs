@@ -120,6 +120,10 @@ public class PieceSpawner : MonoBehaviour
             case PieceType.blockPALittle:
                 amtObj = LevelManager.Instance.blocksPALittle.Count;
                 break;
+            case PieceType.ArcadeSound:
+                amtObj = LevelManager.Instance.ArcadeSound.Count;
+                break;
+
         }
 
         currentPiece = LevelManager.Instance.GetPiece(type, Random.Range(0,amtObj));

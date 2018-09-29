@@ -61,6 +61,8 @@ public class LevelManager : MonoBehaviour
     public List<Piece> FloorZones2 = new List<Piece>();
     public List<Piece> FloorZones3 = new List<Piece>();
     public List<Piece> FloorZones4 = new List<Piece>();
+
+    public List<Piece> ArcadeSound = new List<Piece>();
     [HideInInspector]
     public List<Piece> pieces = new List<Piece>(); //All the pieces in the pool
 
@@ -488,6 +490,10 @@ public class LevelManager : MonoBehaviour
             else if (pt == PieceType.blockPALittle)
             {
                 go = blocksPALittle[visualIndex].gameObject;
+            }
+            else if (pt == PieceType.ArcadeSound)
+            {
+                go = ArcadeSound[visualIndex].gameObject;
             }
 
             go = Instantiate(go);

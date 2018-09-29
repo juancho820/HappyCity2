@@ -38,6 +38,7 @@ public enum PieceType
     blockPALittle = 32,
     blockPABig = 33,
     longblock2 = 34,
+    ArcadeSound = 35,
 }
 
 public class Piece : MonoBehaviour

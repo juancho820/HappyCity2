@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance { set; get; }
 
     public int InvenciPower = 0;
+    public int GoldenT= 0;
 
     private AudioSource audiSourc;
     private GameObject player;
@@ -18,7 +19,15 @@ public class GameManager : MonoBehaviour
     public static bool Once = false;
     private PlayerMotor motor;
     public Camera camara;
-    public GameObject botonPlay, botonTienda, botonInvenci;
+    public GameObject botonPlay, botonTienda, botonInvenci , CanvasWinSomething;
+
+    [Header("Gifts Parameters")]
+    public GameObject[] giftArray;
+    public string[] giftTextArray;
+    [Range(0,1)]
+    public float probabWinSomeThing;
+    [Space(30)]
+
     public float pitch;
     public float pitchTimer;
 
@@ -26,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TapAnim;
-    public Text scoreText, coinText, modifierText, InvenciText;
+    public Text scoreText, coinText, modifierText, InvenciText, WinSomeThingText;
     private float score, coinScore, modifierScore;
     private int lastScore;
 
@@ -36,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        GoldenT = PlayerPrefs.GetInt("Golden");
+        CanvasWinSomething.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         audiSourc = GetComponent<AudioSource>();
         audiSourc.clip = Main;
@@ -117,6 +128,7 @@ public class GameManager : MonoBehaviour
                 {
                     coinText.text = (coinScore / 1000000).ToString("0.0 M");
                 }
+
                 InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
                 InvenciText.text = InvenciPower.ToString("0");
             }
@@ -210,8 +222,11 @@ public class GameManager : MonoBehaviour
 
     public void HomePause()
     {
-        Pausar();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+       
+            Pausar();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+
+    
     }
 
     public void Home()
@@ -221,11 +236,48 @@ public class GameManager : MonoBehaviour
     }
     public void Replay()
     {
+        float i = Random.Range(0f, 1f);
+      
+        if (i <= probabWinSomeThing)
+        {
+            WinSomeThing();
+           
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Replay", 1);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        }
+    }
+   public void WinSomeThing()
+    {
+        CanvasWinSomething.SetActive(true);
+        int i = Random.Range(0, 3);
+        giftArray[i].SetActive(true);
+        WinSomeThingText.text = giftTextArray[i];
+        switch(i+1)
+        {
+            case 1:
+                PlayerPrefs.SetInt("Score", (int)coinScore + 200);
+                break;
+            case 2:
+                PlayerPrefs.SetInt("Golden", (int)GoldenT + 1);
+                break;
+            case 3:
+                PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower + 1);
+                break;
+            
+
+        }
+    }
+    public void ReplayAfterWin()
+    {
         PlayerPrefs.SetInt("Replay", 1);
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 
-    public void Pausar()
+
+        public void Pausar()
     {
         if (Time.timeScale == 1)
         {

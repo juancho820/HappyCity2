@@ -12948,13 +12948,14 @@ GameObject:
   - component: {fileID: 451715902}
   - component: {fileID: 451715904}
   - component: {fileID: 451715903}
+  - component: {fileID: 451715905}
   m_Layer: 5
   m_Name: WinSomeThing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &451715902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13004,6 +13005,101 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 451715901}
   m_CullTransparentMesh: 0
+--- !u!82 &451715905
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451715901}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c59bfb8c4ce958c49b3cf94d1c023b5c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &456918027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4488011658083494, guid: a2b877974857bdf4695cb62cf0598ba8,
@@ -45040,7 +45136,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1039336756}
-        m_MethodName: Pausar
+        m_MethodName: ReplayAfterWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45049,28 +45145,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 408777078}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1668542491}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -45294,10 +45368,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InvenciPower: 0
+  GoldenT: 0
   camara: {fileID: 131846775}
   botonPlay: {fileID: 1715311806}
   botonTienda: {fileID: 567448326}
   botonInvenci: {fileID: 1067051575}
+  CanvasWinSomething: {fileID: 451715901}
+  giftArray:
+  - {fileID: 71574774}
+  - {fileID: 1608949360}
+  - {fileID: 1971172643}
+  giftTextArray:
+  - 200 HappyTickets
+  - 1 GoldenTicket
+  - 1 SuperEstrella
+  probabWinSomeThing: 0.156
   pitch: 0
   pitchTimer: 0
   BotonMain: {fileID: 8300000, guid: 738883365e05c0e479bda7546d13c555, type: 3}
@@ -45313,6 +45398,7 @@ MonoBehaviour:
   coinText: {fileID: 1505271913}
   modifierText: {fileID: 368919599}
   InvenciText: {fileID: 168136558}
+  WinSomeThingText: {fileID: 1203065117}
   deathMenuAnim: {fileID: 1183311774}
   deadScoreText: {fileID: 1580590423}
   deadCoinText: {fileID: 1370768907}
@@ -51401,6 +51487,8 @@ MonoBehaviour:
   - {fileID: 114428131095076778, guid: 9431c8bc0e1dfa64bb59eac1378e89bb, type: 2}
   - {fileID: 114155361035010358, guid: 7bb409960e52d9642aa0db55d6722763, type: 2}
   - {fileID: 114338412922336916, guid: 0d5e7f914d1d5e445ae017a9a63e07c9, type: 2}
+  ArcadeSound:
+  - {fileID: 114128974219171482, guid: 94a063b5064044f2db2f2dfed9deae49, type: 2}
   pieces: []
   availableSegments:
   - {fileID: 114748613187917996, guid: c6c41b63cc95ccf45bd6b329d8f72e49, type: 2}
@@ -113979,7 +114067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1971172644
 RectTransform:
   m_ObjectHideFlags: 0
