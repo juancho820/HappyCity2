@@ -106,6 +106,8 @@ public class PlayerMotor : MonoBehaviour {
             {
                 Pasos.iniciadoPasos = true;
                 Invencibilidad.powerInvenci = false;
+                Invencibilidad.powerInvenciExtra = true;
+                StartCoroutine(TerminarInvenci());
                 anim.SetTrigger("StartRunning");
                 slider.value = 0;
                 speed -= 10;
@@ -434,6 +436,19 @@ public class PlayerMotor : MonoBehaviour {
                 }
             }
         }
+        if (Invencibilidad.powerInvenciExtra == true)
+        {
+            if (other.gameObject.tag == "Invencibilidad")
+            {
+                ps.transform.position = transform.position + Vector3.forward * 5;
+                ps.Play();
+                other.gameObject.GetComponentInParent<PieceSpawner>().activo = false;
+                if (other.GetComponentInParent<MoveForward>() != null)
+                {
+                    other.GetComponentInParent<MoveForward>().invenci = false;
+                }
+            }
+        }
         if (other.gameObject.tag == "bajarCamara")
         {
             CamaraMotor.agachar = true;
@@ -454,7 +469,7 @@ public class PlayerMotor : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(Invencibilidad.powerInvenci == false)
+        if(Invencibilidad.powerInvenci == false && Invencibilidad.powerInvenciExtra == false)
         {
             switch (hit.gameObject.tag)
             {
@@ -474,6 +489,13 @@ public class PlayerMotor : MonoBehaviour {
             }
         }
         if (Invencibilidad.powerInvenci == true)
+        {
+            if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4" || hit.gameObject.tag == "Ramp")
+            {
+                Physics.IgnoreCollision(hit.collider, controller);
+            }
+        }
+        if (Invencibilidad.powerInvenciExtra == true)
         {
             if (hit.gameObject.tag == "Obstacle" || hit.gameObject.tag == "Obstacle2" || hit.gameObject.tag == "Obstacle3" || hit.gameObject.tag == "Obstacle4" || hit.gameObject.tag == "Ramp")
             {
@@ -500,4 +522,9 @@ public class PlayerMotor : MonoBehaviour {
         obj_starPartIdle.SetActive(true);
     }
 
+    public IEnumerator TerminarInvenci()
+    {
+        yield return new WaitForSeconds(1);
+        Invencibilidad.powerInvenciExtra = false;
+    }
 }

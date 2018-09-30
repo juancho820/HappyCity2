@@ -5,6 +5,7 @@ using UnityEngine;
 public class Invencibilidad : MonoBehaviour {
 
     public static bool powerInvenci = false;
+    public static bool powerInvenciExtra = false;
     public ParticleSystem PS;
 
     private void OnTriggerEnter(Collider other)
