@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance { set; get; }
 
+    public GameObject creditos;
+
     public int InvenciPower = 0;
     public int GoldenT= 0;
 
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("Replay") == 1)
         {
             Jugar();
+            creditos.SetActive(false);
         }
         PlayerPrefs.SetInt("Replay", 0);
         if (!PlayerPrefs.HasKey("MagCooldown"))
@@ -237,7 +240,7 @@ public class GameManager : MonoBehaviour
     public void Replay()
     {
         float i = Random.Range(0f, 1f);
-      
+
         if (i <= probabWinSomeThing)
         {
             WinSomeThing();

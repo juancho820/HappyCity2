@@ -208,7 +208,7 @@ public class LevelManager : MonoBehaviour
                     entrada.SetActive(true);
                     entrada.transform.position = new Vector3(-0.03f, 11.2f, 1 * currentSpawnZ + 1);
                 }
-                if (Contador == 9)
+                if (Contador == NumeroDeSpawns)
                 {
                     salida.SetActive(true);
                     salida.transform.position = new Vector3(-0.75f, 8.55f, 1 * currentSpawnZ + 24);
