@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TapAnim;
     public Text scoreText, coinText, modifierText, InvenciText, WinSomeThingText;
-    private float score, coinScore, modifierScore;
+    public float score;
+    private float coinScore, modifierScore;
     private int lastScore;
 
     //Death menu

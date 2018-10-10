@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class TiendaManager : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class TiendaManager : MonoBehaviour
     public Sprite[] arrayInv;
     public Sprite[] arrayMag;
     public Sprite[] arrayX2;
+
+    public Text codigo1, codigo2, codigo3, codigo4;
 
     public Animator anim;
 
@@ -326,6 +329,52 @@ public class TiendaManager : MonoBehaviour
         }
     }
 
+    public void redimir(int premio)
+    {
+        string url = "http://190.7.159.10:1900/RedencionClientes/api/RedencionPremios";
+
+        WWWForm formDate = new WWWForm();
+        formDate.AddField("NumeroPuntos", coinScore.ToString(""));
+        formDate.AddField("CodigoRedencion", DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
+        formDate.AddField("PremioRedencion", premio.ToString(""));
+        formDate.AddField("Fecha", DateTime.Now.ToString(""));
+
+        WWW www = new WWW(url, formDate);
+
+        switch (premio)
+        {
+            case 1:
+                if(GoldenT >= 0)
+                {
+                    codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                    StartCoroutine(request(www));
+                }
+                break;
+            case 2:
+                if (GoldenT >= 10)
+                {
+                    codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                    StartCoroutine(request(www));
+                }
+                break;
+            case 3:
+                if (GoldenT >= 15)
+                {
+                    codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                    StartCoroutine(request(www));
+                }
+                break;
+            case 4:
+                if (GoldenT >= 20)
+                {
+                    codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                    StartCoroutine(request(www));
+                }
+                break;
+        }
+        
+    }
+
     public void OnPlayButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
@@ -334,5 +383,11 @@ public class TiendaManager : MonoBehaviour
     public void VolverTienda()
     {
         SceneManager.LoadScene("GameScene");
+    }
+
+    IEnumerator request(WWW www)
+    {
+        yield return www;
+        Debug.Log("Registro");
     }
 }
