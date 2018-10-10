@@ -348,6 +348,7 @@ public class TiendaManager : MonoBehaviour
                 {
                     codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                     StartCoroutine(request(www));
+                    Bodega.Instance.crearCodigo(codigo1.text);
                 }
                 break;
             case 2:
@@ -355,6 +356,7 @@ public class TiendaManager : MonoBehaviour
                 {
                     codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                     StartCoroutine(request(www));
+                    Bodega.Instance.crearCodigo(codigo2.text);
                 }
                 break;
             case 3:
@@ -362,6 +364,7 @@ public class TiendaManager : MonoBehaviour
                 {
                     codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                     StartCoroutine(request(www));
+                    Bodega.Instance.crearCodigo(codigo3.text);
                 }
                 break;
             case 4:
@@ -369,6 +372,7 @@ public class TiendaManager : MonoBehaviour
                 {
                     codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                     StartCoroutine(request(www));
+                    Bodega.Instance.crearCodigo(codigo4.text);
                 }
                 break;
         }
