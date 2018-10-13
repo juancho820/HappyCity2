@@ -35,12 +35,13 @@ public class TiendaManager : MonoBehaviour
     public int InvCooldown = 10;
     public int MagCooldown = 10;
     public int x2Cooldown = 10;
+    public int redButonInt = 0;
 
-    public GameObject Inv, Mag, X2, Invenci, GT;
+    public GameObject Inv, Mag, X2, Invenci, GT, redButton;
 
     public AudioClip BotonComprar;
 
-    public Text coinTextTienda, InvenciText, InvenciPriceText, MasInv, MasMag, Masx2, GoldenTickts, GTPriceText;
+    public Text coinTextTienda, InvenciText, InvenciPriceText, MasInv, MasMag, Masx2, GoldenTickts, GoldenTicktsRed, GTPriceText,redButtonText;
     private float coinScore;
     private float GoldenT;
 
@@ -94,6 +95,7 @@ public class TiendaManager : MonoBehaviour
         InvenciText.text = InvenciPower.ToString("0");
         coinTextTienda.text = coinScore.ToString("0");
         GoldenTickts.text = GoldenT.ToString("0");
+        GoldenTicktsRed.text = GoldenT.ToString("0");
 
         if (InvCooldown < 16)
         {
@@ -325,12 +327,15 @@ public class TiendaManager : MonoBehaviour
 
             PlayerPrefs.SetInt("Golden", (int)GoldenT);
             GoldenTickts.text = GoldenT.ToString("0");
+            GoldenTicktsRed.text = GoldenT.ToString("0");
+
             anim.SetTrigger("Comprado");
         }
     }
 
     public void redimir(int premio)
     {
+        RedButton();
         string url = "http://190.7.159.10:1900/RedencionClientes/api/RedencionPremios";
 
         WWWForm formDate = new WWWForm();
@@ -377,6 +382,20 @@ public class TiendaManager : MonoBehaviour
                 break;
         }
         
+    }
+    public void RedButton()
+    {
+        redButton.SetActive(true);
+        redButonInt++;
+        redButtonText.text = "" + redButonInt;
+
+    }
+    public void RedButtonUnactive()
+    {
+        redButton.SetActive(false);
+        redButonInt = 0;
+       
+
     }
 
     public void OnPlayButton()
