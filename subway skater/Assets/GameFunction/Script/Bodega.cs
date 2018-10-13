@@ -31,6 +31,7 @@ public class Bodega : MonoBehaviour {
         PlayerPrefs.SetString("Codigo" + numeroDeCodigo.ToString("0"), codigoGenerado);
         numeroDeCodigo++;
         PlayerPrefs.SetInt("numeroDeCodigo", numeroDeCodigo);
+        resize.Instance.Resz();
     }
 
     public void cargarCodigos()
