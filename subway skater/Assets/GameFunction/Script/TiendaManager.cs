@@ -16,6 +16,8 @@ public class TiendaManager : MonoBehaviour
     private int valorUpgradex2 = 100;
     private int valorGT = 2000;
 
+    private bool tiempoRedemcion = false;
+
     private int frameInv = 0;
     private int frameMag = 0;
     private int frameX2 = 0;
@@ -48,6 +50,9 @@ public class TiendaManager : MonoBehaviour
 
     private void Awake()
     {
+
+        tiempoRedemcion = false;
+
         if (!PlayerPrefs.HasKey("UpgradeInv"))
         {
             PlayerPrefs.SetInt("UpgradeInv", 100);
@@ -335,53 +340,63 @@ public class TiendaManager : MonoBehaviour
 
     public void redimir(int premio)
     {
-        RedButton();
-        string url = "http://190.7.159.10:1900/RedencionClientes/api/RedencionPremios";
-
-        WWWForm formDate = new WWWForm();
-        formDate.AddField("NumeroPuntos", coinScore.ToString(""));
-        formDate.AddField("CodigoRedencion", DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
-        formDate.AddField("PremioRedencion", premio.ToString(""));
-        formDate.AddField("Fecha", DateTime.Now.ToString(""));
-
-        WWW www = new WWW(url, formDate);
-
-        switch (premio)
+        if(tiempoRedemcion == false)
         {
-            case 1:
-                if(GoldenT >= 0)
-                {
-                    codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
-                    StartCoroutine(request(www));
-                    Bodega.Instance.crearCodigo(codigo1.text);
-                }
-                break;
-            case 2:
-                if (GoldenT >= 10)
-                {
-                    codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
-                    StartCoroutine(request(www));
-                    Bodega.Instance.crearCodigo(codigo2.text);
-                }
-                break;
-            case 3:
-                if (GoldenT >= 15)
-                {
-                    codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
-                    StartCoroutine(request(www));
-                    Bodega.Instance.crearCodigo(codigo3.text);
-                }
-                break;
-            case 4:
-                if (GoldenT >= 20)
-                {
-                    codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
-                    StartCoroutine(request(www));
-                    Bodega.Instance.crearCodigo(codigo4.text);
-                }
-                break;
-        }
-        
+            string url = "http://190.7.159.10:1900/RedencionClientes/api/RedencionPremios";
+
+            WWWForm formDate = new WWWForm();
+            formDate.AddField("NumeroPuntos", coinScore.ToString(""));
+            formDate.AddField("CodigoRedencion", DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
+            formDate.AddField("PremioRedencion", premio.ToString(""));
+            formDate.AddField("Fecha", DateTime.Now.ToString(""));
+
+            WWW www = new WWW(url, formDate);
+            RedButton();
+
+            switch (premio)
+            {
+                case 1:
+                    if (GoldenT >= 0)
+                    {
+                        codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                        StartCoroutine(request(www));
+                        Bodega.Instance.crearCodigo(codigo1.text);
+                        tiempoRedemcion = true;
+                        StartCoroutine(redimir());
+                    }
+                    break;
+                case 2:
+                    if (GoldenT >= 10)
+                    {
+                        codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                        StartCoroutine(request(www));
+                        Bodega.Instance.crearCodigo(codigo2.text);
+                        tiempoRedemcion = true;
+                        StartCoroutine(redimir());
+                    }
+                    break;
+                case 3:
+                    if (GoldenT >= 15)
+                    {
+                        codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                        StartCoroutine(request(www));
+                        Bodega.Instance.crearCodigo(codigo3.text);
+                        tiempoRedemcion = true;
+                        StartCoroutine(redimir());
+                    }
+                    break;
+                case 4:
+                    if (GoldenT >= 20)
+                    {
+                        codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
+                        StartCoroutine(request(www));
+                        Bodega.Instance.crearCodigo(codigo4.text);
+                        tiempoRedemcion = true;
+                        StartCoroutine(redimir());
+                    }
+                    break;
+            }
+        }        
     }
     public void RedButton()
     {
@@ -412,5 +427,11 @@ public class TiendaManager : MonoBehaviour
     {
         yield return www;
         Debug.Log("Registro");
+    }
+
+    IEnumerator redimir()
+    {
+        yield return new WaitForSeconds(10);
+        tiempoRedemcion = false;
     }
 }

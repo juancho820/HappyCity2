@@ -52,4 +52,17 @@ public class Bodega : MonoBehaviour {
             GameObject.Destroy(child.gameObject);
         }
     }
+
+    public void borrarCodigos()
+    {
+        GameObject[] childs = new GameObject[transform.childCount];
+        for (int i = 0; i < childs.Length; i++)
+        {
+            if (childs[i].GetComponent<paraEliminar>().eliminar == true)
+            {
+                GameObject.Destroy(childs[i].gameObject);
+                PlayerPrefs.DeleteKey("Codigo" + i.ToString("0"));
+            }
+        }
+    }
 }
