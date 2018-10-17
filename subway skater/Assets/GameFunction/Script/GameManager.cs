@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
             InvenciPower--;
             InvenciText.text = InvenciPower.ToString("0");
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
+           
 
             if (Invencibilidad.powerInvenci == true)
             {
