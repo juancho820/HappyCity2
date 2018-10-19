@@ -7,6 +7,7 @@ public class Magneto : MonoBehaviour {
     public static bool powerMagneto = false;
     public ParticleSystem PS;
 
+
     private void OnTriggerEnter(Collider other)
     {
         var Player = other.GetComponent<PlayerMotor>();

@@ -202,8 +202,8 @@ public class GameManager : MonoBehaviour
             InvenciPower--;
             InvenciText.text = InvenciPower.ToString("0");
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
-           
 
+            PlayerMotor.Instance.ActivateStarParticles();
             if (Invencibilidad.powerInvenci == true)
             {
                 PlayerMotor.Instance.slider.value = 0;

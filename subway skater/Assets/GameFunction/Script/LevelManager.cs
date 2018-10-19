@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     private int currentSpawnZ;
     private int y1, y2, y3;
     public bool Iniciado = false;
-    private int NumeroDeSpawns = 5;
+    private int NumeroDeSpawns = 7;
     private int Contador = 0;
     private int zona;
 
