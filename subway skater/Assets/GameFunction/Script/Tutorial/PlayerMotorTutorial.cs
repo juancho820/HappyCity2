@@ -13,11 +13,9 @@ public class PlayerMotorTutorial : MonoBehaviour {
     //
     private bool isRunning = false;
 
-    public AudioClip Whoosh1, Whoosh2, Whoosh3, MagnetAudio, X2Audio, InvenciAudio, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, BlockDeadAudio2, JumpDeadAudio, TicketAudio;
+    public AudioClip Whoosh1, Whoosh2, Whoosh3, Salto1, Salto2, Salto3, SlideAudio, BlockDeadAudio, BlockDeadAudio2, JumpDeadAudio, TicketAudio;
 
     public GameObject tutorial, tutorial1, tutorial2, tutorial3, tutorial4;
-
-    public ParticleSystem ps;
 
     //Animation
     private Animator anim;
@@ -32,14 +30,6 @@ public class PlayerMotorTutorial : MonoBehaviour {
     private bool Tutorial, Tutorial1, Tutorial2, Tutorial3;
 
     public AudioSource Audio;
-
-    public RadialSliderInv slider;
-    public RadialSliderx2 slider2;
-    public RadialSliderMag slider3;
-    public int InvCooldown = 10;
-    public int MagCooldown = 10;
-    public int x2Cooldown = 10;
-
 
     // Movement
     private CharacterController controller;
@@ -64,16 +54,9 @@ public class PlayerMotorTutorial : MonoBehaviour {
     private void Start()
     {
         Instance = this;
-        InvCooldown = PlayerPrefs.GetInt("MagCooldown");
-        MagCooldown = PlayerPrefs.GetInt("InvCooldown");
-        x2Cooldown = PlayerPrefs.GetInt("x2Cooldown");
         speed = originalSpeed;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        if (PlayerPrefs.GetInt("IntInvencibilidad") > 0)
-        {
-            slider.gameObject.SetActive(true);
-        }
     }
 
     private void Update()

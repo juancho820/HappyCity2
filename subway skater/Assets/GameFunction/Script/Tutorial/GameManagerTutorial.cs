@@ -120,7 +120,6 @@ public class GameManagerTutorial : MonoBehaviour
 
             if (isGameStarted && !isDead)
             {
-                // Bump score up
                 if (GameObject.FindGameObjectWithTag("Player").transform.position.z > 0)
                 {
                     score = GameObject.FindGameObjectWithTag("Player").transform.position.z;
