@@ -14,7 +14,7 @@ public class TiendaManager : MonoBehaviour
     private int valorUpgradeInv = 100;
     private int valorUpgradeMag = 100;
     private int valorUpgradex2 = 100;
-    private int valorGT = 2000;
+    private int valorGT = 4500;
 
     private bool tiempoRedemcion = false;
 
@@ -359,7 +359,7 @@ public class TiendaManager : MonoBehaviour
             switch (premio)
             {
                 case 1:
-                    if (GoldenT >= 0)
+                    if (GoldenT >= 3)
                     {
                         codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -372,7 +372,7 @@ public class TiendaManager : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (GoldenT >= 10)
+                    if (GoldenT >= 4)
                     {
                         codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -385,7 +385,7 @@ public class TiendaManager : MonoBehaviour
                     }
                     break;
                 case 3:
-                    if (GoldenT >= 15)
+                    if (GoldenT >= 6)
                     {
                         codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -398,7 +398,7 @@ public class TiendaManager : MonoBehaviour
                     }
                     break;
                 case 4:
-                    if (GoldenT >= 20)
+                    if (GoldenT >= 8)
                     {
                         codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));

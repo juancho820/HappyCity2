@@ -11,12 +11,7 @@ public class GlacierSpawner : MonoBehaviour
     public bool IsScrolling { set; get; }
 
     private float scrollLocation;
-    private Transform playerTransform;
-
-    private void Start()
-    {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    public Transform playerTransform;
 
     private void Update()
     {

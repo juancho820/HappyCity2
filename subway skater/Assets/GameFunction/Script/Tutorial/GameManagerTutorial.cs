@@ -14,7 +14,7 @@ public class GameManagerTutorial : MonoBehaviour
     private bool isGameStarted = false;
     private bool iniciado = false;
     public static bool Once = false;
-    private PlayerMotorTutorial motor;
+    public PlayerMotorTutorial motor;
     public GameObject tutorialCards;
     public Camera camara;
     public float pitch;
@@ -35,6 +35,7 @@ public class GameManagerTutorial : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
 
         if(PlayerPrefs.GetInt("TutorialCompleto") == 1)
         {
@@ -68,8 +69,6 @@ public class GameManagerTutorial : MonoBehaviour
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
-
-        motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotorTutorial>();
     }
     private void Update()
     {

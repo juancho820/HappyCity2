@@ -9,17 +9,17 @@ public class GameManager : MonoBehaviour
 
     public GameObject creditos;
 
-    public int InvenciPower = 0;
-    public int GoldenT= 0;
+    private int InvenciPower = 0;
+    private int GoldenT= 0;
 
-    private AudioSource audiSourc;
-    private GameObject player;
+    public AudioSource audiSourc;
+    public GameObject player;
 
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
     public static bool Once = false;
-    private PlayerMotor motor;
+    public PlayerMotor motor;
     public Camera camara;
     public GameObject botonPlay, botonTienda, botonInvenci , CanvasWinSomething;
 
@@ -31,14 +31,14 @@ public class GameManager : MonoBehaviour
     [Space(30)]
 
     public float pitch;
-    public float pitchTimer;
+    private float pitchTimer;
 
     public AudioClip BotonMain, BotonTienda, Loop, Main;
 
     // UI and UI fields
     public Animator gameCanvas, menuAnim, CoinUIAnim, botonAnim, TapAnim;
     public Text scoreText, coinText, modifierText, InvenciText, WinSomeThingText;
-    public float score;
+    private float score;
     private float coinScore, modifierScore;
     private int lastScore;
 
@@ -48,10 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         GoldenT = PlayerPrefs.GetInt("Golden");
         CanvasWinSomething.SetActive(false);
-        player = GameObject.FindGameObjectWithTag("Player");
-        audiSourc = GetComponent<AudioSource>();
         audiSourc.clip = Main;
         audiSourc.Play();
         if (PlayerPrefs.GetInt("Replay") == 1)
@@ -85,9 +84,6 @@ public class GameManager : MonoBehaviour
         modifierText.text = "x" + modifierScore.ToString("0.0");
         coinText.text = coinScore.ToString("0");
         scoreText.text = scoreText.text = score.ToString("0");
-
-
-        motor = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMotor>();
     
         botonAnim.SetTrigger("Iniciar");
     }

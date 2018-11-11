@@ -6,19 +6,13 @@ public class Pasos : MonoBehaviour {
 
     public AudioClip PasosNormales, PasosHulk;
 
-    private AudioSource Audio;
+    public AudioSource Audio;
     public AudioSource Audio2;
 
     public static bool iniciadoPasos = true;
     public static bool pararPasos = false;
 
     private bool iniciado = false;
-
-    // Use this for initialization
-    void Start () {
-
-        Audio = GetComponent<AudioSource>();
-    }
 	
 	// Update is called once per frame
 	void Update () {        

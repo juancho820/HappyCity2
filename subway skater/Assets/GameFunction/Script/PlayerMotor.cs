@@ -15,7 +15,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public ParticleSystem ps;
 
-    private Animator anim;
+    public Animator anim;
 
     private float posicionActual;
     private float travel;
@@ -31,11 +31,11 @@ public class PlayerMotor : MonoBehaviour {
     public RadialSliderInv slider;
     public RadialSliderx2 slider2;
     public RadialSliderMag slider3;
-    public int InvCooldown = 10;
-    public int MagCooldown = 10;
-    public int x2Cooldown = 10;
+    private int InvCooldown = 10;
+    private int MagCooldown = 10;
+    private int x2Cooldown = 10;
 
-    private CharacterController controller;
+    public CharacterController controller;
     [SerializeField]
     private float jumpForce = 6.0f;
     [SerializeField]
@@ -60,8 +60,6 @@ public class PlayerMotor : MonoBehaviour {
         MagCooldown = PlayerPrefs.GetInt("InvCooldown");
         x2Cooldown = PlayerPrefs.GetInt("x2Cooldown");
         speed = originalSpeed;
-        controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
         if (PlayerPrefs.GetInt("IntInvencibilidad") > 0)
         {
             slider.gameObject.SetActive(true);
