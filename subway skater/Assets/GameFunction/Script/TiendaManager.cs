@@ -132,18 +132,20 @@ public class TiendaManager : MonoBehaviour
             Masx2.text = ("Mejorado!");
         }
 
-        if (coinScore < 1000)
-        {
-            coinTextTienda.text = coinScore.ToString("0");
-        }
-        if (coinScore > 1000)
-        {
-            coinTextTienda.text = (coinScore/1000).ToString("0.0 K");
-        }
-        if (coinScore > 1000000)
-        {
-            coinTextTienda.text = (coinScore/1000000).ToString("0.0 M");
-        }
+        coinTextTienda.text = coinScore.ToString("0");
+
+        //if (coinScore < 1000)
+        //{
+        //    coinTextTienda.text = coinScore.ToString("0");
+        //}
+        //if (coinScore > 1000)
+        //{
+        //    coinTextTienda.text = (coinScore/1000).ToString("0.0 K");
+        //}
+        //if (coinScore > 1000000)
+        //{
+        //    coinTextTienda.text = (coinScore/1000000).ToString("0.0 M");
+        //}
 
     }
 
@@ -158,18 +160,18 @@ public class TiendaManager : MonoBehaviour
             PlayerPrefs.SetInt("IntInvencibilidad", InvenciPower);
             PlayerPrefs.SetInt("Score", (int)coinScore);
             coinTextTienda.text = coinScore.ToString("0");
-            if (coinScore < 1000)
-            {
-                coinTextTienda.text = coinScore.ToString("0");
-            }
-            if (coinScore > 1000)
-            {
-                coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
-            }
-            if (coinScore > 1000000)
-            {
-                coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
-            }
+            //if (coinScore < 1000)
+            //{
+            //    coinTextTienda.text = coinScore.ToString("0");
+            //}
+            //if (coinScore > 1000)
+            //{
+            //    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+            //}
+            //if (coinScore > 1000000)
+            //{
+            //    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+            //}
 
             InvenciText.text = InvenciPower.ToString("0");
             anim.SetTrigger("Comprado");
@@ -194,18 +196,18 @@ public class TiendaManager : MonoBehaviour
                 valorUpgradeInv *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
-                if (coinScore < 1000)
-                {
-                    coinTextTienda.text = coinScore.ToString("0");
-                }
-                if (coinScore > 1000)
-                {
-                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
-                }
-                if (coinScore > 1000000)
-                {
-                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
-                }
+                //if (coinScore < 1000)
+                //{
+                //    coinTextTienda.text = coinScore.ToString("0");
+                //}
+                //if (coinScore > 1000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                //}
+                //if (coinScore > 1000000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                //}
                 PlayerPrefs.SetInt("UpgradeInv", valorUpgradeInv);
                 if(InvCooldown < 16)
                 {
@@ -238,18 +240,18 @@ public class TiendaManager : MonoBehaviour
                 valorUpgradeMag *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
-                if (coinScore < 1000)
-                {
-                    coinTextTienda.text = coinScore.ToString("0");
-                }
-                if (coinScore > 1000)
-                {
-                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
-                }
-                if (coinScore > 1000000)
-                {
-                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
-                }
+                //if (coinScore < 1000)
+                //{
+                //    coinTextTienda.text = coinScore.ToString("0");
+                //}
+                //if (coinScore > 1000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                //}
+                //if (coinScore > 1000000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                //}
 
                 PlayerPrefs.SetInt("UpgradeMag", valorUpgradeMag);
                 if (MagCooldown < 16)
@@ -282,18 +284,18 @@ public class TiendaManager : MonoBehaviour
                 valorUpgradex2 *= 2;
                 PlayerPrefs.SetInt("Score", (int)coinScore);
                 coinTextTienda.text = coinScore.ToString("0");
-                if (coinScore < 1000)
-                {
-                    coinTextTienda.text = coinScore.ToString("0");
-                }
-                if (coinScore > 1000)
-                {
-                    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
-                }
-                if (coinScore > 1000000)
-                {
-                    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
-                }
+                //if (coinScore < 1000)
+                //{
+                //    coinTextTienda.text = coinScore.ToString("0");
+                //}
+                //if (coinScore > 1000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+                //}
+                //if (coinScore > 1000000)
+                //{
+                //    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+                //}
 
                 PlayerPrefs.SetInt("Upgradex2", valorUpgradex2);
                 
@@ -320,18 +322,18 @@ public class TiendaManager : MonoBehaviour
             coinScore -= valorGT;
             PlayerPrefs.SetInt("Score", (int)coinScore);
             coinTextTienda.text = coinScore.ToString("0");
-            if (coinScore < 1000)
-            {
-                coinTextTienda.text = coinScore.ToString("0");
-            }
-            if (coinScore > 1000)
-            {
-                coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
-            }
-            if (coinScore > 1000000)
-            {
-                coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
-            }
+            //if (coinScore < 1000)
+            //{
+            //    coinTextTienda.text = coinScore.ToString("0");
+            //}
+            //if (coinScore > 1000)
+            //{
+            //    coinTextTienda.text = (coinScore / 1000).ToString("0.0 K");
+            //}
+            //if (coinScore > 1000000)
+            //{
+            //    coinTextTienda.text = (coinScore / 1000000).ToString("0.0 M");
+            //}
 
             PlayerPrefs.SetInt("Golden", (int)GoldenT);
             GoldenTickts.text = GoldenT.ToString("0");

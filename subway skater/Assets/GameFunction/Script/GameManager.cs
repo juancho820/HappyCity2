@@ -116,18 +116,19 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<GlacierSpawner>().IsScrolling = true;
                 FindObjectOfType<CamaraMotor>().IsMoving = true;
                 gameCanvas.SetTrigger("Show");
-                if (coinScore < 1000)
-                {
-                    coinText.text = coinScore.ToString("0");
-                }
-                if (coinScore > 1000)
-                {
-                    coinText.text = (coinScore / 1000).ToString("0.0 K");
-                }
-                if (coinScore > 1000000)
-                {
-                    coinText.text = (coinScore / 1000000).ToString("0.0 M");
-                }
+                coinText.text = coinScore.ToString("0");
+                //if (coinScore < 1000)
+                //{
+                //    coinText.text = coinScore.ToString("0");
+                //}
+                //if (coinScore > 1000)
+                //{
+                //    coinText.text = (coinScore / 1000).ToString("0.0 K");
+                //}
+                //if (coinScore > 1000000)
+                //{
+                //    coinText.text = (coinScore / 1000000).ToString("0.0 M");
+                //}
 
                 InvenciPower = PlayerPrefs.GetInt("IntInvencibilidad");
                 InvenciText.text = InvenciPower.ToString("0");
@@ -145,18 +146,18 @@ public class GameManager : MonoBehaviour
             {
                 lastScore = (int)score;
                 scoreText.text = score.ToString("0");
-                if (score < 1000)
-                {
-                    scoreText.text = score.ToString("0");
-                }
-                if (score > 1000)
-                {
-                    scoreText.text = (score / 1000).ToString("0.0 K");
-                }
-                if (score > 1000000)
-                {
-                    scoreText.text = (score / 1000000).ToString("0.0 M");
-                }
+                //if (score < 1000)
+                //{
+                //    scoreText.text = score.ToString("0");
+                //}
+                //if (score > 1000)
+                //{
+                //    scoreText.text = (score / 1000).ToString("0.0 K");
+                //}
+                //if (score > 1000000)
+                //{
+                //    scoreText.text = (score / 1000000).ToString("0.0 M");
+                //}
             }
         }
     }
@@ -166,19 +167,20 @@ public class GameManager : MonoBehaviour
         pitch += 0.1f;
         pitchTimer = 0.7f;
         coinScore += (1 * modifierScore) * X2.x2;
+        coinText.text = coinScore.ToString("0");
 
-        if(coinScore < 1000)
-        {
-            coinText.text = coinScore.ToString("0");
-        }
-        if (coinScore > 1000)
-        {
-            coinText.text = (coinScore/1000).ToString("0.0 K");
-        }
-        if (coinScore > 1000000)
-        {
-            coinText.text = (coinScore / 1000000).ToString("0.0 M");
-        }
+        //if(coinScore < 1000)
+        //{
+        //    coinText.text = coinScore.ToString("0");
+        //}
+        //if (coinScore > 1000)
+        //{
+        //    coinText.text = (coinScore/1000).ToString("0.0 K");
+        //}
+        //if (coinScore > 1000000)
+        //{
+        //    coinText.text = (coinScore / 1000000).ToString("0.0 M");
+        //}
     }
 
     public void Jugar()
@@ -222,18 +224,15 @@ public class GameManager : MonoBehaviour
     }
 
     public void HomePause()
-    {
-       
-            Pausar();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
-
-    
+    {      
+        Pausar();
+        SceneManager.LoadScene("GameScene");    
     }
 
     public void Home()
     {
         PlayerPrefs.SetInt("Replay", 0);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene");
     }
     public void Replay()
     {
@@ -278,7 +277,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-        public void Pausar()
+    public void Pausar()
     {
         if (Time.timeScale == 1)
         {

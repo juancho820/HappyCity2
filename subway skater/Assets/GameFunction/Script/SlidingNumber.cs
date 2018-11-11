@@ -67,34 +67,37 @@ public class SlidingNumber : MonoBehaviour
                 }
             }
 
+
+            Score.text = CurrentNumber.ToString("0");
+            Coins.text = CurrentNumber2.ToString("0");
             //1
-            if (CurrentNumber < 1000)
-            {
-                Score.text = CurrentNumber.ToString("0");
-            }
-            if (CurrentNumber > 1000)
-            {
-                Score.text = (CurrentNumber / 1000).ToString("0.0 K");
-            }
-            if (CurrentNumber > 1000000)
-            {
-                Score.text = (CurrentNumber / 1000000).ToString("0.0 M");
-            }
+            //if (CurrentNumber < 1000)
+            //{
+            //    Score.text = CurrentNumber.ToString("0");
+            //}
+            //if (CurrentNumber > 1000)
+            //{
+            //    Score.text = (CurrentNumber / 1000).ToString("0.0 K");
+            //}
+            //if (CurrentNumber > 1000000)
+            //{
+            //    Score.text = (CurrentNumber / 1000000).ToString("0.0 M");
+            //}
 
 
             //2
-            if (CurrentNumber2 < 1000)
-            {
-                Coins.text = CurrentNumber2.ToString("0");
-            }
-            if (CurrentNumber2 > 1000)
-            {
-                Coins.text = (CurrentNumber2 / 1000).ToString("0.0 K");
-            }
-            if (CurrentNumber2 > 1000000)
-            {
-                Coins.text = (CurrentNumber2 / 1000000).ToString("0.0 M");
-            }
+            //if (CurrentNumber2 < 1000)
+            //{
+            //    Coins.text = CurrentNumber2.ToString("0");
+            //}
+            //if (CurrentNumber2 > 1000)
+            //{
+            //    Coins.text = (CurrentNumber2 / 1000).ToString("0.0 K");
+            //}
+            //if (CurrentNumber2 > 1000000)
+            //{
+            //    Coins.text = (CurrentNumber2 / 1000000).ToString("0.0 M");
+            //}
 
 
 
