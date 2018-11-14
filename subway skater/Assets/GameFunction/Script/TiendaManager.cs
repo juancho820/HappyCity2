@@ -367,10 +367,11 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(codigo1.text);
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Premio De Cobre";
+                        premioTexto.text = "1 hora x $16.000 pesos";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
+                        GoldenT -= 3;
                     }
                     break;
                 case 2:
@@ -380,10 +381,11 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(codigo2.text);
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Premio De Plata";
+                        premioTexto.text = "50% en bonos con recargas de $20.000";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
+                        GoldenT -= 4;
                     }
                     break;
                 case 3:
@@ -393,10 +395,11 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(codigo3.text);
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Premio De Oro";
+                        premioTexto.text = "Recargas  $20.000 recibes 2x1";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
+                        GoldenT -= 6;
                     }
                     break;
                 case 4:
@@ -406,10 +409,11 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(codigo4.text);
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Premio De Cristal";
+                        premioTexto.text = "Carga $30.000 y recibes 50 tickets físicos + 50% en todas las atracciones.";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
+                        GoldenT -= 8;
                     }
                     break;
             }
