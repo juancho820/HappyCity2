@@ -4,7 +4,7 @@ public class Coin : MonoBehaviour
 {
     private Animator anim;
     private GameObject player;
-    public bool cogida = false;
+    private bool cogida = false;
 
     private void Awake()
     {

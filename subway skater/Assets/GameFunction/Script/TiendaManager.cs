@@ -372,6 +372,9 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
                         GoldenT -= 3;
+                        GoldenTickts.text = GoldenT.ToString("0");
+                        GoldenTicktsRed.text = GoldenT.ToString("0");
+                        PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 2:
@@ -386,6 +389,9 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
                         GoldenT -= 4;
+                        GoldenTickts.text = GoldenT.ToString("0");
+                        GoldenTicktsRed.text = GoldenT.ToString("0");
+                        PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 3:
@@ -400,6 +406,9 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
                         GoldenT -= 6;
+                        GoldenTickts.text = GoldenT.ToString("0");
+                        GoldenTicktsRed.text = GoldenT.ToString("0");
+                        PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 4:
@@ -414,6 +423,9 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
                         GoldenT -= 8;
+                        GoldenTickts.text = GoldenT.ToString("0");
+                        GoldenTicktsRed.text = GoldenT.ToString("0");
+                        PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
             }

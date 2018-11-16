@@ -12,10 +12,14 @@ public class MoveForward : MonoBehaviour {
 
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        position = this.transform.position;
 	}
 
-	void Update () {
+    private void OnEnable()
+    {
+        position = this.transform.position;
+    }
+
+    void Update () {
         if (GameManager.Instance.isDead == false)
         {
             if (this.transform.position.z - player.transform.position.z > -40)

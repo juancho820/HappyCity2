@@ -18,9 +18,7 @@ public class LevelManager : MonoBehaviour
     private int amountOfActiveSegments2;
     private int amountOfActiveSegments3;
     private int amountOfActiveSegments4;
-    private int continiousSegments;
     private int currentSpawnZ;
-    private int y1, y2, y3;
     public bool Iniciado = false;
     private int NumeroDeSpawns = 7;
     private int Contador = 0;
@@ -150,14 +148,9 @@ public class LevelManager : MonoBehaviour
         switch (zona)
         {
             case 0:
-                List<Segment> possibleSeg = availableSegments.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-                int id = Random.Range(0, possibleSeg.Count);
+                int id = Random.Range(0, availableSegments.Count);
 
                 Segment s = GetSegment(id, false);
-
-                y1 = s.endY1;
-                y2 = s.endY2;
-                y3 = s.endY3;
 
                 s.transform.SetParent(transform);
                 s.transform.localPosition = Vector3.forward * currentSpawnZ;
@@ -168,14 +161,9 @@ public class LevelManager : MonoBehaviour
                 break;
             case 1:
                 
-                List<Segment> possibleSeg2 = availableSegments2.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-                int id2 = Random.Range(0, possibleSeg2.Count);
+                int id2 = Random.Range(0, availableSegments2.Count);
 
                 Segment s2 = GetSegment2(id2, false);
-
-                y1 = s2.endY1;
-                y2 = s2.endY2;
-                y3 = s2.endY3;
 
                 s2.transform.SetParent(transform);
                 s2.transform.localPosition = Vector3.forward * currentSpawnZ;
@@ -185,14 +173,9 @@ public class LevelManager : MonoBehaviour
                 s2.Spawn();
                 break;
             case 2:
-                List<Segment> possibleSeg3 = availableSegments3.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-                int id3 = Random.Range(0, possibleSeg3.Count);
+                int id3 = Random.Range(0, availableSegments3.Count);
 
                 Segment s3 = GetSegment3(id3, false);
-
-                y1 = s3.endY1;
-                y2 = s3.endY2;
-                y3 = s3.endY3;
 
                 s3.transform.SetParent(transform);
                 s3.transform.localPosition = Vector3.forward * currentSpawnZ;
@@ -213,14 +196,10 @@ public class LevelManager : MonoBehaviour
                     salida.SetActive(true);
                     salida.transform.position = new Vector3(-0.75f, 8.55f, 1 * currentSpawnZ + 24);
                 }
-                List<Segment> possibleSeg4 = availableSegments4.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-                int id4 = Random.Range(0, possibleSeg4.Count);
+
+                int id4 = Random.Range(0, availableSegments4.Count);
 
                 Segment s4 = GetSegment4(id4, false);
-
-                y1 = s4.endY1;
-                y2 = s4.endY2;
-                y3 = s4.endY3;
 
                 s4.transform.SetParent(transform);
                 s4.transform.localPosition = Vector3.forward * currentSpawnZ;
@@ -234,14 +213,9 @@ public class LevelManager : MonoBehaviour
 
     private void SpawnTransition()
     {
-        List<Segment> possibleTransition = availableTransitions.FindAll(x => x.beginY1 == y1 || x.beginY2 == y2 || x.beginY3 == y3);
-        int id = Random.Range(0, possibleTransition.Count);
+        int id = Random.Range(0, availableTransitions.Count);
 
         Segment s = GetSegment(id, true);
-
-        y1 = s.endY1;
-        y2 = s.endY2;
-        y3 = s.endY3;
 
         s.transform.SetParent(transform);
         s.transform.localPosition = Vector3.forward * currentSpawnZ;

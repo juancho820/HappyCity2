@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class Avioneta : MonoBehaviour {
 
-    public Animator avionetaAnim;
+    private Animator avionetaAnim;
     private float random;
     private int random2;
     private bool avionetaOn;
-	
-	void Update ()
+
+    private void Start()
+    {
+        avionetaAnim = GetComponent<Animator>();
+    }
+
+    void Update ()
     {
         if(avionetaOn == false)
         {
