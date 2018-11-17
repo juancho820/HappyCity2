@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public AudioSource audiSourc;
     public GameObject player;
 
+    public GameObject pausa;
+
     public bool isDead { set; get; }
     private bool isGameStarted = false;
     private bool iniciado = false;
@@ -112,6 +114,7 @@ public class GameManager : MonoBehaviour
                 Once = true;
                 isGameStarted = true;
                 TapAnim.gameObject.SetActive(false);
+                pausa.SetActive(true);
                 motor.StartRunning();
                 FindObjectOfType<GlacierSpawner>().IsScrolling = true;
                 FindObjectOfType<CamaraMotor>().IsMoving = true;

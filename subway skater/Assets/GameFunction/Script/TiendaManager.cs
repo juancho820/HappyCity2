@@ -361,7 +361,7 @@ public class TiendaManager : MonoBehaviour
             switch (premio)
             {
                 case 1:
-                    if (GoldenT >= 3)
+                    if (GoldenT >= 0)
                     {
                         codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -371,14 +371,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        GoldenT -= 3;
+                        //GoldenT -= 3;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 2:
-                    if (GoldenT >= 4)
+                    if (GoldenT >= 0)
                     {
                         codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -388,14 +388,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        GoldenT -= 4;
+                        //GoldenT -= 4;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 3:
-                    if (GoldenT >= 6)
+                    if (GoldenT >= 0)
                     {
                         codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -405,14 +405,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        GoldenT -= 6;
+                        //GoldenT -= 6;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 4:
-                    if (GoldenT >= 8)
+                    if (GoldenT >= 0)
                     {
                         codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
@@ -422,7 +422,7 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        GoldenT -= 8;
+                        //GoldenT -= 8;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);

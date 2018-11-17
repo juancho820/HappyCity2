@@ -30,6 +30,7 @@ public class Bodega : MonoBehaviour {
     {
         numeroDeCodigo++;
         GameObject go = Instantiate(codigo, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        go.name = "Premio" + numeroDeCodigo.ToString();
         go.transform.SetParent(this.transform, false);
         codigo.GetComponentInChildren<Text>().text = codigoGenerado;
         PlayerPrefs.SetString("Codigo" + numeroDeCodigo.ToString("0"), codigoGenerado);
