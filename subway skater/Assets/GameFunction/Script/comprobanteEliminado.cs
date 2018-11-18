@@ -8,7 +8,7 @@ public class comprobanteEliminado : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        if (PlayerPrefs.GetInt("Eliminar" + transform.parent.name) == 1)
+        if (PlayerPrefs.GetInt("Eliminar" + transform.parent.GetComponentInChildren<Text>().text) == 1)
         {
             foreach (Transform child in transform)
             {

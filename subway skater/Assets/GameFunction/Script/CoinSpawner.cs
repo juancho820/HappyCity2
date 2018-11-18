@@ -3,15 +3,15 @@
 public class CoinSpawner : MonoBehaviour
 {
     public int maxCoin;
-    private float chanceToSpawn = 0.8f;
-    public bool forceSpawnAll;
+    //private float chanceToSpawn = 0.8f;
+    //public bool forceSpawnAll;
 
     private GameObject[] coins;
 
     private void Awake()
     {
         maxCoin = transform.childCount;
-        forceSpawnAll = true;
+        //forceSpawnAll = true;
 
         coins = new GameObject[transform.childCount];
 
@@ -30,21 +30,21 @@ public class CoinSpawner : MonoBehaviour
         //    return;
         //}
 
-        if (forceSpawnAll)
-        {
+        //if (forceSpawnAll)
+        //{
             for (int i = 0; i < maxCoin; i++)
             {
                 coins[i].SetActive(true);
             }
-        }
-        else
-        {
-            int r = Random.Range(0, maxCoin);
-            for (int i = 0; i < r; i++)
-            {
-                coins[i].SetActive(true);
-            }
-        }
+        //}
+        //else
+        //{
+        //    int r = Random.Range(0, maxCoin);
+        //    for (int i = 0; i < r; i++)
+        //    {
+        //        coins[i].SetActive(true);
+        //    }
+        //}
     }
 
     private void OnDisable()

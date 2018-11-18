@@ -30,8 +30,6 @@ public class TiendaManager : MonoBehaviour
     public Sprite[] arrayMag;
     public Sprite[] arrayX2;
 
-    public Text codigo1, codigo2, codigo3, codigo4;
-
     public Animator anim;
 
     public int InvCooldown = 10;
@@ -363,9 +361,8 @@ public class TiendaManager : MonoBehaviour
                 case 1:
                     if (GoldenT >= 0)
                     {
-                        codigo1.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
-                        Bodega.Instance.crearCodigo(codigo1.text);
+                        Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
                         premioTexto.text = "1 hora x $16.000 pesos";
                         tiempoRedemcion = true;
@@ -380,9 +377,8 @@ public class TiendaManager : MonoBehaviour
                 case 2:
                     if (GoldenT >= 0)
                     {
-                        codigo2.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
-                        Bodega.Instance.crearCodigo(codigo2.text);
+                        Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
                         premioTexto.text = "50% en bonos con recargas de $20.000";
                         tiempoRedemcion = true;
@@ -397,9 +393,8 @@ public class TiendaManager : MonoBehaviour
                 case 3:
                     if (GoldenT >= 0)
                     {
-                        codigo3.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
-                        Bodega.Instance.crearCodigo(codigo3.text);
+                        Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
                         premioTexto.text = "Recargas  $20.000 recibes 2x1";
                         tiempoRedemcion = true;
@@ -414,9 +409,8 @@ public class TiendaManager : MonoBehaviour
                 case 4:
                     if (GoldenT >= 0)
                     {
-                        codigo4.text = DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString("");
                         StartCoroutine(request(www));
-                        Bodega.Instance.crearCodigo(codigo4.text);
+                        Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
                         premioTexto.text = "Carga $30.000 y recibes 50 tickets físicos + 50% en todas las atracciones.";
                         tiempoRedemcion = true;
@@ -464,7 +458,7 @@ public class TiendaManager : MonoBehaviour
 
     IEnumerator redimir()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
         tiempoRedemcion = false;
     }
 }

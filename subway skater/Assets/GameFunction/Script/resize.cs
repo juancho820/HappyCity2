@@ -19,7 +19,7 @@ public class resize : MonoBehaviour {
 
     public void Resz()
     {
-        rt.sizeDelta += new Vector2(0, 300);
+        rt.sizeDelta += new Vector2(0, 200);
         PlayerPrefs.SetInt("canvasSize", (int)rt.sizeDelta.y);
     }
 }
