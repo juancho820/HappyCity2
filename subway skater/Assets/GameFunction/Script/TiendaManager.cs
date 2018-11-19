@@ -42,6 +42,7 @@ public class TiendaManager : MonoBehaviour
     public AudioClip BotonComprar;
 
     public GameObject redencionGanar;
+    public GameObject[] premiosImg;
     public Text premioTexto;
 
     public Text coinTextTienda, InvenciText, InvenciPriceText, MasInv, MasMag, Masx2, GoldenTickts, GoldenTicktsRed, GTPriceText,redButtonText;
@@ -364,7 +365,8 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "1 hora x $16.000 pesos";
+                        premiosImg[0].SetActive(true);
+                        premioTexto.text = "Premio Cobre";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
@@ -380,7 +382,8 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "50% en bonos con recargas de $20.000";
+                        premiosImg[1].SetActive(true);
+                        premioTexto.text = "Premio Plata";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
@@ -396,7 +399,8 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Recargas  $20.000 recibes 2x1";
+                        premiosImg[2].SetActive(true);
+                        premioTexto.text = "Premio Oro";
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
@@ -412,8 +416,9 @@ public class TiendaManager : MonoBehaviour
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
                         redencionGanar.SetActive(true);
-                        premioTexto.text = "Carga $30.000 y recibes 50 tickets físicos + 50% en todas las atracciones.";
+                        premioTexto.text = "Premio Cristal";
                         tiempoRedemcion = true;
+                        premiosImg[3].SetActive(true);
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
                         //GoldenT -= 8;
