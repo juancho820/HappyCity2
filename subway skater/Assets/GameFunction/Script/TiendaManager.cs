@@ -346,7 +346,7 @@ public class TiendaManager : MonoBehaviour
     {
         if(tiempoRedemcion == false)
         {
-            string url = "http://190.7.159.10:1900/RedencionClientes/api/RedencionPremios";
+            string url = "http://190.7.159.10:1300/RedencionWebApiPruebas/api/v1/Redencion/CrearRedencion/Token";
 
             WWWForm formDate = new WWWForm();
             formDate.AddField("NumeroPuntos", coinScore.ToString(""));
