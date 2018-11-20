@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MobileInput : MonoBehaviour
 {
-    private const float DEADZONE = 50.0f;
+    private const float DEADZONE = 40.0f;
 
     public static MobileInput Instance { set; get; }
 
