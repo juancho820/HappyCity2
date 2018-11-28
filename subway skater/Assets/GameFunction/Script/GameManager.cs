@@ -100,10 +100,10 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            coinScore += 100;
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    coinScore += 100;
+        //}
 
         if (iniciado == true)
         {

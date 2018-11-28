@@ -13,7 +13,7 @@ public class GlacierSpawner : MonoBehaviour
     private float scrollLocation;
     public Transform playerTransform;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!IsScrolling)
         {

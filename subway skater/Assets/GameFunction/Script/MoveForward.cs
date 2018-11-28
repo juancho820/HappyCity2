@@ -19,7 +19,7 @@ public class MoveForward : MonoBehaviour {
         position = this.transform.position;
     }
 
-    void Update () {
+    void FixedUpdate () {
         if (GameManager.Instance.isDead == false)
         {
             if (this.transform.position.z - player.transform.position.z > -40)

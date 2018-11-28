@@ -360,7 +360,7 @@ public class TiendaManager : MonoBehaviour
             switch (premio)
             {
                 case 1:
-                    if (GoldenT >= 0)
+                    if (GoldenT >= 3)
                     {
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
@@ -370,14 +370,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        //GoldenT -= 3;
+                        GoldenT -= 3;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 2:
-                    if (GoldenT >= 0)
+                    if (GoldenT >= 4)
                     {
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
@@ -387,14 +387,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        //GoldenT -= 4;
+                        GoldenT -= 4;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 3:
-                    if (GoldenT >= 0)
+                    if (GoldenT >= 6)
                     {
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
@@ -404,14 +404,14 @@ public class TiendaManager : MonoBehaviour
                         tiempoRedemcion = true;
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        //GoldenT -= 6;
+                        GoldenT -= 6;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
                     }
                     break;
                 case 4:
-                    if (GoldenT >= 0)
+                    if (GoldenT >= 8)
                     {
                         StartCoroutine(request(www));
                         Bodega.Instance.crearCodigo(DateTime.Now.ToString("yyyyMMddTHHmmss") + coinScore.ToString("") + premio.ToString(""));
@@ -421,7 +421,7 @@ public class TiendaManager : MonoBehaviour
                         premiosImg[3].SetActive(true);
                         StartCoroutine(redimir());
                         this.GetComponent<AudioSource>().Stop();
-                        //GoldenT -= 8;
+                        GoldenT -= 8;
                         GoldenTickts.text = GoldenT.ToString("0");
                         GoldenTicktsRed.text = GoldenT.ToString("0");
                         PlayerPrefs.SetInt("Golden", (int)GoldenT);
